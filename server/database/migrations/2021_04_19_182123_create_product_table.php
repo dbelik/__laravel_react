@@ -22,7 +22,7 @@ class CreateProductTable extends Migration
             $table->index('type_id');
 
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('product_type');
+            $table->foreign('type_id')->references('id')->on('product_types');
         });
     }
 
