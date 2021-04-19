@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProductAttributeValBool extends Model
 {
     use HasFactory;
+
+    public function attribute() {
+        return $this->hasOne(ProductAttribute::class);
+    }
 }
