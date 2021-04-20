@@ -19,7 +19,9 @@ mix.webpackConfig({
     resolve: {
         alias: {
             "@components": __dirname + "/resources/js/components",
-            "@css": __dirname + "/resources/css"
+            "@pages": __dirname + "/resources/js/pages",
+            "@css": __dirname + "/resources/css",
+            "@utils": __dirname + "/resources/js/utils",
         }
     }
 })

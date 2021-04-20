@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@shopify/polaris/dist/styles.css";
 import "@css/app.css";
 
-import ProductForm from './forms/Product.jsx';
+import Global from './global/Global.jsx';
 
 if (document.getElementById('root')) {
-    ReactDOM.render(<ProductForm />, document.getElementById('root'));
+    ReactDOM.render(<Global />, document.getElementById('root'));
 }

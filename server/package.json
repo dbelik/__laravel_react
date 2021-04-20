@@ -25,6 +25,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
-        "@shopify/polaris": "^6.3.0"
+        "@shopify/polaris": "^6.3.0",
+        "react-router-dom": "^5.2.0"
     }
 }
