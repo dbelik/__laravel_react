@@ -10,8 +10,8 @@ export default function GlobalRouter() {
     return (
         <Router history={history}>
             <Switch>
-                <Redirect exact from="/" to="/products" />
-                <Route path="/products" component={Products} />
+                <Redirect exact from="/" to="/products/new" />
+                <Route path="/products/new" component={Products} />
                 <Route component={PageError} />
             </Switch>
         </Router>
