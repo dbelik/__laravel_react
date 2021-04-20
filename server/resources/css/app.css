@@ -7,6 +7,9 @@
 
     /* Backgrounds */
     --bg-form: #ffffff;
+
+    /* Border radius */
+    --border-radius: .5rem;
 }
 
 /* Tag overloads */
@@ -29,7 +32,7 @@ h2 {
 }
 
 .form-container {
-    max-width: 480px;
+    max-width: 560px;
 }
 
 /* Sizes */
@@ -43,4 +46,9 @@ h2 {
 /* Backgrounds */
 .bg-form {
     background-color: var(--bg-form);
+}
+
+/* Border radius */
+.rounded {
+    border-radius: var(--border-radius) !important;
 }

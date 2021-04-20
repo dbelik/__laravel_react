@@ -30,21 +30,21 @@ export default function Products() {
 
     // Submit handler
     function handleFormSubmit() {
-        console.log(color)
+        alert('here')
     }
 
     return (
         <CenterContainer>
             <FormContainer>
                 <Form preventDefault={true} onSubmit={handleFormSubmit}>
-                    <h2>Add new product</h2>
+                    <h2 className="text-center">Add new product</h2>
 
-                    <div class="mt-3">
-                        <p class="mb-3">Color</p>
+                    <div className="mt-3">
+                        <p className="mb-3">Color</p>
                         <ColorPicker onChange={ handleChange } color={color}/>
                     </div>
 
-                    <div class="mt-3">
+                    <div className="mt-3">
                         <TextField
                             label="Weight"
                             type="number"
@@ -53,7 +53,7 @@ export default function Products() {
                         />
                     </div>
                     
-                    <div class="mt-3">
+                    <div className="mt-3">
                         <TextField
                             label="Price"
                             type="number"
@@ -62,7 +62,7 @@ export default function Products() {
                         />
                     </div>
 
-                    <div class="mt-3">
+                    <div className="mt-3">
                         <Select
                             label="Product type"
                             options={typeOptions}
@@ -71,7 +71,7 @@ export default function Products() {
                         />
                     </div>
 
-                    <div class="mt-5">
+                    <div className="mt-5">
                         <Button submit>Create</Button>
                     </div>
                 </Form>
