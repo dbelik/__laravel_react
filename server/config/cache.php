@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store
@@ -32,7 +31,6 @@ return [
     */
 
     'stores' => [
-
         'apc' => [
             'driver' => 'apc',
         ],
@@ -74,6 +72,7 @@ return [
         ],
 
         'redis' => [
+            'driver' => 'redis',
             'client' => env('REDIS_CLIENT', 'phpredis'),
 
             'default' => [
@@ -82,7 +81,7 @@ return [
                 'port' => env('REDIS_PORT', 6379),
                 'database' => env('REDIS_DB', 0),
             ],
-        
+
             'cache' => [
                 'host' => env('REDIS_HOST', '127.0.0.1'),
                 'password' => env('REDIS_PASSWORD', null),
@@ -99,7 +98,6 @@ return [
             'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
-
     ],
 
     /*
@@ -114,5 +112,4 @@ return [
     */
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
-
 ];
