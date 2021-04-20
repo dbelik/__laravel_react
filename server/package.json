@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@shopify/polaris": "^6.3.0",
+        "react-helmet": "^6.1.0",
         "react-router-dom": "^5.2.0"
     }
 }
