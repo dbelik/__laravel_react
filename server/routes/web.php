@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 // TODO: add api routes
 
 // React will handle any route
-Route::get('/{any}', function () {
+Route::get('web/{any}', function () {
     return view('react');
 })->where('any', '.*');

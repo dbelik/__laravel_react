@@ -11,3 +11,5 @@ restart:
 
 shell-php:
 	docker-compose exec --user="1000" php bash
+shell-redis:
+	docker-compose exec redis bash

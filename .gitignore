@@ -3,3 +3,5 @@ vendor
 node_modules
 package-lock.json
 /db-data
+ssl
+/_test_requests
