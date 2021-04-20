@@ -1,11 +1,8 @@
 import React, {useCallback, useState} from 'react';
 import {ColorPicker, TextField, Form, Select, Button} from '@shopify/polaris';
 
-import ContentContainer from "@components/containers/Content.jsx";
-
-function handleFormSubmit() {
-    alert('here');
-}
+import FormContainer from "@components/containers/Form.jsx";
+import CenterContainer from "@components/containers/Center.jsx";
 
 export default function Products() {
     // Color field
@@ -29,32 +26,56 @@ export default function Products() {
         {label: 'Phone', value: 'phone'},
         {label: 'Tablet', value: 'tablet'},
         {label: 'Laptop', value: 'laptop'},
-      ];
+    ];
+
+    // Submit handler
+    function handleFormSubmit() {
+        console.log(color)
+    }
 
     return (
-        <ContentContainer>
-            <Form onSubmit={handleFormSubmit}>
-                <ColorPicker onChange={ handleChange } color={color}/>
-                <TextField
-                    label="Weight"
-                    type="number"
-                    value={weight}
-                    onChange={setWeight}
-                />
-                <TextField
-                    label="Price"
-                    type="number"
-                    value={price}
-                    onChange={setPrice}
-                />
-                <Select
-                    label="Product type"
-                    options={typeOptions}
-                    onChange={handleTypeSelectChange}
-                    value={type}
-                />
-                <Button submit>Create</Button>
-            </Form>
-        </ContentContainer>
+        <CenterContainer>
+            <FormContainer>
+                <Form preventDefault={true} onSubmit={handleFormSubmit}>
+                    <h2>Add new product</h2>
+
+                    <div class="mt-3">
+                        <p class="mb-3">Color</p>
+                        <ColorPicker onChange={ handleChange } color={color}/>
+                    </div>
+
+                    <div class="mt-3">
+                        <TextField
+                            label="Weight"
+                            type="number"
+                            value={weight}
+                            onChange={setWeight}
+                        />
+                    </div>
+                    
+                    <div class="mt-3">
+                        <TextField
+                            label="Price"
+                            type="number"
+                            value={price}
+                            onChange={setPrice}
+                        />
+                    </div>
+
+                    <div class="mt-3">
+                        <Select
+                            label="Product type"
+                            options={typeOptions}
+                            onChange={handleTypeSelectChange}
+                            value={type}
+                        />
+                    </div>
+
+                    <div class="mt-5">
+                        <Button submit>Create</Button>
+                    </div>
+                </Form>
+            </FormContainer>
+        </CenterContainer>
     );
 }

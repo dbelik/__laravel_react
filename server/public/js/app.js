@@ -11314,24 +11314,48 @@ if (document.getElementById('root')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/containers/Content.jsx":
-/*!********************************************************!*\
-  !*** ./resources/js/components/containers/Content.jsx ***!
-  \********************************************************/
+/***/ "./resources/js/components/containers/Center.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/containers/Center.jsx ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Content)
+/* harmony export */   "default": () => (/* binding */ Center)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function Content(props) {
+function Center(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "content-container",
+    className: "h-100vh w-100vw d-flex align-items-center justify-content-center",
+    children: props.children
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/containers/Form.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/containers/Form.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Form)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function Form(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "form-container h-auto bg-form py-4 px-5 rounded",
     children: props.children
   });
 }
@@ -11483,13 +11507,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Products)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
-/* harmony import */ var _components_containers_Content_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/containers/Content.jsx */ "./resources/js/components/containers/Content.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
+/* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -11507,10 +11532,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function handleFormSubmit() {
-  alert('here');
-}
 
 function Products() {
   // Color field
@@ -11554,32 +11575,60 @@ function Products() {
   }, {
     label: 'Laptop',
     value: 'laptop'
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_containers_Content_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-      onSubmit: handleFormSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.ColorPicker, {
-        onChange: handleChange,
-        color: color
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
-        label: "Weight",
-        type: "number",
-        value: weight,
-        onChange: setWeight
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
-        label: "Price",
-        type: "number",
-        value: price,
-        onChange: setPrice
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Select, {
-        label: "Product type",
-        options: typeOptions,
-        onChange: handleTypeSelectChange,
-        value: type
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Button, {
-        submit: true,
-        children: "Create"
-      })]
+  }]; // Submit handler
+
+  function handleFormSubmit() {
+    console.log(color);
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        preventDefault: true,
+        onSubmit: handleFormSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          children: "Add new product"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          "class": "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            "class": "mb-3",
+            children: "Color"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.ColorPicker, {
+            onChange: handleChange,
+            color: color
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.TextField, {
+            label: "Weight",
+            type: "number",
+            value: weight,
+            onChange: setWeight
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.TextField, {
+            label: "Price",
+            type: "number",
+            value: price,
+            onChange: setPrice
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Select, {
+            label: "Product type",
+            options: typeOptions,
+            onChange: handleTypeSelectChange,
+            value: type
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "mt-5",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
+            submit: true,
+            children: "Create"
+          })
+        })]
+      })
     })
   });
 }
@@ -16109,7 +16158,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\n:root {\n    font-size: 16px;\n}\n\n/* Common classes */\n.content-container {\n    max-width: 1280px;\n    padding: 0 2rem;\n    margin: auto;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\n:root {\n    font-size: 16px;\n\n    /* Font sizes */\n    --font-size-h2: 2rem;\n\n    /* Backgrounds */\n    --bg-form: #ffffff;\n}\n\n/* Tag overloads */\nh2 {\n    font-size: var(--font-size-h2);\n    margin-bottom: 1.5rem;\n}\n\n/* Common classes */\n/* Containers */\n.content-container,\n.form-container {\n    padding: 0 2rem;\n    margin: auto;\n    width: 100%;\n}\n\n.content-container {\n    max-width: 1280px;\n}\n\n.form-container {\n    max-width: 480px;\n}\n\n/* Sizes */\n.h-100vh {\n    height: 100vh;\n}\n.w-100vw {\n    width: 100vw;\n}\n\n/* Backgrounds */\n.bg-form {\n    background-color: var(--bg-form);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

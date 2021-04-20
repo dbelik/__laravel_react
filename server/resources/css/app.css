@@ -1,11 +1,46 @@
 /* Variable declarations */
 :root {
     font-size: 16px;
+
+    /* Font sizes */
+    --font-size-h2: 2rem;
+
+    /* Backgrounds */
+    --bg-form: #ffffff;
+}
+
+/* Tag overloads */
+h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1.5rem;
 }
 
 /* Common classes */
-.content-container {
-    max-width: 1280px;
+/* Containers */
+.content-container,
+.form-container {
     padding: 0 2rem;
     margin: auto;
+    width: 100%;
+}
+
+.content-container {
+    max-width: 1280px;
+}
+
+.form-container {
+    max-width: 480px;
+}
+
+/* Sizes */
+.h-100vh {
+    height: 100vh;
+}
+.w-100vw {
+    width: 100vw;
+}
+
+/* Backgrounds */
+.bg-form {
+    background-color: var(--bg-form);
 }
