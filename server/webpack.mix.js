@@ -22,6 +22,8 @@ mix.webpackConfig({
             "@pages": __dirname + "/resources/js/pages",
             "@css": __dirname + "/resources/css",
             "@utils": __dirname + "/resources/js/utils",
+            "@context": __dirname + "/resources/context",
+            "@provider": __dirname + "/resources/js/provider",
         }
     }
 })
