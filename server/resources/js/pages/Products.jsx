@@ -1,5 +1,7 @@
-import React, {useCallback, useState, Fragment} from 'react';
+import React, {useCallback, useState, Fragment, useEffect} from 'react';
 import {ColorPicker, TextField, Form, Select, Button} from '@shopify/polaris';
+
+import axios from 'axios';
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
@@ -21,13 +23,29 @@ export default function Products() {
     const [price, setPrice] = useState('');
 
     // Product type field
-    const [type, setType] = useState('phone');
+    const [type, setType] = useState('');
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
-    const typeOptions = [
-        {label: 'Phone', value: 'phone'},
-        {label: 'Tablet', value: 'tablet'},
-        {label: 'Laptop', value: 'laptop'},
-    ];
+
+    // Make a request to get product types
+    const [typeOptions, setTypeOptions] = useState([]);
+    useEffect(() => {
+        async function fetch() {
+            const data = await axios.get("/api/product_type");
+            const options = [];
+
+            data.data.forEach((option) => {
+                options.push({
+                    label: option.title,
+                    value: option.title,
+                })
+            })
+
+            setTypeOptions(options);
+            setType(options[0].value);
+        }
+
+        fetch();
+    }, []);
 
     // Submit button
     const [submitDisabled, setSubmitDisabled] = useState(false);
@@ -80,7 +98,7 @@ export default function Products() {
                             />
                         </div>
 
-                        <div className="mt-5">
+                        <div className="mt-5 d-flex justify-content-center">
                             <Button disabled={submitDisabled} submit>Create</Button>
                         </div>
                     </Form>

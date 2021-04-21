@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductTypeRequest extends FormRequest
+class ProductsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,19 +24,22 @@ class ProductTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:255',
+            'weight' => 'required|numeric',
+            'color' => 'required|string|max:6',
+            'price' => 'required|numeric',
+            'type_id' => 'required|exists:product_types,id',
         ];
     }
 
     /**
-     *  Filters to be applied to the input.
+     * Custom message for validation.
      *
      * @return array
      */
-    public function filters()
+    public function messages()
     {
         return [
-            'title' => 'trim|capitalize',
+            'color.max' => 'Color must be written in rgb format (#rrggbb, 6 letters) without hash symbol',
         ];
     }
 }

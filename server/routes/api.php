@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductTypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Product types routes
 Route::get('/product_type', [ProductTypeController::class, 'get']);
 Route::post('/product_type', [ProductTypeController::class, 'post']);
+
+// Product routes
+Route::get('/products', [ProductsController::class, 'get']);
+Route::post('/products', [ProductsController::class, 'post']);
+
+// Authentication
+Auth::routes();
