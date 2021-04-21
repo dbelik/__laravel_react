@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import PolarisWrapper from './PolarisWrapper.jsx';
+import PolarisWrapper from "./PolarisWrapper.jsx";
 import Router from "./GlobalRouter";
 
 export default function Global() {
@@ -8,5 +8,5 @@ export default function Global() {
         <PolarisWrapper>
             <Router />
         </PolarisWrapper>
-    )
+    );
 }

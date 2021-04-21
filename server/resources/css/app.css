@@ -2,6 +2,10 @@
 :root {
     font-size: 16px;
 
+    /* Sizes */
+    --skip-navbar-height: 6rem;
+    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));
+
     /* Font sizes */
     --font-size-h2: 2rem;
 
@@ -9,7 +13,7 @@
     --bg-form: #ffffff;
 
     /* Border radius */
-    --border-radius: .5rem;
+    --border-radius: 0.5rem;
 }
 
 /* Tag overloads */
@@ -18,7 +22,8 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     text-decoration: none;
 }
 
@@ -44,12 +49,29 @@ a:hover, a:focus {
     list-style: none;
 }
 
+/* Margins/paddings */
+.return-to-navbar {
+    margin-top: calc(-1 * var(--skip-navbar-height) / 2);
+}
+
 /* Sizes */
 .h-100vh {
     height: 100vh;
 }
 .w-100vw {
     width: 100vw;
+}
+
+.min-h-100vh {
+    min-height: 100vh;
+    height: auto;
+}
+
+.skip-navbar-height {
+    padding-top: var(--skip-navbar-height);
+}
+.min-height-screen-skip-navbar {
+    min-height: var(--height-screen-skip-navbar);
 }
 
 /* Backgrounds */

@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
-export default function Content(props) {
+export default function Content({ children, className, ...props }) {
     return (
-        <div className="content-container">{props.children}</div>
-    )
+        <div
+            {...props}
+            className={`content-container bg-white shadow-sm ${className}`}
+        >
+            {children}
+        </div>
+    );
 }

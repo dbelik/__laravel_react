@@ -1,11 +1,11 @@
-import React, {useCallback, useState, Fragment, useEffect} from 'react';
-import {ColorPicker, TextField, Form, Select, Button} from '@shopify/polaris';
+import React, { useCallback, useState, Fragment, useEffect } from "react";
+import { ColorPicker, TextField, Form, Select, Button } from "@shopify/polaris";
 
-import axios from 'axios';
+import axios from "axios";
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
-import Title from '@components/global/Title.jsx';
+import Title from "@components/global/Title.jsx";
 
 export default function Products() {
     // Color field
@@ -17,13 +17,13 @@ export default function Products() {
     const handleChange = useCallback(setColor, []);
 
     // Weight field
-    const [weight, setWeight] = useState('');
+    const [weight, setWeight] = useState("");
 
     // Weight field
-    const [price, setPrice] = useState('');
+    const [price, setPrice] = useState("");
 
     // Product type field
-    const [type, setType] = useState('');
+    const [type, setType] = useState("");
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
     // Make a request to get product types
@@ -37,8 +37,8 @@ export default function Products() {
                 options.push({
                     label: option.title,
                     value: option.title,
-                })
-            })
+                });
+            });
 
             setTypeOptions(options);
             setType(options[0].value);
@@ -58,14 +58,17 @@ export default function Products() {
     return (
         <Fragment>
             <Title>Create Product</Title>
-            <CenterContainer>
+            <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>
                     <Form action="/api/product/new" onSubmit={handleFormSubmit}>
                         <h2 className="text-center">Add new product</h2>
 
                         <div className="mt-3">
                             <p className="mb-3">Color</p>
-                            <ColorPicker onChange={ handleChange } color={color}/>
+                            <ColorPicker
+                                onChange={handleChange}
+                                color={color}
+                            />
                         </div>
 
                         <div className="mt-3">
@@ -78,7 +81,7 @@ export default function Products() {
                                 onChange={setWeight}
                             />
                         </div>
-                        
+
                         <div className="mt-3">
                             <TextField
                                 placeholder="Price in dollars"
@@ -99,7 +102,9 @@ export default function Products() {
                         </div>
 
                         <div className="mt-5 d-flex justify-content-center">
-                            <Button disabled={submitDisabled} submit>Create</Button>
+                            <Button disabled={submitDisabled} submit>
+                                Create
+                            </Button>
                         </div>
                     </Form>
                 </FormContainer>
