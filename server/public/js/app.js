@@ -12179,61 +12179,23 @@ function User(props) {
   }
 
   function _signup() {
-    _signup = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(options) {
+    _signup = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(options) {
       var signupResp;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.prev = 0;
-              _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/register", options);
-
-            case 3:
-              signupResp = _context.sent;
-              setCurrentUser({
-                email: options.email,
-                name: options.name
-              });
-              return _context.abrupt("return", signupResp.response);
-
-            case 8:
-              _context.prev = 8;
-              _context.t0 = _context["catch"](0);
-              return _context.abrupt("return", _context.t0.response);
-
-            case 11:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, null, [[0, 8]]);
-    }));
-    return _signup.apply(this, arguments);
-  }
-
-  function login(_x2) {
-    return _login.apply(this, arguments);
-  }
-
-  function _login() {
-    _login = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(options) {
-      var loginResp;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.prev = 0;
               _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/login", options);
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/register", options);
 
             case 3:
-              loginResp = _context2.sent;
+              signupResp = _context2.sent;
               setCurrentUser({
                 email: options.email,
                 name: options.name
               });
-              return _context2.abrupt("return", loginResp.response);
+              return _context2.abrupt("return", signupResp.response);
 
             case 8:
               _context2.prev = 8;
@@ -12247,11 +12209,88 @@ function User(props) {
         }
       }, _callee2, null, [[0, 8]]);
     }));
+    return _signup.apply(this, arguments);
+  }
+
+  function login(_x2) {
+    return _login.apply(this, arguments);
+  }
+
+  function _login() {
+    _login = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(options) {
+      var loginResp;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.prev = 0;
+              _context3.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/login", options);
+
+            case 3:
+              loginResp = _context3.sent;
+              setCurrentUser({
+                email: options.email,
+                name: options.name
+              });
+              return _context3.abrupt("return", loginResp.response);
+
+            case 8:
+              _context3.prev = 8;
+              _context3.t0 = _context3["catch"](0);
+              return _context3.abrupt("return", _context3.t0.response);
+
+            case 11:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[0, 8]]);
+    }));
     return _login.apply(this, arguments);
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    setLoading(false);
+    function fetch() {
+      return _fetch.apply(this, arguments);
+    }
+
+    function _fetch() {
+      _fetch = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var user;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/profile");
+
+              case 3:
+                user = _context.sent;
+                console.log(user);
+                setCurrentUser(user.data);
+                _context.next = 10;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+
+              case 10:
+                setLoading(false);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }));
+      return _fetch.apply(this, arguments);
+    }
+
+    fetch();
   }, []);
   var value = {
     currentUser: currentUser,
