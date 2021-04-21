@@ -11422,6 +11422,7 @@ function GlobalRouter() {
         from: "/",
         to: "/products/new"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        exact: true,
         path: "/products/new",
         component: _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_2__.default
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
