@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Authenticated;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductTypeController;
 use Illuminate\Http\Request;
@@ -21,6 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    // Check if user is authenticated
+    Route::post('/authenticated', [Authenticated::class, 'post']);
+
     // Product types routes
     Route::get('/product_type', [ProductTypeController::class, 'get']);
     Route::post('/product_type', [ProductTypeController::class, 'post']);

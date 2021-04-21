@@ -1,9 +1,11 @@
-export function requireAuth(nextState, replace, next) {
-    if (!false) {
-        replace({
-            pathname: "/auth/login",
-            state: {nextPathname: nextState.location.pathname}
-        });
+import axios from 'axios';
+
+export async function requireAuth() {
+    try {
+        const res = await axios.post("/api/authenticated");
+        console.log(res);
+    } catch (e) {
+        return false;
     }
-    next();
+    return true;
 }
