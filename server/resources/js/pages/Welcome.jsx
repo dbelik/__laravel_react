@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment } from "react";
+
+import Title from "@components/global/Title.jsx";
 
 export default function Welcome() {
     return (
-        <p>Example of welcome page.</p>
-    )
+        <Fragment>
+            <Title>Welcome</Title>
+            <p>Example of welcome page.</p>
+        </Fragment>
+    );
 }

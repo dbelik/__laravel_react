@@ -11524,7 +11524,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
-/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
+/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -11618,54 +11618,58 @@ function Register() {
     return _handleFormSubmit.apply(this, arguments);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
-    className: "min-height-screen-skip-navbar",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Form, {
-      onSubmit: handleFormSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-        className: "text-center",
-        children: "Login"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "mt-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          name: "email",
-          placeholder: "example@email.com",
-          label: "Login",
-          type: "email",
-          value: email,
-          onChange: setEmail
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          className: "text-danger",
-          children: errorMessages.email || ""
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "mt-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          name: "password",
-          placeholder: "Password",
-          label: "Password",
-          type: "password",
-          value: password,
-          onChange: setPassword
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          className: "text-danger",
-          children: errorMessages.password || ""
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "mt-4 d-flex justify-content-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
-          disabled: submitDisabled,
-          submit: true,
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+      children: "Login"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+      className: "min-height-screen-skip-navbar",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Form, {
+        onSubmit: handleFormSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "text-center",
           children: "Login"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-        className: "mt-5 mb-0 text-center",
-        children: ["Don't have an account yet?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-          to: "/auth/register",
-          children: "Register here"
-        }), "."]
-      })]
-    })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            name: "email",
+            placeholder: "example@email.com",
+            label: "Login",
+            type: "email",
+            value: email,
+            onChange: setEmail
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-danger",
+            children: errorMessages.email || ""
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            name: "password",
+            placeholder: "Password",
+            label: "Password",
+            type: "password",
+            value: password,
+            onChange: setPassword
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-danger",
+            children: errorMessages.password || ""
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "mt-4 d-flex justify-content-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
+            disabled: submitDisabled,
+            submit: true,
+            children: "Login"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+          className: "mt-5 mb-0 text-center",
+          children: ["Don't have an account yet?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+            to: "/auth/register",
+            children: "Register here"
+          }), "."]
+        })]
+      })
+    })]
   });
 }
 
@@ -11690,7 +11694,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
-/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
+/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -11794,77 +11798,81 @@ function Register() {
     return _handleFormSubmit.apply(this, arguments);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
-    className: "min-height-screen-skip-navbar",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Form, {
-      onSubmit: handleFormSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-        className: "text-center",
-        children: "Register"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "mt-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          focused: true,
-          name: "name",
-          placeholder: "Login",
-          label: "Login",
-          value: login,
-          onChange: setLogin
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          className: "text-danger",
-          children: errorMessages.login || ""
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "mt-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          name: "email",
-          placeholder: "example@email.com",
-          label: "Email",
-          type: "email",
-          value: email,
-          onChange: setEmail
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          className: "text-danger",
-          children: errorMessages.email || ""
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "mt-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          name: "password",
-          placeholder: "Password",
-          label: "Password",
-          type: "password",
-          value: password,
-          onChange: setPassword
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          className: "text-danger",
-          children: errorMessages.password || ""
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "mt-3",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
-          name: "password_confirmation",
-          placeholder: "Confirm password",
-          label: "Confirm password",
-          type: "password",
-          value: confirmPassword,
-          onChange: setConfirmPassword
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "mt-4 d-flex justify-content-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
-          disabled: submitDisabled,
-          submit: true,
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+      children: "Register"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+      className: "min-height-screen-skip-navbar",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Form, {
+        onSubmit: handleFormSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "text-center",
           children: "Register"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-        className: "mt-5 mb-0 text-center",
-        children: ["Already have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-          to: "/auth/login",
-          children: "Login here"
-        }), "."]
-      })]
-    })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            focused: true,
+            name: "name",
+            placeholder: "Login",
+            label: "Login",
+            value: login,
+            onChange: setLogin
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-danger",
+            children: errorMessages.login || ""
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            name: "email",
+            placeholder: "example@email.com",
+            label: "Email",
+            type: "email",
+            value: email,
+            onChange: setEmail
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-danger",
+            children: errorMessages.email || ""
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mt-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            name: "password",
+            placeholder: "Password",
+            label: "Password",
+            type: "password",
+            value: password,
+            onChange: setPassword
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-danger",
+            children: errorMessages.password || ""
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.TextField, {
+            name: "password_confirmation",
+            placeholder: "Confirm password",
+            label: "Confirm password",
+            type: "password",
+            value: confirmPassword,
+            onChange: setConfirmPassword
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "mt-4 d-flex justify-content-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
+            disabled: submitDisabled,
+            submit: true,
+            children: "Register"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+          className: "mt-5 mb-0 text-center",
+          children: ["Already have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+            to: "/auth/login",
+            children: "Login here"
+          }), "."]
+        })]
+      })
+    })]
   });
 }
 
@@ -12109,12 +12117,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Welcome)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 function Welcome() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-    children: "Example of welcome page."
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
+      children: "Welcome"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      children: "Example of welcome page."
+    })]
   });
 }
 
