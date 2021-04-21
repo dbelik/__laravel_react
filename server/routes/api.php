@@ -20,13 +20,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Product types routes
-Route::get('/product_type', [ProductTypeController::class, 'get']);
-Route::post('/product_type', [ProductTypeController::class, 'post']);
+Route::group(['middleware' => 'auth'], function () {
+    // Product types routes
+    Route::get('/product_type', [ProductTypeController::class, 'get']);
+    Route::post('/product_type', [ProductTypeController::class, 'post']);
 
-// Product routes
-Route::get('/products', [ProductsController::class, 'get']);
-Route::post('/products', [ProductsController::class, 'post']);
+    // Product routes
+    Route::get('/products', [ProductsController::class, 'get']);
+    Route::post('/products', [ProductsController::class, 'post']);
+});
 
 // Authentication
 Auth::routes();

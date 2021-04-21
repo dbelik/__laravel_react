@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // React will handle any route
-Route::get('/web/products/new', function () {
-    return view('react');
-})->middleware('auth');
-
 Route::get('/{query}', function () {
     return view('react');
 })->where('query', '^((?!api).)*$');

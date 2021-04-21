@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import {TextField, Form, Button} from '@shopify/polaris';
 
 import CenterContainer from "@components/containers/Center.jsx"
@@ -20,8 +22,9 @@ export default function Register() {
 
         try {
             const res = await axios.post("/api/login", options);
+            console.log(res);
         } catch (e) {
-            console.log(e.response.data.errors)
+            console.log(e.response);
             setErrorMessages(e.response.data.errors);
             setSubmitDisabled(false);
         }
@@ -60,6 +63,8 @@ export default function Register() {
                     <div className="mt-5 d-flex justify-content-center">
                         <Button disabled={submitDisabled} submit>Login</Button>
                     </div>
+
+                    <p className="mt-3 mb-0">Don't have an account yet? <Link to="/auth/register">Register here</Link>.</p>
                 </Form>
             </FormContainer>
         </CenterContainer>
