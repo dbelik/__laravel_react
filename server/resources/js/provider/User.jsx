@@ -31,6 +31,15 @@ export default function User(props) {
         }
     }
 
+    async function logout() {
+        setCurrentUser({});
+        try {
+            const res = await axios.post("/api/logout");
+        } catch (e) {
+            // Leave it empty
+        }
+    }
+
     useEffect(() => {
         async function fetch() {
             try {
@@ -51,6 +60,7 @@ export default function User(props) {
         currentUser,
         signup,
         login,
+        logout,
     };
 
     return (
