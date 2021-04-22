@@ -12,6 +12,7 @@ import Welcome from "@pages/Welcome.jsx";
 import Products from "@pages/Products.jsx";
 import AuthRegister from "@pages/Auth/Register.jsx";
 import AuthLogin from "@pages/Auth/Login.jsx";
+import Dashboard from "@pages/Dashboard.jsx";
 import PageError from "@pages/PageError.jsx";
 
 export default function GlobalRouter() {
@@ -33,6 +34,7 @@ export default function GlobalRouter() {
                         component={AuthLogin}
                     />
 
+                    <PrivateRoute path="/dashboard" component={Dashboard} />
                     <PrivateRoute path="/products/new" component={Products} />
 
                     <Route component={PageError} />

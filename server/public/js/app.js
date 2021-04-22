@@ -11450,7 +11450,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ GlobalRouter)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _utils_createHistory_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @utils/createHistory.js */ "./resources/js/utils/createHistory.js");
 /* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/global/routes/PrivateRoute.jsx");
 /* harmony import */ var _OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OnlyPublicRoute */ "./resources/js/components/global/routes/OnlyPublicRoute.jsx");
@@ -11460,8 +11460,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @pages/Products.jsx */ "./resources/js/pages/Products.jsx");
 /* harmony import */ var _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @pages/Auth/Register.jsx */ "./resources/js/pages/Auth/Register.jsx");
 /* harmony import */ var _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @pages/Auth/Login.jsx */ "./resources/js/pages/Auth/Login.jsx");
-/* harmony import */ var _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pages/PageError.jsx */ "./resources/js/pages/PageError.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pages/Dashboard.jsx */ "./resources/js/pages/Dashboard.jsx");
+/* harmony import */ var _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pages/PageError.jsx */ "./resources/js/pages/PageError.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -11477,28 +11479,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function GlobalRouter() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Router, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Router, {
     history: _utils_createHistory_js__WEBPACK_IMPORTED_MODULE_1__.default,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_containers_Content__WEBPACK_IMPORTED_MODULE_5__.default, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_containers_Content__WEBPACK_IMPORTED_MODULE_5__.default, {
       className: "min-h-100vh skip-navbar-height",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
           exact: true,
           path: "/",
           component: _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/register",
           component: _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_8__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/login",
           component: _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+          path: "/dashboard",
+          component: _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_10__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
           path: "/products/new",
           component: _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_7__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
-          component: _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_10__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          component: _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_11__.default
         })]
       })
     })]
@@ -11906,6 +11911,48 @@ function Register() {
               children: "Login here"
             }), "."]
           })]
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/pages/Dashboard.jsx":
+/*!******************************************!*\
+  !*** ./resources/js/pages/Dashboard.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function Dashboard() {
+  var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_1__.useUser)(),
+      currentUser = _useUser.currentUser;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
+      children: ["Hello, ", currentUser.name]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: "Would you like to..."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          to: "products/new",
+          children: "add new product"
         })
       })
     })]
@@ -16915,7 +16962,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\r\n:root {\r\n    font-size: 14px;\r\n\r\n    /* Sizes */\r\n    --skip-navbar-height: 6rem;\r\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\r\n\r\n    /* Font sizes */\r\n    --font-size-h2: 2rem;\r\n\r\n    /* Backgrounds */\r\n    --bg-form: #ffffff;\r\n\r\n    /* Border radius */\r\n    --border-radius: 0.5rem;\r\n}\r\n\r\n/* Tag overloads */\r\nh2 {\r\n    font-size: var(--font-size-h2);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n/* Common classes */\r\n/* Containers */\r\n.content-container,\r\n.form-container {\r\n    padding: 0 2rem;\r\n    margin: auto;\r\n    width: 100%;\r\n}\r\n\r\n.content-container {\r\n    max-width: 1280px;\r\n}\r\n\r\n.form-container {\r\n    max-width: 560px;\r\n}\r\n\r\n/* List styles */\r\n.list-style-none {\r\n    list-style: none;\r\n}\r\n\r\n/* Margins/paddings */\r\n.return-to-navbar {\r\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\r\n}\r\n\r\n/* Sizes */\r\n.h-100vh {\r\n    height: 100vh;\r\n}\r\n.w-100vw {\r\n    width: 100vw;\r\n}\r\n\r\n.min-h-100vh {\r\n    min-height: 100vh;\r\n    height: auto;\r\n}\r\n\r\n.skip-navbar-height {\r\n    padding-top: var(--skip-navbar-height);\r\n}\r\n.min-height-screen-skip-navbar {\r\n    min-height: var(--height-screen-skip-navbar);\r\n}\r\n\r\n/* Backgrounds */\r\n.bg-form {\r\n    background-color: var(--bg-form);\r\n}\r\n\r\n/* Border radius */\r\n.rounded {\r\n    border-radius: var(--border-radius) !important;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\n:root {\n    font-size: 14px;\n\n    /* Sizes */\n    --skip-navbar-height: 6rem;\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\n\n    /* Font sizes */\n    --font-size-h1: 3rem;\n    --font-size-h2: 2rem;\n\n    /* Backgrounds */\n    --bg-form: #ffffff;\n\n    /* Border radius */\n    --border-radius: 0.5rem;\n}\n\n/* Tag overloads */\nh1 {\n    font-size: var(--font-size-h1);\n    margin-bottom: 1.5rem;\n}\n\nh2 {\n    font-size: var(--font-size-h2);\n    margin-bottom: 1.5rem;\n}\n\na:hover,\na:focus {\n    text-decoration: none;\n}\n\n/* Common classes */\n/* Containers */\n.content-container,\n.form-container {\n    padding: 0 2rem;\n    margin: auto;\n    width: 100%;\n}\n\n.content-container {\n    max-width: 1280px;\n}\n\n.form-container {\n    max-width: 560px;\n}\n\n/* List styles */\n.list-style-none {\n    list-style: none;\n}\n\n/* Margins/paddings */\n.return-to-navbar {\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\n}\n\n/* Sizes */\n.h-100vh {\n    height: 100vh;\n}\n.w-100vw {\n    width: 100vw;\n}\n\n.min-h-100vh {\n    min-height: 100vh;\n    height: auto;\n}\n\n.skip-navbar-height {\n    padding-top: var(--skip-navbar-height);\n}\n.min-height-screen-skip-navbar {\n    min-height: var(--height-screen-skip-navbar);\n}\n\n/* Backgrounds */\n.bg-form {\n    background-color: var(--bg-form);\n}\n\n/* Border radius */\n.rounded {\n    border-radius: var(--border-radius) !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18713,6 +18760,19 @@ var root = {
 };
 
 module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/isarray/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/isarray/index.js ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),
@@ -47797,7 +47857,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
 
 /**
  * Expose `pathToRegexp`.
@@ -48223,19 +48283,6 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
-  \*******************************************************************/
-/***/ ((module) => {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),

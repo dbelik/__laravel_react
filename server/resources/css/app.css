@@ -7,6 +7,7 @@
     --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));
 
     /* Font sizes */
+    --font-size-h1: 3rem;
     --font-size-h2: 2rem;
 
     /* Backgrounds */
@@ -17,6 +18,11 @@
 }
 
 /* Tag overloads */
+h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: 1.5rem;
+}
+
 h2 {
     font-size: var(--font-size-h2);
     margin-bottom: 1.5rem;
