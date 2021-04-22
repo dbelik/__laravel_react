@@ -113,8 +113,28 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
+        // Update product
+        // $product = Product::find($id);
+
+        // if (!$product) return response("Couldn't find product with the given id")->status(404);
+
+        // $product->name = $request->name;
+        // $product->product_type_id = $request->type_id;
+        // $product->save();
+
+        // $savedAttrib = $product->attributes();
+
+        // foreach ($attributes as $attrib) {
+        //     $attribute->product_type_id = $request->type_id;
+        //     $attribute->product_id = $product->id;
+
+        //     $new_attrib = new $attrib['class']();
+        //     $new_attrib->value = $attrib['value'];
+        //     $new_attrib->save();
+        //     $new_attrib->attribute()->save($attribute);
+        // }
     }
 
     /**

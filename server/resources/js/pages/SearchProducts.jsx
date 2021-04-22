@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { TextField, Button, Form } from "@shopify/polaris";
 
 import axios from "axios";
 
@@ -7,6 +8,7 @@ import Title from "@components/global/Title.jsx";
 
 export default function SearchProduct() {
     const [products, setProducts] = useState([]);
+    const [searchName, setSearchName] = useState("");
 
     useEffect(() => {
         async function fetch() {
@@ -17,11 +19,23 @@ export default function SearchProduct() {
         fetch();
     }, []);
 
+    async function handleSearchSubmit() {
+        alert("here");
+    }
+
     return (
         <Fragment>
             <Title>Search</Title>
 
-            <h2>Products:</h2>
+            <Form onSubmit={handleSearchSubmit}>
+                <TextField
+                    label="Search"
+                    value={searchName}
+                    onChange={setSearchName}
+                />
+            </Form>
+
+            <h2 className="mt-5">Products:</h2>
             <ul className="m-0 p-0 list-style-none">
                 <li className="row border-bottom">
                     <span className="d-none d-sm-block col-sm-2 col-lg-2 pb-3 text-truncate text-muted">
