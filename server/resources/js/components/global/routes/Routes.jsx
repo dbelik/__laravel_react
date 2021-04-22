@@ -9,6 +9,7 @@ import GlobalNavbar from "../Navbar.jsx";
 import ContentContainer from "../../containers/Content";
 
 import Welcome from "@pages/Welcome.jsx";
+import Product from "@pages/Product.jsx";
 import Products from "@pages/Products.jsx";
 import SearchProducts from "@pages/SearchProducts.jsx";
 import AuthRegister from "@pages/Auth/Register.jsx";
@@ -43,6 +44,7 @@ export default function GlobalRouter() {
                     />
 
                     <PrivateRoute path="/products/new" component={Products} />
+                    <PrivateRoute path="/products/:id" component={Product} />
                     <PrivateRoute path="/search" component={SearchProducts} />
 
                     <Route component={PageError} />

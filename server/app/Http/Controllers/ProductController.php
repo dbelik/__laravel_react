@@ -78,6 +78,21 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        $product = Product::find($id);
+        // If product isn't stored, return empty result
+        if (!$product) return [];
+        
+        $res = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
+
+        $attributes = $product->productType->attributes()->get();
+        foreach ($attributes as $attribute) {
+            $model = $attribute->attributable_type;
+            $type = substr($model, strrpos($model, '\\') + 1);
+
+            $res[$type] = $attribute->attributable->value;
+        }
+
+        return $res;
     }
 
     /**
