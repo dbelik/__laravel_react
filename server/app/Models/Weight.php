@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Weight extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false;
+
+    public function attribute()
+    {
+        return $this->morphMany(Attribute::class, 'attributable');
+    }
 }

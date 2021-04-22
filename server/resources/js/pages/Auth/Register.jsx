@@ -59,10 +59,8 @@ export default function Register() {
                                 label="Login"
                                 value={login}
                                 onChange={setLogin}
+                                error={errorMessages.login}
                             />
-                            <p className="text-danger">
-                                {errorMessages.login || ""}
-                            </p>
                         </div>
 
                         <div className="mt-3">
@@ -73,10 +71,8 @@ export default function Register() {
                                 type="email"
                                 value={email}
                                 onChange={setEmail}
+                                error={errorMessages.email}
                             />
-                            <p className="text-danger">
-                                {errorMessages.email || ""}
-                            </p>
                         </div>
 
                         <div className="mt-3">
@@ -87,10 +83,8 @@ export default function Register() {
                                 type="password"
                                 value={password}
                                 onChange={setPassword}
+                                error={errorMessages.password}
                             />
-                            <p className="text-danger">
-                                {errorMessages.password || ""}
-                            </p>
                         </div>
 
                         <div className="mt-3">

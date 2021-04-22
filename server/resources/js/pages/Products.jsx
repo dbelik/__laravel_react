@@ -1,29 +1,36 @@
 import React, { useCallback, useState, Fragment, useEffect } from "react";
-import { ColorPicker, TextField, Form, Select, Button } from "@shopify/polaris";
+import {
+    ColorPicker,
+    TextField,
+    Form,
+    Select,
+    Button,
+    Banner,
+} from "@shopify/polaris";
 
 import axios from "axios";
+import convert from "color-convert";
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
 import Title from "@components/global/Title.jsx";
 
 export default function Products() {
-    // Color field
+    // Product fields
     const [color, setColor] = useState({
-        hue: 120,
+        hue: 0,
         brightness: 1,
         saturation: 1,
     });
     const handleChange = useCallback(setColor, []);
 
-    // Weight field
+    const [name, setName] = useState("");
     const [weight, setWeight] = useState("");
-
-    // Weight field
     const [price, setPrice] = useState("");
-
-    // Product type field
     const [type, setType] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [announcement, setAnnouncement] = useState(false);
+
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
     // Make a request to get product types
@@ -51,17 +58,53 @@ export default function Products() {
     const [submitDisabled, setSubmitDisabled] = useState(false);
 
     // Submit handler
-    function handleFormSubmit() {
+    async function handleFormSubmit() {
         setSubmitDisabled(true);
+        const rgb = convert.hsv.hex(
+            color.hue,
+            color.saturation * 100,
+            color.brightness * 100
+        );
+        const options = { weight, price, name, type_id: type, color: rgb };
+        try {
+            const res = await axios.post("/api/products", options);
+            setAnnouncement(true);
+        } catch (e) {
+            setErrors(e.response.data.errors);
+        }
+        setSubmitDisabled(false);
     }
 
     return (
         <Fragment>
             <Title>Create Product</Title>
+
+            {announcement && (
+                <Banner
+                    title="You have successfully created a new product."
+                    status="success"
+                    onDismiss={() => {
+                        setAnnouncement(false);
+                    }}
+                    stopAnnouncements={announcement}
+                />
+            )}
+
             <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>
-                    <Form action="/api/product/new" onSubmit={handleFormSubmit}>
+                    <Form onSubmit={handleFormSubmit}>
                         <h2 className="text-center">Add new product</h2>
+
+                        <div className="mt-3">
+                            <TextField
+                                focused
+                                placeholder="Product name"
+                                label="Name"
+                                value={name}
+                                onChange={setName}
+                                error={errors.name}
+                            />
+                        </div>
 
                         <div className="mt-3">
                             <p className="mb-3">Color</p>
@@ -73,12 +116,12 @@ export default function Products() {
 
                         <div className="mt-3">
                             <TextField
-                                focused
                                 placeholder="Weight in kg"
                                 label="Weight"
                                 type="number"
                                 value={weight}
                                 onChange={setWeight}
+                                error={errors.weight}
                             />
                         </div>
 
@@ -89,6 +132,7 @@ export default function Products() {
                                 type="number"
                                 value={price}
                                 onChange={setPrice}
+                                error={errors.price}
                             />
                         </div>
 

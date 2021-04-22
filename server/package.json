@@ -27,6 +27,7 @@
     "dependencies": {
         "@babel/preset-react": "^7.13.13",
         "@shopify/polaris": "^6.3.0",
+        "color-convert": "^1.9.3",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
         "react-helmet": "^6.1.0",

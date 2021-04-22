@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 
+import history from "@utils/createHistory";
+
 const UserContext = React.createContext();
 
 export function useUser() {
@@ -32,12 +34,13 @@ export default function User(props) {
     }
 
     async function logout() {
-        setCurrentUser({});
         try {
             const res = await axios.post("/api/logout");
+            history.push("/auth/login");
         } catch (e) {
             // Leave it empty
         }
+        setCurrentUser({});
     }
 
     useEffect(() => {

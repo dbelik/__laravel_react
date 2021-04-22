@@ -6,6 +6,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Color;
 use App\Models\Price;
 use App\Models\Product;
+use App\Models\Attribute;
 use App\Models\ProductType;
 use App\Models\Weight;
 use Illuminate\Http\Request;
@@ -50,31 +51,22 @@ class ProductController extends Controller
         $product->product_type_id = $request->type_id;
         $product->save();
 
-        // Create attributes for this product
-        $attribute = new Attribute();
-        $attribute->productType()->associate($request->type_id);
-        $attribute->product()->associate($product);
+        $attributes = [
+            ['class' => Weight::class, 'value' => $request->weight],
+            ['class' => Price::class, 'value' => $request->price],
+            ['class' => Color::class, 'value' => $request->color],
+        ];
+        
+        foreach ($attributes as $attrib) {
+            $attribute = new Attribute();
+            $attribute->product_type_id = $request->type_id;
+            $attribute->product_id = $product->id;
 
-        // Create color attribute
-        $color = new Color();
-        $color->value = $request->color;
-        $color->save();
-
-        // Create color attribute
-        $weight = new Weight();
-        $weight->value = $request->weight;
-        $weight->save();
-
-        // Create color attribute
-        $price = new Price();
-        $price->value = $request->price;
-        $price->save();
-
-        // Add all attributes to attribute table
-        $color->attribute()->save($attribute);
-        $weight->attribute()->save($attribute);
-        $price->attribute()->save($attribute);
-        dd($attribute->toArray());
+            $new_attrib = new $attrib['class']();
+            $new_attrib->value = $attrib['value'];
+            $new_attrib->save();
+            $new_attrib->attribute()->save($attribute);
+        }
     }
 
     /**

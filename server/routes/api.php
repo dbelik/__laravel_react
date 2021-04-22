@@ -29,7 +29,6 @@ Route::group(['middleware' => 'auth'], function () {
     // Product routes
     Route::get('/products', [ProductController::class, 'index']);
     Route::post('/products', [ProductController::class, 'store']);
-    // Route::get('/products', [ProductController::class, 'store']);
 });
 
 // Used for authentication on the frontend
