@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +27,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/product_type', [ProductTypeController::class, 'post']);
 
     // Product routes
-    Route::get('/products', [ProductsController::class, 'get']);
-    Route::post('/products', [ProductsController::class, 'post']);
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::post('/products', [ProductController::class, 'store']);
+    // Route::get('/products', [ProductController::class, 'store']);
 });
 
 // Used for authentication on the frontend
