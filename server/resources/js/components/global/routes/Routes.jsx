@@ -15,13 +15,16 @@ import AuthLogin from "@pages/Auth/Login.jsx";
 import Dashboard from "@pages/Dashboard.jsx";
 import PageError from "@pages/PageError.jsx";
 
+import { useUser } from '@provider/User'
+
 export default function GlobalRouter() {
+    const { currentUser } = useUser();
     return (
         <Router history={history}>
             <GlobalNavbar />
             <ContentContainer className="min-h-100vh skip-navbar-height">
                 <Switch>
-                    <Route exact path="/" component={Welcome} />
+                    <Route exact path="/" component={currentUser ? Dashboard : Welcome} />
 
                     <OnlyPublicRoute
                         exact
@@ -34,7 +37,6 @@ export default function GlobalRouter() {
                         component={AuthLogin}
                     />
 
-                    <PrivateRoute path="/dashboard" component={Dashboard} />
                     <PrivateRoute path="/products/new" component={Products} />
 
                     <Route component={PageError} />

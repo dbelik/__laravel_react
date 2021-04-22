@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductTypeRequest;
-use App\Models\ProductTypes;
+use App\Models\ProductType;
 
 class ProductTypeController extends Controller
 {
     public function get()
     {
-        return ProductTypes::all();
+        return ProductType::all();
     }
 
     public function post(ProductTypeRequest $request)
@@ -18,8 +18,8 @@ class ProductTypeController extends Controller
         $validationRes = $request->validated();
 
         // All data is valid, store them in database now.
-        $type = new ProductTypes();
-        $type->title = $request->title;
+        $type = new ProductType();
+        $type->name = $request->name;
         $type->timestamps = false;
         $type->save();
 

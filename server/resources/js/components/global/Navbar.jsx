@@ -12,8 +12,14 @@ export default function Navbar() {
 
     return (
         <nav className="fixed-top py-3 bg-white shadow-sm">
-            <div className="content-container">
-                <ul className="d-flex align-items-center justify-content-end list-style-none p-0 m-0">
+            <div className="content-container d-flex align-items-center justify-content-between">
+                {currentUser && 
+                    <ul class="m-0 p-0 list-style-none">
+                        <li><Link to="/">Dashboard</Link></li>
+                    </ul>
+                }
+
+                <ul className="d-flex align-items-center list-style-none p-0 m-0">
                     {!currentUser ? (
                         <li>
                             <Link to="/auth/login">Login</Link>

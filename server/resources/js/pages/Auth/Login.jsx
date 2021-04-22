@@ -51,7 +51,7 @@ export default function Login() {
                             <TextField
                                 name="email"
                                 placeholder="example@email.com"
-                                label="Login"
+                                label="Email"
                                 type="email"
                                 value={email}
                                 onChange={setEmail}

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\ProductTypes;
+use App\Models\ProductType;
 
 class ProductTypesSeeder extends Seeder
 {
@@ -14,10 +14,10 @@ class ProductTypesSeeder extends Seeder
      */
     public function run()
     {
-        ProductTypes::insert([
-            ['title' => "phone"],
-            ['title' => "tablet"],
-            ['title' => "laptop"],
+        ProductType::insert([
+            ['name' => "phone"],
+            ['name' => "tablet"],
+            ['name' => "laptop"],
         ]);
     }
 }

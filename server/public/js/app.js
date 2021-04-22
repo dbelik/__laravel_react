@@ -11214,6 +11214,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 function Navbar() {
   var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_2__.useUser)(),
       currentUser = _useUser.currentUser,
@@ -11244,10 +11245,18 @@ function Navbar() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
     className: "fixed-top py-3 bg-white shadow-sm",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "content-container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
-        className: "d-flex align-items-center justify-content-end list-style-none p-0 m-0",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "content-container d-flex align-items-center justify-content-between",
+      children: [currentUser && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+        "class": "m-0 p-0 list-style-none",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+            to: "/",
+            children: "Dashboard"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+        className: "d-flex align-items-center list-style-none p-0 m-0",
         children: !currentUser ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
             to: "/auth/login",
@@ -11260,7 +11269,7 @@ function Navbar() {
             children: "Logout"
           })
         })
-      })
+      })]
     })
   });
 }
@@ -11450,7 +11459,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ GlobalRouter)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _utils_createHistory_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @utils/createHistory.js */ "./resources/js/utils/createHistory.js");
 /* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/global/routes/PrivateRoute.jsx");
 /* harmony import */ var _OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OnlyPublicRoute */ "./resources/js/components/global/routes/OnlyPublicRoute.jsx");
@@ -11462,7 +11471,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @pages/Auth/Login.jsx */ "./resources/js/pages/Auth/Login.jsx");
 /* harmony import */ var _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pages/Dashboard.jsx */ "./resources/js/pages/Dashboard.jsx");
 /* harmony import */ var _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pages/PageError.jsx */ "./resources/js/pages/PageError.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -11479,30 +11490,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function GlobalRouter() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Router, {
+  var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_12__.useUser)(),
+      currentUser = _useUser.currentUser;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Router, {
     history: _utils_createHistory_js__WEBPACK_IMPORTED_MODULE_1__.default,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_containers_Content__WEBPACK_IMPORTED_MODULE_5__.default, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_containers_Content__WEBPACK_IMPORTED_MODULE_5__.default, {
       className: "min-h-100vh skip-navbar-height",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           exact: true,
           path: "/",
-          component: _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
+          component: currentUser ? _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_10__.default : _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/register",
           component: _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_8__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/login",
           component: _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
-          path: "/dashboard",
-          component: _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_10__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
           path: "/products/new",
           component: _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_7__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           component: _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_11__.default
         })]
       })
@@ -11655,7 +11666,7 @@ function Login() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
               name: "email",
               placeholder: "example@email.com",
-              label: "Login",
+              label: "Email",
               type: "email",
               value: email,
               onChange: setEmail
@@ -12094,8 +12105,8 @@ function Products() {
                 options = [];
                 data.data.forEach(function (option) {
                   options.push({
-                    label: option.title,
-                    value: option.title
+                    label: option.name,
+                    value: option.id
                   });
                 });
                 setTypeOptions(options);
@@ -12401,24 +12412,23 @@ function User(props) {
 
               case 3:
                 user = _context.sent;
-                console.log(user);
                 setCurrentUser(user.data);
-                _context.next = 10;
+                _context.next = 9;
                 break;
 
-              case 8:
-                _context.prev = 8;
+              case 7:
+                _context.prev = 7;
                 _context.t0 = _context["catch"](0);
 
-              case 10:
+              case 9:
                 setLoading(false);
 
-              case 11:
+              case 10:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 8]]);
+        }, _callee, null, [[0, 7]]);
       }));
       return _fetch.apply(this, arguments);
     }

@@ -44,7 +44,6 @@ export default function User(props) {
         async function fetch() {
             try {
                 const user = await axios.get("/api/profile");
-                console.log(user);
                 setCurrentUser(user.data);
             } catch (e) {
                 // Leave it empty
