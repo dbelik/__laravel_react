@@ -10,12 +10,13 @@ import ContentContainer from "../../containers/Content";
 
 import Welcome from "@pages/Welcome.jsx";
 import Products from "@pages/Products.jsx";
+import SearchProducts from "@pages/SearchProducts.jsx";
 import AuthRegister from "@pages/Auth/Register.jsx";
 import AuthLogin from "@pages/Auth/Login.jsx";
 import Dashboard from "@pages/Dashboard.jsx";
 import PageError from "@pages/PageError.jsx";
 
-import { useUser } from '@provider/User'
+import { useUser } from "@provider/User";
 
 export default function GlobalRouter() {
     const { currentUser } = useUser();
@@ -24,7 +25,11 @@ export default function GlobalRouter() {
             <GlobalNavbar />
             <ContentContainer className="min-h-100vh skip-navbar-height">
                 <Switch>
-                    <Route exact path="/" component={currentUser ? Dashboard : Welcome} />
+                    <Route
+                        exact
+                        path="/"
+                        component={currentUser ? Dashboard : Welcome}
+                    />
 
                     <OnlyPublicRoute
                         exact
@@ -38,6 +43,7 @@ export default function GlobalRouter() {
                     />
 
                     <PrivateRoute path="/products/new" component={Products} />
+                    <PrivateRoute path="/search" component={SearchProducts} />
 
                     <Route component={PageError} />
                 </Switch>
