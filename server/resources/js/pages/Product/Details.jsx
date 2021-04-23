@@ -7,7 +7,7 @@ import {
     Button,
     Banner,
 } from "@shopify/polaris";
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 import axios from "axios";
 import convert from "color-convert";
@@ -34,6 +34,7 @@ export default function Products() {
     const [errors, setErrors] = useState([]);
     const [announcement, setAnnouncement] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [redirect, setRedirect] = useState(false);
 
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
@@ -104,6 +105,16 @@ export default function Products() {
         }
         setSubmitDisabled(false);
     }
+
+    async function deleteProduct() {
+        const res = await axios({
+            method: 'delete',
+            url: `/api/products/${id}`,
+        });
+        setRedirect(true);
+    }
+
+    if (redirect) return <Redirect to="/" />
 
     return (
         <Fragment>
@@ -189,7 +200,7 @@ export default function Products() {
                             <div className="mt-5 d-flex justify-content-center">
                                 <Button
                                     disabled={loading || submitDisabled}
-                                    submit
+                                    onClick={deleteProduct}
                                 >
                                     Delete
                                 </Button>

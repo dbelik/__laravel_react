@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/products', [ProductController::class, 'store']);
 
     Route::get('/products/{id}', [ProductController::class, 'show']);
+    Route::delete('/products/{id}', [ProductController::class, 'destroy']);
     // Route::put('/products/{id}', [ProductController::class, 'update']);
 });
 

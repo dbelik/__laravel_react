@@ -133,25 +133,26 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
         // Update product
-        // $product = Product::find($id);
+        $product = Product::find($id);
 
-        // if (!$product) return response("Couldn't find product with the given id")->status(404);
+        if (!$product) {
+            return response("Couldn't find product with the given id")->status(404);
+        }
 
-        // $product->name = $request->name;
-        // $product->product_type_id = $request->type_id;
-        // $product->save();
+        $product->name = $request->name;
+        $product->product_type_id = $request->type_id;
+        $product->save();
 
-        // $savedAttrib = $product->attributes();
+        $savedAttrib = $product->attributes();
 
-        // foreach ($attributes as $attrib) {
-        //     $attribute->product_type_id = $request->type_id;
-        //     $attribute->product_id = $product->id;
+        foreach ($savedAttrib as $newAttrib) {
+            $savedAttrib->product_type_id = $request->type_id;
 
-        //     $new_attrib = new $attrib['class']();
-        //     $new_attrib->value = $attrib['value'];
-        //     $new_attrib->save();
-        //     $new_attrib->attribute()->save($attribute);
-        // }
+            // $new_attrib = new $attrib['class']();
+            // $new_attrib->value = $attrib['value'];
+            // $new_attrib->save();
+            // $new_attrib->attribute()->save($attribute);
+        }
     }
 
     /**
@@ -163,5 +164,15 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $product = Product::find($id);
+        if (!$product) {
+            return response('Product with the given id was not found');
+        }
+
+        foreach ($product->attributes() as $attribute) {
+            $attribute->attributable->delete();
+        }
+
+        $product->delete();
     }
 }

@@ -14,7 +14,7 @@ import Dashboard from "@pages/Dashboard.jsx";
 import AuthRegister from "@pages/Auth/Register.jsx";
 import AuthLogin from "@pages/Auth/Login.jsx";
 
-import EditProduct from "@pages/Product/Edit.jsx";
+import DetailsProduct from "@pages/Product/Details.jsx";
 import CreateProduct from "@pages/Product/Create.jsx";
 import SearchProducts from "@pages/Product/Search.jsx";
 
@@ -47,7 +47,7 @@ export default function GlobalRouter() {
                     />
 
                     <PrivateRoute exact path="/products/new" component={CreateProduct} />
-                    <PrivateRoute exact path="/products/:id" component={EditProduct} />
+                    <PrivateRoute exact path="/products/:id" component={DetailsProduct} />
                     <PrivateRoute exact path="/search" component={SearchProducts} />
 
                     <Route component={NotFound} />

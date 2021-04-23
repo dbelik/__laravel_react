@@ -1,27 +1,45 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TextField, Button, Form } from "@shopify/polaris";
 
 import axios from "axios";
+import history from '@utils/createHistory';
 
 import Title from "@components/global/Title.jsx";
 
-export default function SearchProduct() {
+export default function SearchProduct(props) {
     const [products, setProducts] = useState([]);
     const [searchName, setSearchName] = useState("");
 
-    useEffect(() => {
-        async function fetch() {
-            const data = await axios.get("/api/products");
-            setProducts(data.data);
-        }
+    const search = new URLSearchParams(useLocation().search);
 
-        fetch();
+    useEffect(() => {
+        fetchProducts();
     }, []);
 
-    async function handleSearchSubmit() {
-        const data = await axios.get(`/api/products?name=${searchName}`);
+    async function fetchProducts() {
+        const data = await axios.get(buildApiUrl({
+            name: search.get('name'),
+            page: search.get('page')
+        }));
         setProducts(data.data);
+    }
+
+    function buildFetchUrl(base, options) {
+        return `${base}?name=${options.name || ""}&page=${options.page || ""}`;
+    }
+
+    function buildApiUrl(options) {
+        return buildFetchUrl('/api/products', options);
+    }
+
+    function buildFrontUrl(options) {
+        return buildFetchUrl('/search', options);
+    }
+
+    async function handleSearchSubmit() {
+        history.push(buildFrontUrl({ name: searchName, page: 1}));
+        fetchProducts();
     }
 
     return (
