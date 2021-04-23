@@ -41,7 +41,8 @@ class ProductController extends Controller
         for ($i = 0; $i < count($products); ++$i) {
             $product = $products[$i];
             $res[$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
-            $attributes = $product->productType->attributes()->get();
+
+            $attributes = $product->attributes()->get();
             foreach ($attributes as $attribute) {
                 $model = $attribute->attributable_type;
                 $type = substr($model, strrpos($model, '\\') + 1);

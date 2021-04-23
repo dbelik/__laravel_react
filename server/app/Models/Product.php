@@ -12,10 +12,10 @@ class Product extends Model
     protected $table = 'products';
     public $timestamps = false;
 
-//    public function attributes()
-//    {
-//        return $this->morphMany(Attribute::class, 'attributable');
-//    }
+    public function attributes()
+    {
+        return $this->hasMany(Attribute::class, 'product_id');
+    }
 
     public function productType()
     {

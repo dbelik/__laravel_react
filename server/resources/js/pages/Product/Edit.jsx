@@ -7,6 +7,7 @@ import {
     Button,
     Banner,
 } from "@shopify/polaris";
+import { useParams } from 'react-router-dom';
 
 import axios from "axios";
 import convert from "color-convert";
@@ -15,7 +16,7 @@ import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
 import Title from "@components/global/Title.jsx";
 
-export default function Products(props) {
+export default function Products() {
     // Product fields
     const [color, setColor] = useState({
         hue: 0,
@@ -35,6 +36,8 @@ export default function Products(props) {
     const [loading, setLoading] = useState(true);
 
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
+
+    const { id } = useParams();
 
     // Make a request to get product types
     const [typeOptions, setTypeOptions] = useState([]);
@@ -68,7 +71,7 @@ export default function Products(props) {
 
         async function fetch() {
             await fetchTypes();
-            if (props.mustExist) await fetchProduct(props.id);
+            await fetchProduct(id);
             setLoading(false);
         }
 
@@ -91,7 +94,7 @@ export default function Products(props) {
 
         try {
             const res = await axios({
-                method: props.method,
+                method: 'put',
                 url: "/api/products",
                 data: options,
             });
@@ -104,11 +107,11 @@ export default function Products(props) {
 
     return (
         <Fragment>
-            <Title>{props.title}</Title>
+            <Title>Edit product</Title>
 
             {announcement && (
                 <Banner
-                    title="You have successfully created a new product."
+                    title="You have successfully edited a new product."
                     status="success"
                     onDismiss={() => {
                         setAnnouncement(false);
@@ -127,7 +130,7 @@ export default function Products(props) {
                             ></Banner>
                         )}
                         <Fragment>
-                            <h2 className="text-center">{props.title}</h2>
+                            <h2 className="text-center">Edit product</h2>
 
                             <div className="mt-3">
                                 <TextField
@@ -188,7 +191,13 @@ export default function Products(props) {
                                     disabled={loading || submitDisabled}
                                     submit
                                 >
-                                    Create
+                                    Delete
+                                </Button>
+                                <Button
+                                    disabled={loading || submitDisabled}
+                                    submit
+                                >
+                                    Edit
                                 </Button>
                             </div>
                         </Fragment>
