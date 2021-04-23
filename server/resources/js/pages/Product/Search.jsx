@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { TextField, Button, Form } from "@shopify/polaris";
+import { TextField, Button, Form, Pagination } from "@shopify/polaris";
 
 import axios from "axios";
 import history from '@utils/createHistory';
@@ -10,6 +10,7 @@ import Title from "@components/global/Title.jsx";
 export default function SearchProduct(props) {
     const [products, setProducts] = useState([]);
     const [searchName, setSearchName] = useState("");
+    const [pageState, setPageState] = useState({});
 
     const search = new URLSearchParams(useLocation().search);
 
@@ -18,11 +19,17 @@ export default function SearchProduct(props) {
     }, []);
 
     async function fetchProducts() {
+        const page = parseInt(search.get('page')) || 1;
+        const searchName = search.get('name') || "";
+        setSearchName(searchName);
+
         const data = await axios.get(buildApiUrl({
             name: search.get('name'),
-            page: search.get('page')
+            page: page,
         }));
-        setProducts(data.data);
+
+        setProducts(data.data.items);
+        setPageState(data.data.pageState);
     }
 
     function buildFetchUrl(base, options) {
@@ -37,13 +44,15 @@ export default function SearchProduct(props) {
         return buildFetchUrl('/search', options);
     }
 
+    async function searchSubmit(options) {
+        history.push(buildFrontUrl({ name: options.name, page: options.page}));
+        const data = await axios.get(buildApiUrl(options));
+        setProducts(data.data.items);
+        setPageState(data.data.pageState);
+    }
+
     async function handleSearchSubmit() {
-        history.push(buildFrontUrl({ name: searchName, page: 1}));
-        const data = await axios.get(buildApiUrl({
-            name: searchName,
-            page: 1
-        }));
-        setProducts(data.data);
+        searchSubmit({ name: searchName });
     }
 
     return (
@@ -96,6 +105,20 @@ export default function SearchProduct(props) {
                     </li>
                 ))}
             </ul>
+
+            <div className="w-100 d-flex justify-content-center mt-5">
+                <Pagination
+                    hasPrevious={pageState.prevUrl}
+                    onPrevious={async () => {
+                        searchSubmit({ name: searchName, page: pageState.currentPage - 1});
+                    }}
+
+                    hasNext={pageState.nextUrl}
+                    onNext={async () => {
+                        searchSubmit({ name: searchName, page: pageState.currentPage + 1});
+                    }}
+                />
+            </div>
         </Fragment>
     );
 }

@@ -238,6 +238,68 @@ var SvgCaretUpMinor = function SvgCaretUpMinor(props) {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris-icons/dist/icons/ChevronLeftMinor.svg.mjs":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris-icons/dist/icons/ChevronLeftMinor.svg.mjs ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "S": () => (/* binding */ SvgChevronLeftMinor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var _ref =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16z"
+});
+
+var SvgChevronLeftMinor = function SvgChevronLeftMinor(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    viewBox: "0 0 20 20"
+  }, props), _ref);
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris-icons/dist/icons/ChevronRightMinor.svg.mjs":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris-icons/dist/icons/ChevronRightMinor.svg.mjs ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "S": () => (/* binding */ SvgChevronRightMinor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var _ref =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16z"
+});
+
+var SvgChevronRightMinor = function SvgChevronRightMinor(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    viewBox: "0 0 20 20"
+  }, props), _ref);
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris-icons/dist/icons/CircleAlertMajor.svg.mjs":
 /*!*********************************************************************************!*\
   !*** ./node_modules/@shopify/polaris-icons/dist/icons/CircleAlertMajor.svg.mjs ***!
@@ -4994,6 +5056,140 @@ const MediaQueryProvider = function MediaQueryProvider({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Pagination": () => (/* binding */ Pagination)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/ChevronLeftMinor.svg.mjs");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/ChevronRightMinor.svg.mjs");
+/* harmony import */ var _KeypressListener_KeypressListener_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../KeypressListener/KeypressListener.js */ "./node_modules/@shopify/polaris/dist/esm/components/KeypressListener/KeypressListener.js");
+/* harmony import */ var _TextStyle_TextStyle_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../TextStyle/TextStyle.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextStyle/TextStyle.js");
+/* harmony import */ var _Button_Button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Button/Button.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../ButtonGroup/ButtonGroup.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js");
+/* harmony import */ var _utilities_is_input_focused_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utilities/is-input-focused.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/is-input-focused.js");
+/* harmony import */ var _Tooltip_Tooltip_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Tooltip/Tooltip.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/Tooltip.js");
+
+
+
+
+
+
+
+
+
+
+function Pagination({
+  hasNext,
+  hasPrevious,
+  nextURL,
+  previousURL,
+  onNext,
+  onPrevious,
+  nextTooltip,
+  previousTooltip,
+  nextKeys,
+  previousKeys,
+  accessibilityLabel,
+  accessibilityLabels,
+  label
+}) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__.useI18n)();
+  const node = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)();
+  const navLabel = accessibilityLabel || i18n.translate('Polaris.Pagination.pagination');
+  const previousLabel = (accessibilityLabels == null ? void 0 : accessibilityLabels.previous) || i18n.translate('Polaris.Pagination.previous');
+  const nextLabel = (accessibilityLabels == null ? void 0 : accessibilityLabels.next) || i18n.translate('Polaris.Pagination.next');
+  const prev = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button_Button_js__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    outline: true,
+    icon: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__.S,
+    accessibilityLabel: previousLabel,
+    url: previousURL,
+    onClick: onPrevious,
+    disabled: !hasPrevious,
+    id: "previousURL"
+  });
+  const constructedPrevious = previousTooltip && hasPrevious ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tooltip_Tooltip_js__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    activatorWrapper: "span",
+    content: previousTooltip
+  }, prev) : prev;
+  const next = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button_Button_js__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    outline: true,
+    icon: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_5__.S,
+    accessibilityLabel: nextLabel,
+    url: nextURL,
+    onClick: onNext,
+    disabled: !hasNext,
+    id: "nextURL"
+  });
+  const constructedNext = nextTooltip && hasNext ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tooltip_Tooltip_js__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    activatorWrapper: "span",
+    content: nextTooltip
+  }, next) : next;
+  const previousHandler = onPrevious || noop;
+  const previousButtonEvents = previousKeys && (previousURL || onPrevious) && hasPrevious && previousKeys.map(key => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_KeypressListener_KeypressListener_js__WEBPACK_IMPORTED_MODULE_6__.KeypressListener, {
+    key: key,
+    keyCode: key,
+    handler: previousURL ? handleCallback(clickPaginationLink('previousURL', node)) : handleCallback(previousHandler)
+  }));
+  const nextHandler = onNext || noop;
+  const nextButtonEvents = nextKeys && (nextURL || onNext) && hasNext && nextKeys.map(key => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_KeypressListener_KeypressListener_js__WEBPACK_IMPORTED_MODULE_6__.KeypressListener, {
+    key: key,
+    keyCode: key,
+    handler: nextURL ? handleCallback(clickPaginationLink('nextURL', node)) : handleCallback(nextHandler)
+  }));
+  const labelTextMarkup = hasNext && hasPrevious ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TextStyle_TextStyle_js__WEBPACK_IMPORTED_MODULE_7__.TextStyle, null, label) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TextStyle_TextStyle_js__WEBPACK_IMPORTED_MODULE_7__.TextStyle, {
+    variation: "subdued"
+  }, label);
+  const labelMarkup = label ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "aria-live": "polite"
+  }, labelTextMarkup) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", {
+    "aria-label": navLabel,
+    ref: node
+  }, previousButtonEvents, nextButtonEvents, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_8__.ButtonGroup, {
+    segmented: !label
+  }, constructedPrevious, labelMarkup, constructedNext));
+}
+
+function clickPaginationLink(id, node) {
+  return () => {
+    if (node.current == null) {
+      return;
+    }
+
+    const link = node.current.querySelector(`#${id}`);
+
+    if (link) {
+      link.click();
+    }
+  };
+}
+
+function handleCallback(fn) {
+  return () => {
+    if ((0,_utilities_is_input_focused_js__WEBPACK_IMPORTED_MODULE_9__.isInputFocused)()) {
+      return;
+    }
+
+    fn();
+  };
+}
+
+function noop() {}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/Popover/Popover.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/Popover/Popover.js ***!
@@ -7534,6 +7730,220 @@ function getColorScheme(colorScheme, parentColorScheme) {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/Tooltip.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tooltip/Tooltip.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Tooltip": () => (/* binding */ Tooltip)
+/* harmony export */ });
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../types.js */ "./node_modules/@shopify/polaris/dist/esm/types.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/unique-id/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/unique-id/hooks.js");
+/* harmony import */ var _utilities_focus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/focus.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/focus.js");
+/* harmony import */ var _Portal_Portal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Portal/Portal.js */ "./node_modules/@shopify/polaris/dist/esm/components/Portal/Portal.js");
+/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
+/* harmony import */ var _components_TooltipOverlay_TooltipOverlay_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/TooltipOverlay/TooltipOverlay.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.js");
+
+
+
+
+
+
+
+
+function Tooltip({
+  children,
+  content,
+  dismissOnMouseOut,
+  active: originalActive,
+  preferredPosition = 'below',
+  activatorWrapper = 'span',
+  accessibilityLabel
+}) {
+  const WrapperComponent = activatorWrapper;
+  const {
+    value: active,
+    setTrue: handleFocus,
+    setFalse: handleBlur
+  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(Boolean(originalActive));
+  const [activatorNode, setActivatorNode] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const id = (0,_utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_2__.useUniqueId)('TooltipContent');
+  const activatorContainer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const mouseEntered = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const firstFocusable = activatorContainer.current ? (0,_utilities_focus_js__WEBPACK_IMPORTED_MODULE_3__.findFirstFocusableNode)(activatorContainer.current) : null;
+    const accessibilityNode = firstFocusable || activatorContainer.current;
+    if (!accessibilityNode) return;
+    accessibilityNode.tabIndex = 0;
+    accessibilityNode.setAttribute('aria-describedby', id);
+    accessibilityNode.setAttribute('data-polaris-tooltip-activator', 'true');
+  }, [id, children]);
+  const handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(event => {
+    if (event.keyCode !== _types_js__WEBPACK_IMPORTED_MODULE_4__.Key.Escape) return;
+    handleBlur();
+  }, [handleBlur]);
+  const portal = activatorNode ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Portal_Portal_js__WEBPACK_IMPORTED_MODULE_5__.Portal, {
+    idPrefix: "tooltip"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TooltipOverlay_TooltipOverlay_js__WEBPACK_IMPORTED_MODULE_6__.TooltipOverlay, {
+    id: id,
+    preferredPosition: preferredPosition,
+    activator: activatorNode,
+    active: active,
+    accessibilityLabel: accessibilityLabel,
+    onClose: noop,
+    preventInteraction: dismissOnMouseOut
+  }, content)) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(WrapperComponent, {
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    onMouseLeave: handleMouseLeave,
+    onMouseOver: handleMouseEnterFix,
+    onClick: stopPropagation,
+    ref: setActivator,
+    onKeyUp: handleKeyUp
+  }, children, portal);
+
+  function setActivator(node) {
+    const activatorContainerRef = activatorContainer;
+
+    if (node == null) {
+      activatorContainerRef.current = null;
+      setActivatorNode(null);
+      return;
+    }
+
+    node.firstElementChild instanceof HTMLElement && setActivatorNode(node.firstElementChild);
+    activatorContainerRef.current = node;
+  }
+
+  function handleMouseEnter() {
+    mouseEntered.current = true;
+    handleFocus();
+  }
+
+  function handleMouseLeave() {
+    mouseEntered.current = false;
+    handleBlur();
+  } // https://github.com/facebook/react/issues/10109
+  // Mouseenter event not triggered when cursor moves from disabled button
+
+
+  function handleMouseEnterFix() {
+    !mouseEntered.current && handleMouseEnter();
+  }
+}
+
+function noop() {}
+
+function stopPropagation(event) {
+  event.stopPropagation();
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.js":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.js ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TooltipOverlay": () => (/* binding */ TooltipOverlay)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _shared_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../shared.js */ "./node_modules/@shopify/polaris/dist/esm/components/shared.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _PositionedOverlay_PositionedOverlay_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../PositionedOverlay/PositionedOverlay.js */ "./node_modules/@shopify/polaris/dist/esm/components/PositionedOverlay/PositionedOverlay.js");
+/* harmony import */ var _TooltipOverlay_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TooltipOverlay.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.scss.js");
+
+
+
+
+
+
+
+function TooltipOverlay({
+  active,
+  activator,
+  preferredPosition = 'below',
+  preventInteraction,
+  id,
+  children,
+  accessibilityLabel
+}) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__.useI18n)();
+  const markup = active ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PositionedOverlay_PositionedOverlay_js__WEBPACK_IMPORTED_MODULE_2__.PositionedOverlay, {
+    active: active,
+    activator: activator,
+    preferredPosition: preferredPosition,
+    preventInteraction: preventInteraction,
+    render: renderTooltip
+  }) : null;
+  return markup;
+
+  function renderTooltip(overlayDetails) {
+    const {
+      measuring,
+      desiredHeight,
+      positioning
+    } = overlayDetails;
+    const containerClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_3__.classNames)(_TooltipOverlay_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.TooltipOverlay, measuring && _TooltipOverlay_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.measuring, positioning === 'above' && _TooltipOverlay_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.positionedAbove);
+    const contentStyles = measuring ? undefined : {
+      minHeight: desiredHeight
+    };
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", Object.assign({
+      className: containerClassName
+    }, _shared_js__WEBPACK_IMPORTED_MODULE_5__.layer.props), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: id,
+      role: "tooltip",
+      className: _TooltipOverlay_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Content,
+      style: contentStyles,
+      "aria-label": accessibilityLabel ? i18n.translate('Polaris.TooltipOverlay.accessibilityLabel', {
+        label: accessibilityLabel
+      }) : undefined
+    }, children));
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.scss.js":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.scss.js ***!
+  \********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "TooltipOverlay": "Polaris-Tooltip-TooltipOverlay",
+  "measuring": "Polaris-Tooltip-TooltipOverlay--measuring",
+  "positionedAbove": "Polaris-Tooltip-TooltipOverlay--positionedAbove",
+  "Content": "Polaris-Tooltip-TooltipOverlay__Content"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/UnstyledButton/UnstyledButton.js":
 /*!********************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/UnstyledButton/UnstyledButton.js ***!
@@ -8825,6 +9235,42 @@ function isElementInViewport(element) {
     right
   } = element.getBoundingClientRect();
   return top >= 0 && right <= window.innerWidth && bottom <= window.innerHeight && left >= 0;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/utilities/is-input-focused.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/utilities/is-input-focused.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isInputFocused": () => (/* binding */ isInputFocused)
+/* harmony export */ });
+var EditableTarget;
+
+(function (EditableTarget) {
+  EditableTarget["Input"] = "INPUT";
+  EditableTarget["Textarea"] = "TEXTAREA";
+  EditableTarget["Select"] = "SELECT";
+  EditableTarget["ContentEditable"] = "contenteditable";
+})(EditableTarget || (EditableTarget = {}));
+
+function isInputFocused() {
+  if (document == null || document.activeElement == null) {
+    return false;
+  }
+
+  const {
+    tagName
+  } = document.activeElement;
+  return tagName === EditableTarget.Input || tagName === EditableTarget.Textarea || tagName === EditableTarget.Select || document.activeElement.hasAttribute(EditableTarget.ContentEditable);
 }
 
 
@@ -13422,6 +13868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @utils/createHistory */ "./resources/js/utils/createHistory.js");
@@ -13464,6 +13911,11 @@ function SearchProduct(props) {
       searchName = _useState4[0],
       setSearchName = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      pageState = _useState6[0],
+      setPageState = _useState6[1];
+
   var search = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)().search);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchProducts();
@@ -13474,28 +13926,32 @@ function SearchProduct(props) {
   }
 
   function _fetchProducts() {
-    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var page, searchName, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _context.next = 2;
+              page = parseInt(search.get('page')) || 1;
+              searchName = search.get('name') || "";
+              setSearchName(searchName);
+              _context3.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
                 name: search.get('name'),
-                page: search.get('page')
+                page: page
               }));
 
-            case 2:
-              data = _context.sent;
-              setProducts(data.data);
+            case 5:
+              data = _context3.sent;
+              setProducts(data.data.items);
+              setPageState(data.data.pageState);
 
-            case 4:
+            case 8:
             case "end":
-              return _context.stop();
+              return _context3.stop();
           }
         }
-      }, _callee);
+      }, _callee3);
     }));
     return _fetchProducts.apply(this, arguments);
   }
@@ -13512,37 +13968,59 @@ function SearchProduct(props) {
     return buildFetchUrl('/search', options);
   }
 
+  function searchSubmit(_x) {
+    return _searchSubmit.apply(this, arguments);
+  }
+
+  function _searchSubmit() {
+    _searchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(options) {
+      var data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(buildFrontUrl({
+                name: options.name,
+                page: options.page
+              }));
+              _context4.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl(options));
+
+            case 3:
+              data = _context4.sent;
+              setProducts(data.data.items);
+              setPageState(data.data.pageState);
+
+            case 6:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }));
+    return _searchSubmit.apply(this, arguments);
+  }
+
   function handleSearchSubmit() {
     return _handleSearchSubmit.apply(this, arguments);
   }
 
   function _handleSearchSubmit() {
-    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-      var data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
-              _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(buildFrontUrl({
-                name: searchName,
-                page: 1
-              }));
-              _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
-                name: searchName,
-                page: 1
-              }));
+              searchSubmit({
+                name: searchName
+              });
 
-            case 3:
-              data = _context2.sent;
-              setProducts(data.data);
-
-            case 5:
+            case 1:
             case "end":
-              return _context2.stop();
+              return _context5.stop();
           }
         }
-      }, _callee2);
+      }, _callee5);
     }));
     return _handleSearchSubmit.apply(this, arguments);
   }
@@ -13603,6 +14081,46 @@ function SearchProduct(props) {
           })]
         }, product.Id);
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "w-100 d-flex justify-content-center mt-5",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.Pagination, {
+        hasPrevious: pageState.prevUrl,
+        onPrevious: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  searchSubmit({
+                    name: searchName,
+                    page: pageState.currentPage - 1
+                  });
+
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        })),
+        hasNext: pageState.nextUrl,
+        onNext: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  searchSubmit({
+                    name: searchName,
+                    page: pageState.currentPage + 1
+                  });
+
+                case 1:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }))
+      })
     })]
   });
 }

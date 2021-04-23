@@ -34,19 +34,28 @@ class ProductController extends Controller
         }
 
         // Paginate result
-        $products = $products->paginate(15);
+        $products = $products->paginate(5);
 
         // Store all matching products in $res
-        $res = [];
+        $res = [
+            'items' => [],
+            'pageState' => [
+                'nextUrl' => $products->nextPageUrl(),
+                'prevUrl' => $products->previousPageUrl(),
+                'currentPage' => $products->currentPage(),
+                'totalPages' => ceil($products->total() / $products->perPage()),
+            ],
+        ];
+
         for ($i = 0; $i < count($products); ++$i) {
             $product = $products[$i];
-            $res[$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
+            $res['items'][$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
 
             $attributes = $product->attributes()->get();
             foreach ($attributes as $attribute) {
                 $model = $attribute->attributable_type;
                 $type = substr($model, strrpos($model, '\\') + 1);
-                $res[$i][$type] = $attribute->attributable->value;
+                $res['items'][$i][$type] = $attribute->attributable->value;
             }
         }
 
