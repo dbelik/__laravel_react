@@ -1,1 +1,0 @@
-- on auth pages, if laravel doesn't throw 422 error when data is invalid, then try to restart server or remove all cookies
