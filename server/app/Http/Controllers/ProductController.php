@@ -166,10 +166,10 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            return response('Product with the given id was not found');
+            return [];
         }
 
-        foreach ($product->attributes() as $attribute) {
+        foreach ($product->attributes()->get() as $attribute) {
             $attribute->attributable->delete();
         }
 

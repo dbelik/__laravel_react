@@ -17,6 +17,7 @@ export default function User(props) {
         try {
             const signupResp = await axios.post("/api/register", options);
             setCurrentUser({ email: options.email, name: options.name });
+            window.location.reload();
             return signupResp.response;
         } catch (e) {
             return e.response;
@@ -27,6 +28,7 @@ export default function User(props) {
         try {
             const loginResp = await axios.post("/api/login", options);
             setCurrentUser({ email: options.email, name: options.name });
+            window.location.reload();
             return loginResp.response;
         } catch (e) {
             return e.response;
@@ -36,7 +38,7 @@ export default function User(props) {
     async function logout() {
         try {
             const res = await axios.post("/api/logout");
-            history.push("/auth/login");
+            window.location.reload();
         } catch (e) {
             // Leave it empty
         }

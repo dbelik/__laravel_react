@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'string|required|max:255',
-            'weight' => 'numeric|required',
+            'weight' => 'numeric|required|max:500000',
             'color' => 'string|required|max:6',
             'price' => 'numeric|required|max:500000',
             'type_id' => 'required|exists:product_types,id',

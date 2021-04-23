@@ -11847,17 +11847,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _PolarisWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PolarisWrapper.jsx */ "./resources/js/components/global/PolarisWrapper.jsx");
 /* harmony import */ var _routes_Routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes/Routes */ "./resources/js/components/global/routes/Routes.jsx");
-/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Logs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Logs */ "./resources/js/components/global/Logs.jsx");
+/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
+/* harmony import */ var _provider_Log__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @provider/Log */ "./resources/js/provider/Log.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
 
 
 function Global() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_PolarisWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_provider_User__WEBPACK_IMPORTED_MODULE_3__.default, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_routes_Routes__WEBPACK_IMPORTED_MODULE_2__.default, {})
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_PolarisWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_provider_User__WEBPACK_IMPORTED_MODULE_4__.default, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_provider_Log__WEBPACK_IMPORTED_MODULE_5__.default, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_routes_Routes__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Logs__WEBPACK_IMPORTED_MODULE_3__.default, {})]
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/global/Logs.jsx":
+/*!*************************************************!*\
+  !*** ./resources/js/components/global/Logs.jsx ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Logs)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _provider_Log__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @provider/Log */ "./resources/js/provider/Log.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Logs() {
+  var _useLog = (0,_provider_Log__WEBPACK_IMPORTED_MODULE_1__.useLog)(),
+      logs = _useLog.logs;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+    className: "fixed-bottom list-style-none m-0 p-0",
+    children: logs.map(function (log, i) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+        children: log
+      }, i);
     })
   });
 }
@@ -12247,12 +12287,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
 /* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
 /* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
@@ -12300,15 +12339,10 @@ function Login() {
       submitDisabled = _useState6[0],
       setSubmitDisabled = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState8 = _slicedToArray(_useState7, 2),
-      redirect = _useState8[0],
-      setRedirect = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState10 = _slicedToArray(_useState9, 2),
-      errorMessages = _useState10[0],
-      setErrorMessages = _useState10[1];
+      errorMessages = _useState8[0],
+      setErrorMessages = _useState8[1];
 
   var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_2__.useUser)(),
       login = _useUser.login;
@@ -12340,7 +12374,6 @@ function Login() {
                 setSubmitDisabled(false);
               } else {
                 setErrorMessages([]);
-                setRedirect(true);
               }
 
             case 6:
@@ -12353,27 +12386,20 @@ function Login() {
     return _handleFormSubmit.apply(this, arguments);
   }
 
-  if (redirect) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
-      push: true,
-      to: "/"
-    });
-  }
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
       children: "Login"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
       className: "min-height-screen-skip-navbar",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Form, {
           onSubmit: handleFormSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
             className: "text-center",
             children: "Login"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               name: "email",
               placeholder: "example@email.com",
               label: "Email",
@@ -12384,7 +12410,7 @@ function Login() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               name: "password",
               placeholder: "Password",
               label: "Password",
@@ -12395,14 +12421,14 @@ function Login() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-4 d-flex justify-content-center",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.Button, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Button, {
               disabled: submitDisabled,
               submit: true,
               children: "Login"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
             className: "mt-5 mb-0 text-center",
-            children: ["Don't have an account yet?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+            children: ["Don't have an account yet?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               to: "/auth/register",
               children: "Register here"
             }), "."]
@@ -12429,11 +12455,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
 /* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
 /* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
@@ -12534,7 +12559,6 @@ function Register() {
                 setSubmitDisabled(false);
               } else {
                 setErrorMessages([]);
-                setRedirect(true);
               }
 
             case 6:
@@ -12547,27 +12571,20 @@ function Register() {
     return _handleFormSubmit.apply(this, arguments);
   }
 
-  if (redirect) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
-      push: true,
-      to: "/"
-    });
-  }
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
       children: "Register"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
       className: "min-height-screen-skip-navbar",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Form, {
           onSubmit: handleFormSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
             className: "text-center",
             children: "Register"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               focused: true,
               name: "name",
               placeholder: "Login",
@@ -12578,7 +12595,7 @@ function Register() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               name: "email",
               placeholder: "example@email.com",
               label: "Email",
@@ -12589,7 +12606,7 @@ function Register() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               name: "password",
               placeholder: "Password",
               label: "Password",
@@ -12600,7 +12617,7 @@ function Register() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
               name: "password_confirmation",
               placeholder: "Confirm password",
               label: "Confirm password",
@@ -12610,14 +12627,14 @@ function Register() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-4 d-flex justify-content-center",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.Button, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Button, {
               disabled: submitDisabled,
               submit: true,
               children: "Register"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
             className: "mt-5 mb-0 text-center",
-            children: ["Already have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+            children: ["Already have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               to: "/auth/login",
               children: "Login here"
             }), "."]
@@ -12718,7 +12735,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Banner/Banner.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
@@ -12728,10 +12744,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var color_convert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! color-convert */ "./node_modules/color-convert/index.js");
 /* harmony import */ var color_convert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(color_convert__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
-/* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
-/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _provider_Log__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @provider/Log */ "./resources/js/provider/Log.jsx");
+/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
+/* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
+/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -12749,6 +12766,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -12797,19 +12815,17 @@ function Products() {
       errors = _useState12[0],
       setErrors = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState14 = _slicedToArray(_useState13, 2),
-      announcement = _useState14[0],
-      setAnnouncement = _useState14[1];
+  var _useLog = (0,_provider_Log__WEBPACK_IMPORTED_MODULE_4__.useLog)(),
+      success = _useLog.success;
 
   var handleTypeSelectChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (type) {
     return setType(type);
   }, []); // Make a request to get product types
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState16 = _slicedToArray(_useState15, 2),
-      typeOptions = _useState16[0],
-      setTypeOptions = _useState16[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState14 = _slicedToArray(_useState13, 2),
+      typeOptions = _useState14[0],
+      setTypeOptions = _useState14[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     function fetch() {
@@ -12851,10 +12867,10 @@ function Products() {
     fetch();
   }, []); // Submit button
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState18 = _slicedToArray(_useState17, 2),
-      submitDisabled = _useState18[0],
-      setSubmitDisabled = _useState18[1]; // Submit handler
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState16 = _slicedToArray(_useState15, 2),
+      submitDisabled = _useState16[0],
+      setSubmitDisabled = _useState16[1]; // Submit handler
 
 
   function handleFormSubmit() {
@@ -12883,7 +12899,7 @@ function Products() {
 
             case 6:
               res = _context2.sent;
-              setAnnouncement(true);
+              success("Successfully created new product");
               _context2.next = 13;
               break;
 
@@ -12905,27 +12921,20 @@ function Products() {
     return _handleFormSubmit.apply(this, arguments);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_7__.default, {
       children: "Create Product"
-    }), announcement && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Banner, {
-      title: "You have successfully created a new product.",
-      status: "success",
-      onDismiss: function onDismiss() {
-        setAnnouncement(false);
-      },
-      stopAnnouncements: announcement
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {
       className: "min-height-screen-skip-navbar",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Form, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Form, {
           onSubmit: handleFormSubmit,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
             className: "text-center",
             children: "Add new product"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
               focused: true,
               placeholder: "Product name",
               label: "Name",
@@ -12933,18 +12942,18 @@ function Products() {
               onChange: setName,
               error: errors.name
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
             className: "mt-3",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
               className: "mb-3",
               children: "Color"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.ColorPicker, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.ColorPicker, {
               onChange: handleChange,
               color: color
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
               placeholder: "Weight in kg",
               label: "Weight",
               type: "number",
@@ -12952,9 +12961,9 @@ function Products() {
               onChange: setWeight,
               error: errors.weight
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
               placeholder: "Price in dollars",
               label: "Price",
               type: "number",
@@ -12962,17 +12971,17 @@ function Products() {
               onChange: setPrice,
               error: errors.price
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.Select, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.Select, {
               label: "Product type",
               options: typeOptions,
               onChange: handleTypeSelectChange,
               value: type
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-5 d-flex justify-content-center",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Button, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Button, {
               disabled: submitDisabled,
               submit: true,
               children: "Create"
@@ -13000,21 +13009,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Banner/Banner.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var color_convert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! color-convert */ "./node_modules/color-convert/index.js");
 /* harmony import */ var color_convert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(color_convert__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
-/* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
-/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @utils/createHistory */ "./resources/js/utils/createHistory.js");
+/* harmony import */ var _provider_Log__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @provider/Log */ "./resources/js/provider/Log.jsx");
+/* harmony import */ var _components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/containers/Form.jsx */ "./resources/js/components/containers/Form.jsx");
+/* harmony import */ var _components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/containers/Center.jsx */ "./resources/js/components/containers/Center.jsx");
+/* harmony import */ var _components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/global/Title.jsx */ "./resources/js/components/global/Title.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -13043,6 +13053,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 function Products() {
   // Product fields
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
@@ -13058,61 +13070,55 @@ function Products() {
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
-      globalError = _useState4[0],
-      setGlobalError = _useState4[1];
+      name = _useState4[0],
+      setName = _useState4[1];
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState6 = _slicedToArray(_useState5, 2),
-      name = _useState6[0],
-      setName = _useState6[1];
+      weight = _useState6[0],
+      setWeight = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState8 = _slicedToArray(_useState7, 2),
-      weight = _useState8[0],
-      setWeight = _useState8[1];
+      price = _useState8[0],
+      setPrice = _useState8[1];
 
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState10 = _slicedToArray(_useState9, 2),
-      price = _useState10[0],
-      setPrice = _useState10[1];
+      type = _useState10[0],
+      setType = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState12 = _slicedToArray(_useState11, 2),
-      type = _useState12[0],
-      setType = _useState12[1];
+      errors = _useState12[0],
+      setErrors = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
       _useState14 = _slicedToArray(_useState13, 2),
-      errors = _useState14[0],
-      setErrors = _useState14[1];
+      loading = _useState14[0],
+      setLoading = _useState14[1];
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState16 = _slicedToArray(_useState15, 2),
-      announcement = _useState16[0],
-      setAnnouncement = _useState16[1];
+      redirect = _useState16[0],
+      setRedirect = _useState16[1];
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
-      _useState18 = _slicedToArray(_useState17, 2),
-      loading = _useState18[0],
-      setLoading = _useState18[1];
-
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState20 = _slicedToArray(_useState19, 2),
-      redirect = _useState20[0],
-      setRedirect = _useState20[1];
+  var _useLog = (0,_provider_Log__WEBPACK_IMPORTED_MODULE_5__.useLog)(),
+      success = _useLog.success,
+      error = _useLog.error;
 
   var handleTypeSelectChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (type) {
     return setType(type);
   }, []);
 
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useParams)(),
       id = _useParams.id; // Make a request to get product types
 
 
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState22 = _slicedToArray(_useState21, 2),
-      typeOptions = _useState22[0],
-      setTypeOptions = _useState22[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState18 = _slicedToArray(_useState17, 2),
+      typeOptions = _useState18[0],
+      setTypeOptions = _useState18[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     function fetchTypes() {
@@ -13167,7 +13173,11 @@ function Products() {
 
               case 2:
                 product = _context2.sent.data;
-                if (product.length === 0) setGlobalError("Product doesn't exist");else {
+
+                if (product.length === 0) {
+                  error("Product with the given id doesn't exist");
+                  _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push('/');
+                } else {
                   setName(product.Name);
                   setWeight(product.Weight.toString());
                   setPrice(product.Price.toString());
@@ -13217,10 +13227,10 @@ function Products() {
     fetch();
   }, []); // Submit button
 
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState24 = _slicedToArray(_useState23, 2),
-      submitDisabled = _useState24[0],
-      setSubmitDisabled = _useState24[1]; // Submit handler
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      submitDisabled = _useState20[0],
+      setSubmitDisabled = _useState20[1]; // Submit handler
 
 
   function handleFormSubmit() {
@@ -13253,24 +13263,23 @@ function Products() {
 
             case 6:
               res = _context4.sent;
-              setAnnouncement(true);
-              _context4.next = 13;
+              _context4.next = 12;
               break;
 
-            case 10:
-              _context4.prev = 10;
+            case 9:
+              _context4.prev = 9;
               _context4.t0 = _context4["catch"](3);
               setErrors(_context4.t0.response.data.errors);
 
-            case 13:
+            case 12:
               setSubmitDisabled(false);
 
-            case 14:
+            case 13:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[3, 10]]);
+      }, _callee4, null, [[3, 9]]);
     }));
     return _handleFormSubmit.apply(this, arguments);
   }
@@ -13294,9 +13303,10 @@ function Products() {
 
             case 2:
               res = _context5.sent;
+              success("Successfully deleted item");
               setRedirect(true);
 
-            case 4:
+            case 5:
             case "end":
               return _context5.stop();
           }
@@ -13306,34 +13316,24 @@ function Products() {
     return _deleteProduct.apply(this, arguments);
   }
 
-  if (redirect) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Redirect, {
+  if (redirect) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Redirect, {
     to: "/"
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_8__.default, {
       children: "Edit product"
-    }), announcement && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Banner, {
-      title: "You have successfully edited a new product.",
-      status: "success",
-      onDismiss: function onDismiss() {
-        setAnnouncement(false);
-      },
-      stopAnnouncements: announcement
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_containers_Center_jsx__WEBPACK_IMPORTED_MODULE_7__.default, {
       className: "min-height-screen-skip-navbar",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.Form, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Form, {
           onSubmit: handleFormSubmit,
-          children: [globalError && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Banner, {
-            title: globalError,
-            status: "critical"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
               className: "text-center",
               children: "Edit product"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "mt-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.TextField, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.TextField, {
                 focused: true,
                 placeholder: "Product name",
                 label: "Name",
@@ -13342,18 +13342,18 @@ function Products() {
                 onChange: setName,
                 error: errors.name
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "mt-3",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
                 className: "mb-3",
                 children: "Color"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.ColorPicker, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.ColorPicker, {
                 onChange: handleChange,
                 color: color
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "mt-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.TextField, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.TextField, {
                 placeholder: "Weight in kg",
                 label: "Weight",
                 type: "number",
@@ -13362,9 +13362,9 @@ function Products() {
                 error: errors.weight,
                 disabled: loading
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "mt-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.TextField, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.TextField, {
                 placeholder: "Price in dollars",
                 label: "Price",
                 type: "number",
@@ -13373,29 +13373,29 @@ function Products() {
                 error: errors.price,
                 disabled: loading
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "mt-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Select, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_14__.Select, {
                 label: "Product type",
                 options: typeOptions,
                 onChange: handleTypeSelectChange,
                 value: type,
                 disabled: loading
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "mt-5 d-flex justify-content-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_14__.Button, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
                 disabled: loading || submitDisabled,
                 onClick: deleteProduct,
                 destructive: true,
                 children: "Delete"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_14__.Button, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
                 disabled: loading || submitDisabled,
                 submit: true,
                 children: "Save"
               })]
             })]
-          })]
+          })
         })
       })
     })]
@@ -13639,6 +13639,102 @@ function Welcome() {
 
 /***/ }),
 
+/***/ "./resources/js/provider/Log.jsx":
+/*!***************************************!*\
+  !*** ./resources/js/provider/Log.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useLog": () => (/* binding */ useLog),
+/* harmony export */   "default": () => (/* binding */ Log)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Banner/Banner.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var LogContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext();
+function useLog() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(LogContext);
+}
+function Log(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      logs = _useState2[0],
+      setLogs = _useState2[1];
+
+  function removeLog(banner) {
+    setLogs(logs.filter(function (logBanner) {
+      return logBanner !== banner;
+    }));
+  }
+
+  function initAutoremove(banner) {
+    setTimeout(function () {
+      return removeLog(banner);
+    }, 3000);
+  }
+
+  function log(message, status) {
+    var banner = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Banner, {
+      title: message,
+      status: status,
+      onDismiss: function onDismiss() {
+        return removeLog(banner);
+      }
+    });
+
+    setLogs(function (prevLogs) {
+      return [].concat(_toConsumableArray(prevLogs), [banner]);
+    });
+    initAutoremove(banner);
+  }
+
+  function success(message) {
+    log(message, "success");
+  }
+
+  function error(message) {
+    log(message, "critical");
+  }
+
+  var value = {
+    logs: logs,
+    success: success,
+    error: error
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(LogContext.Provider, {
+    value: value,
+    children: props && props.children
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/provider/User.jsx":
 /*!****************************************!*\
   !*** ./resources/js/provider/User.jsx ***!
@@ -13716,19 +13812,20 @@ function User(props) {
                 email: options.email,
                 name: options.name
               });
+              window.location.reload();
               return _context2.abrupt("return", signupResp.response);
 
-            case 8:
-              _context2.prev = 8;
+            case 9:
+              _context2.prev = 9;
               _context2.t0 = _context2["catch"](0);
               return _context2.abrupt("return", _context2.t0.response);
 
-            case 11:
+            case 12:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[0, 8]]);
+      }, _callee2, null, [[0, 9]]);
     }));
     return _signup.apply(this, arguments);
   }
@@ -13754,19 +13851,20 @@ function User(props) {
                 email: options.email,
                 name: options.name
               });
+              window.location.reload();
               return _context3.abrupt("return", loginResp.response);
 
-            case 8:
-              _context3.prev = 8;
+            case 9:
+              _context3.prev = 9;
               _context3.t0 = _context3["catch"](0);
               return _context3.abrupt("return", _context3.t0.response);
 
-            case 11:
+            case 12:
             case "end":
               return _context3.stop();
           }
         }
-      }, _callee3, null, [[0, 8]]);
+      }, _callee3, null, [[0, 9]]);
     }));
     return _login.apply(this, arguments);
   }
@@ -13788,7 +13886,7 @@ function User(props) {
 
             case 3:
               res = _context4.sent;
-              _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push("/auth/login");
+              window.location.reload();
               _context4.next = 9;
               break;
 

@@ -10,6 +10,7 @@ import {
 
 import axios from "axios";
 import convert from "color-convert";
+import { useLog } from '@provider/Log'
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
@@ -29,7 +30,8 @@ export default function Products() {
     const [price, setPrice] = useState("");
     const [type, setType] = useState("");
     const [errors, setErrors] = useState([]);
-    const [announcement, setAnnouncement] = useState(false);
+
+    const {success} = useLog();
 
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
@@ -68,7 +70,7 @@ export default function Products() {
         const options = { weight, price, name, type_id: type, color: rgb };
         try {
             const res = await axios.post("/api/products", options);
-            setAnnouncement(true);
+            success("Successfully created new product");
         } catch (e) {
             setErrors(e.response.data.errors);
         }
@@ -78,17 +80,6 @@ export default function Products() {
     return (
         <Fragment>
             <Title>Create Product</Title>
-
-            {announcement && (
-                <Banner
-                    title="You have successfully created a new product."
-                    status="success"
-                    onDismiss={() => {
-                        setAnnouncement(false);
-                    }}
-                    stopAnnouncements={announcement}
-                />
-            )}
 
             <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>

@@ -35,12 +35,7 @@ export default function Register() {
             setSubmitDisabled(false);
         } else {
             setErrorMessages([]);
-            setRedirect(true);
         }
-    }
-
-    if (redirect) {
-        return <Redirect push to="/" />;
     }
 
     return (

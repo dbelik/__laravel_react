@@ -11,6 +11,9 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import axios from "axios";
 import convert from "color-convert";
+import history from '@utils/createHistory'
+
+import { useLog } from '@provider/Log';
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
@@ -25,16 +28,15 @@ export default function Products() {
     });
     const handleChange = useCallback(setColor, []);
 
-    const [globalError, setGlobalError] = useState("");
-
     const [name, setName] = useState("");
     const [weight, setWeight] = useState("");
     const [price, setPrice] = useState("");
     const [type, setType] = useState("");
     const [errors, setErrors] = useState([]);
-    const [announcement, setAnnouncement] = useState(false);
     const [loading, setLoading] = useState(true);
     const [redirect, setRedirect] = useState(false);
+
+    const { success, error } = useLog();
 
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
@@ -61,7 +63,10 @@ export default function Products() {
 
         async function fetchProduct(id) {
             const product = (await axios.get(`/api/products/${id}`)).data;
-            if (product.length === 0) setGlobalError("Product doesn't exist");
+            if (product.length === 0) {
+                error("Product with the given id doesn't exist");
+                history.push('/');
+            }
             else {
                 setName(product.Name);
                 setWeight(product.Weight.toString());
@@ -99,7 +104,6 @@ export default function Products() {
                 url: "/api/products",
                 data: options,
             });
-            setAnnouncement(true);
         } catch (e) {
             setErrors(e.response.data.errors);
         }
@@ -111,6 +115,7 @@ export default function Products() {
             method: 'delete',
             url: `/api/products/${id}`,
         });
+        success("Successfully deleted item");
         setRedirect(true);
     }
 
@@ -120,26 +125,9 @@ export default function Products() {
         <Fragment>
             <Title>Edit product</Title>
 
-            {announcement && (
-                <Banner
-                    title="You have successfully edited a new product."
-                    status="success"
-                    onDismiss={() => {
-                        setAnnouncement(false);
-                    }}
-                    stopAnnouncements={announcement}
-                />
-            )}
-
             <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>
                     <Form onSubmit={handleFormSubmit}>
-                        {globalError && (
-                            <Banner
-                                title={globalError}
-                                status="critical"
-                            ></Banner>
-                        )}
                         <Fragment>
                             <h2 className="text-center">Edit product</h2>
 

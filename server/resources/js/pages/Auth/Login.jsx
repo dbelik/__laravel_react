@@ -13,7 +13,6 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [submitDisabled, setSubmitDisabled] = useState(false);
-    const [redirect, setRedirect] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
 
     const { login } = useUser();
@@ -31,12 +30,7 @@ export default function Login() {
             setSubmitDisabled(false);
         } else {
             setErrorMessages([]);
-            setRedirect(true);
         }
-    }
-
-    if (redirect) {
-        return <Redirect push to="/" />;
     }
 
     return (
