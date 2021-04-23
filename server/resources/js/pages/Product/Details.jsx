@@ -64,8 +64,8 @@ export default function Products() {
             if (product.length === 0) setGlobalError("Product doesn't exist");
             else {
                 setName(product.Name);
-                setWeight(product.Weight);
-                setPrice(product.Price);
+                setWeight(product.Weight.toString());
+                setPrice(product.Price.toString());
                 setType(product.Type.id);
             }
         }
