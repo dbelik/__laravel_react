@@ -12832,7 +12832,7 @@ function Products() {
                 data.data.forEach(function (option) {
                   options.push({
                     label: option.name,
-                    value: option.id
+                    value: option.id.toString()
                   });
                 });
                 setTypeOptions(options);
@@ -13135,7 +13135,7 @@ function Products() {
                 data.data.forEach(function (option) {
                   options.push({
                     label: option.name,
-                    value: option.id
+                    value: option.id.toString()
                   });
                 });
                 setTypeOptions(options);
@@ -13387,11 +13387,12 @@ function Products() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_14__.Button, {
                 disabled: loading || submitDisabled,
                 onClick: deleteProduct,
+                destructive: true,
                 children: "Delete"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_14__.Button, {
                 disabled: loading || submitDisabled,
                 submit: true,
-                children: "Edit"
+                children: "Save"
               })]
             })]
           })]
@@ -13517,6 +13518,7 @@ function SearchProduct(props) {
 
   function _handleSearchSubmit() {
     _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var data;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -13525,9 +13527,17 @@ function SearchProduct(props) {
                 name: searchName,
                 page: 1
               }));
-              fetchProducts();
+              _context2.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
+                name: searchName,
+                page: 1
+              }));
 
-            case 2:
+            case 3:
+              data = _context2.sent;
+              setProducts(data.data);
+
+            case 5:
             case "end":
               return _context2.stop();
           }

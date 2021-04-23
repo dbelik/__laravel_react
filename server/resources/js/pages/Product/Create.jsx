@@ -43,7 +43,7 @@ export default function Products() {
             data.data.forEach((option) => {
                 options.push({
                     label: option.name,
-                    value: option.id,
+                    value: option.id.toString(),
                 });
             });
 

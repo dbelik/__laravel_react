@@ -39,7 +39,11 @@ export default function SearchProduct(props) {
 
     async function handleSearchSubmit() {
         history.push(buildFrontUrl({ name: searchName, page: 1}));
-        fetchProducts();
+        const data = await axios.get(buildApiUrl({
+            name: searchName,
+            page: 1
+        }));
+        setProducts(data.data);
     }
 
     return (

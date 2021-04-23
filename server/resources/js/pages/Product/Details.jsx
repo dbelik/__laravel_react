@@ -51,7 +51,7 @@ export default function Products() {
             data.data.forEach((option) => {
                 options.push({
                     label: option.name,
-                    value: option.id,
+                    value: option.id.toString(),
                 });
             });
 
@@ -201,6 +201,7 @@ export default function Products() {
                                 <Button
                                     disabled={loading || submitDisabled}
                                     onClick={deleteProduct}
+                                    destructive
                                 >
                                     Delete
                                 </Button>
@@ -208,7 +209,7 @@ export default function Products() {
                                     disabled={loading || submitDisabled}
                                     submit
                                 >
-                                    Edit
+                                    Save
                                 </Button>
                             </div>
                         </Fragment>
