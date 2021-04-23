@@ -20,7 +20,8 @@ export default function SearchProduct() {
     }, []);
 
     async function handleSearchSubmit() {
-        alert("here");
+        const data = await axios.get(`/api/products?name=${searchName}`);
+        setProducts(data.data);
     }
 
     return (

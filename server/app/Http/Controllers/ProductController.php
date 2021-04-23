@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Attribute;
 use App\Models\Color;
 use App\Models\Price;
 use App\Models\Product;
-use App\Models\Attribute;
 use App\Models\ProductType;
 use App\Models\Weight;
 use Illuminate\Http\Request;
@@ -18,11 +18,26 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::paginate(15);
-        $res = [];
+        // Extract query params
+        $productName = $request->query('name');
+        $productName = $productName ? $productName : '';
 
+        // Init query
+        $products = Product::query();
+
+        // Apply search parameters
+        // If name parameter has been passed
+        if ($productName) {
+            $products = $products->where('name', 'LIKE', "%$productName%");
+        }
+
+        // Paginate result
+        $products = $products->paginate(15);
+
+        // Store all matching products in $res
+        $res = [];
         for ($i = 0; $i < count($products); ++$i) {
             $product = $products[$i];
             $res[$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
@@ -30,7 +45,6 @@ class ProductController extends Controller
             foreach ($attributes as $attribute) {
                 $model = $attribute->attributable_type;
                 $type = substr($model, strrpos($model, '\\') + 1);
-
                 $res[$i][$type] = $attribute->attributable->value;
             }
         }
@@ -56,7 +70,7 @@ class ProductController extends Controller
             ['class' => Price::class, 'value' => $request->price],
             ['class' => Color::class, 'value' => $request->color],
         ];
-        
+
         foreach ($attributes as $attrib) {
             $attribute = new Attribute();
             $attribute->product_type_id = $request->type_id;
@@ -80,8 +94,10 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         // If product isn't stored, return empty result
-        if (!$product) return [];
-        
+        if (!$product) {
+            return [];
+        }
+
         $res = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
 
         $attributes = $product->productType->attributes()->get();

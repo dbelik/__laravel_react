@@ -3120,122 +3120,6 @@ var styles = {
 
 /***/ }),
 
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js ***!
-  \**************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ButtonGroup": () => (/* binding */ ButtonGroup)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
-/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
-/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
-/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js");
-
-
-
-
-
-
-function ButtonGroup({
-  children,
-  spacing,
-  segmented,
-  fullWidth,
-  connectedTop
-}) {
-  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.ButtonGroup, spacing && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default[spacing], segmented && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.segmented, fullWidth && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.fullWidth);
-  const contents = (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.elementChildren)(children).map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, {
-    button: child,
-    key: index
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: className,
-    "data-buttongroup-segmented": segmented,
-    "data-buttongroup-connected-top": connectedTop,
-    "data-buttongroup-full-width": fullWidth
-  }, contents);
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js ***!
-  \*******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var styles = {
-  "ButtonGroup": "Polaris-ButtonGroup",
-  "Item": "Polaris-ButtonGroup__Item",
-  "Item-plain": "Polaris-ButtonGroup__Item--plain",
-  "segmented": "Polaris-ButtonGroup--segmented",
-  "Item-focused": "Polaris-ButtonGroup__Item--focused",
-  "fullWidth": "Polaris-ButtonGroup--fullWidth",
-  "extraTight": "Polaris-ButtonGroup--extraTight",
-  "tight": "Polaris-ButtonGroup--tight",
-  "loose": "Polaris-ButtonGroup--loose"
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
-
-
-/***/ }),
-
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js ***!
-  \***********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Item": () => (/* binding */ Item)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
-/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
-/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
-
-
-
-
-
-function Item({
-  button
-}) {
-  const {
-    value: focused,
-    setTrue: forceTrueFocused,
-    setFalse: forceFalseFocused
-  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(false);
-  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Item, focused && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-focused"], button.props.plain && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-plain"]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: className,
-    onFocus: forceTrueFocused,
-    onBlur: forceFalseFocused
-  }, button);
-}
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js ***!
@@ -3510,6 +3394,122 @@ function buttonFrom(_ref, overrides, key) {
     key: key,
     onClick: onAction
   }, action, overrides), content);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonGroup": () => (/* binding */ ButtonGroup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
+/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js");
+
+
+
+
+
+
+function ButtonGroup({
+  children,
+  spacing,
+  segmented,
+  fullWidth,
+  connectedTop
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.ButtonGroup, spacing && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default[spacing], segmented && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.segmented, fullWidth && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.fullWidth);
+  const contents = (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.elementChildren)(children).map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, {
+    button: child,
+    key: index
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    "data-buttongroup-segmented": segmented,
+    "data-buttongroup-connected-top": connectedTop,
+    "data-buttongroup-full-width": fullWidth
+  }, contents);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "ButtonGroup": "Polaris-ButtonGroup",
+  "Item": "Polaris-ButtonGroup__Item",
+  "Item-plain": "Polaris-ButtonGroup__Item--plain",
+  "segmented": "Polaris-ButtonGroup--segmented",
+  "Item-focused": "Polaris-ButtonGroup__Item--focused",
+  "fullWidth": "Polaris-ButtonGroup--fullWidth",
+  "extraTight": "Polaris-ButtonGroup--extraTight",
+  "tight": "Polaris-ButtonGroup--tight",
+  "loose": "Polaris-ButtonGroup--loose"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
+/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
+
+
+
+
+
+function Item({
+  button
+}) {
+  const {
+    value: focused,
+    setTrue: forceTrueFocused,
+    setFalse: forceFalseFocused
+  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(false);
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Item, focused && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-focused"], button.props.plain && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-plain"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    onFocus: forceTrueFocused,
+    onBlur: forceFalseFocused
+  }, button);
 }
 
 
@@ -12536,13 +12536,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Navbar.jsx */ "./resources/js/components/global/Navbar.jsx");
 /* harmony import */ var _containers_Content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../containers/Content */ "./resources/js/components/containers/Content.jsx");
 /* harmony import */ var _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @pages/Welcome.jsx */ "./resources/js/pages/Welcome.jsx");
-/* harmony import */ var _pages_Product_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @pages/Product.jsx */ "./resources/js/pages/Product.jsx");
-/* harmony import */ var _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @pages/Products.jsx */ "./resources/js/pages/Products.jsx");
-/* harmony import */ var _pages_SearchProducts_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @pages/SearchProducts.jsx */ "./resources/js/pages/SearchProducts.jsx");
-/* harmony import */ var _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pages/Auth/Register.jsx */ "./resources/js/pages/Auth/Register.jsx");
-/* harmony import */ var _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pages/Auth/Login.jsx */ "./resources/js/pages/Auth/Login.jsx");
-/* harmony import */ var _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @pages/Dashboard.jsx */ "./resources/js/pages/Dashboard.jsx");
-/* harmony import */ var _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @pages/PageError.jsx */ "./resources/js/pages/PageError.jsx");
+/* harmony import */ var _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @pages/Dashboard.jsx */ "./resources/js/pages/Dashboard.jsx");
+/* harmony import */ var _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @pages/Auth/Register.jsx */ "./resources/js/pages/Auth/Register.jsx");
+/* harmony import */ var _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @pages/Auth/Login.jsx */ "./resources/js/pages/Auth/Login.jsx");
+/* harmony import */ var _pages_Product_Info_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pages/Product/Info.jsx */ "./resources/js/pages/Product/Info.jsx");
+/* harmony import */ var _pages_Product_Create_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pages/Product/Create.jsx */ "./resources/js/pages/Product/Create.jsx");
+/* harmony import */ var _pages_Product_Search_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @pages/Product/Search.jsx */ "./resources/js/pages/Product/Search.jsx");
+/* harmony import */ var _pages_Errors_NotFound_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @pages/Errors/NotFound.jsx */ "./resources/js/pages/Errors/NotFound.jsx");
 /* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -12575,26 +12575,29 @@ function GlobalRouter() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
           exact: true,
           path: "/",
-          component: currentUser ? _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_12__.default : _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__.default
+          component: currentUser ? _pages_Dashboard_jsx__WEBPACK_IMPORTED_MODULE_7__.default : _pages_Welcome_jsx__WEBPACK_IMPORTED_MODULE_6__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/register",
-          component: _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_10__.default
+          component: _pages_Auth_Register_jsx__WEBPACK_IMPORTED_MODULE_8__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_OnlyPublicRoute__WEBPACK_IMPORTED_MODULE_3__.default, {
           exact: true,
           path: "/auth/login",
-          component: _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_11__.default
+          component: _pages_Auth_Login_jsx__WEBPACK_IMPORTED_MODULE_9__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+          exact: true,
           path: "/products/new",
-          component: _pages_Products_jsx__WEBPACK_IMPORTED_MODULE_8__.default
+          component: _pages_Product_Create_jsx__WEBPACK_IMPORTED_MODULE_11__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+          exact: true,
           path: "/products/:id",
-          component: _pages_Product_jsx__WEBPACK_IMPORTED_MODULE_7__.default
+          component: _pages_Product_Info_jsx__WEBPACK_IMPORTED_MODULE_10__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.default, {
+          exact: true,
           path: "/search",
-          component: _pages_SearchProducts_jsx__WEBPACK_IMPORTED_MODULE_9__.default
+          component: _pages_Product_Search_jsx__WEBPACK_IMPORTED_MODULE_12__.default
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
-          component: _pages_PageError_jsx__WEBPACK_IMPORTED_MODULE_13__.default
+          component: _pages_Errors_NotFound_jsx__WEBPACK_IMPORTED_MODULE_13__.default
         })]
       })
     })]
@@ -13051,10 +13054,10 @@ function Dashboard() {
 
 /***/ }),
 
-/***/ "./resources/js/pages/PageError.jsx":
-/*!******************************************!*\
-  !*** ./resources/js/pages/PageError.jsx ***!
-  \******************************************/
+/***/ "./resources/js/pages/Errors/NotFound.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/pages/Errors/NotFound.jsx ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13074,43 +13077,10 @@ function PageError() {
 
 /***/ }),
 
-/***/ "./resources/js/pages/Product.jsx":
-/*!****************************************!*\
-  !*** ./resources/js/pages/Product.jsx ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Products)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _components_forms_Product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/forms/Product */ "./resources/js/components/forms/Product.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Products() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
-      id = _useParams.id;
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_forms_Product__WEBPACK_IMPORTED_MODULE_1__.default, {
-    id: id,
-    title: "Change product's data",
-    method: "put",
-    mustExist: true
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/pages/Products.jsx":
-/*!*****************************************!*\
-  !*** ./resources/js/pages/Products.jsx ***!
-  \*****************************************/
+/***/ "./resources/js/pages/Product/Create.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/Product/Create.jsx ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13389,9 +13359,42 @@ function Products() {
 
 /***/ }),
 
-/***/ "./resources/js/pages/SearchProducts.jsx":
+/***/ "./resources/js/pages/Product/Info.jsx":
+/*!*********************************************!*\
+  !*** ./resources/js/pages/Product/Info.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Products)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _components_forms_Product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/forms/Product */ "./resources/js/components/forms/Product.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Products() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      id = _useParams.id;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_forms_Product__WEBPACK_IMPORTED_MODULE_1__.default, {
+    id: id,
+    title: "Change product's data",
+    method: "put",
+    mustExist: true
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/pages/Product/Search.jsx":
 /*!***********************************************!*\
-  !*** ./resources/js/pages/SearchProducts.jsx ***!
+  !*** ./resources/js/pages/Product/Search.jsx ***!
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -13484,13 +13487,19 @@ function SearchProduct() {
 
   function _handleSearchSubmit() {
     _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var data;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              alert("here");
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products?name=".concat(searchName));
 
-            case 1:
+            case 2:
+              data = _context2.sent;
+              setProducts(data.data);
+
+            case 4:
             case "end":
               return _context2.stop();
           }
@@ -19576,7 +19585,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\r\n:root {\r\n    font-size: 14px;\r\n\r\n    /* Sizes */\r\n    --skip-navbar-height: 6rem;\r\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\r\n\r\n    /* Font sizes */\r\n    --font-size-h1: 3rem;\r\n    --font-size-h2: 2rem;\r\n\r\n    /* Backgrounds */\r\n    --bg-form: #ffffff;\r\n\r\n    /* Border radius */\r\n    --border-radius: 0.5rem;\r\n}\r\n\r\n/* Tag overloads */\r\nh1 {\r\n    font-size: var(--font-size-h1);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\nh2 {\r\n    font-size: var(--font-size-h2);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n/* Common classes */\r\n/* Containers */\r\n.content-container,\r\n.form-container {\r\n    margin: auto;\r\n    width: 100%;\r\n}\r\n\r\n.content-container {\r\n    max-width: 1280px;\r\n    padding: 0 2rem;\r\n}\r\n\r\n.form-container {\r\n    max-width: 560px;\r\n}\r\n\r\n/* List styles */\r\n.list-style-none {\r\n    list-style: none;\r\n}\r\n\r\n/* Margins/paddings */\r\n.return-to-navbar {\r\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\r\n}\r\n\r\n/* Sizes */\r\n.h-100vh {\r\n    height: 100vh;\r\n}\r\n.w-100vw {\r\n    width: 100vw;\r\n}\r\n\r\n.min-h-100vh {\r\n    min-height: 100vh;\r\n    height: auto;\r\n}\r\n\r\n.skip-navbar-height {\r\n    padding-top: var(--skip-navbar-height);\r\n}\r\n.min-height-screen-skip-navbar {\r\n    min-height: var(--height-screen-skip-navbar);\r\n}\r\n\r\n/* Backgrounds */\r\n.bg-form {\r\n    background-color: var(--bg-form);\r\n}\r\n\r\n/* Border radius */\r\n.rounded {\r\n    border-radius: var(--border-radius) !important;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\n:root {\n    font-size: 14px;\n\n    /* Sizes */\n    --skip-navbar-height: 6rem;\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\n\n    /* Font sizes */\n    --font-size-h1: 3rem;\n    --font-size-h2: 2rem;\n\n    /* Backgrounds */\n    --bg-form: #ffffff;\n\n    /* Border radius */\n    --border-radius: 0.5rem;\n}\n\n/* Tag overloads */\nh1 {\n    font-size: var(--font-size-h1);\n    margin-bottom: 1.5rem;\n}\n\nh2 {\n    font-size: var(--font-size-h2);\n    margin-bottom: 1.5rem;\n}\n\na:hover,\na:focus {\n    text-decoration: none;\n}\n\n/* Common classes */\n/* Containers */\n.content-container,\n.form-container {\n    margin: auto;\n    width: 100%;\n}\n\n.content-container {\n    max-width: 1280px;\n    padding: 0 2rem;\n}\n\n.form-container {\n    max-width: 560px;\n}\n\n/* List styles */\n.list-style-none {\n    list-style: none;\n}\n\n/* Margins/paddings */\n.return-to-navbar {\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\n}\n\n/* Sizes */\n.h-100vh {\n    height: 100vh;\n}\n.w-100vw {\n    width: 100vw;\n}\n\n.min-h-100vh {\n    min-height: 100vh;\n    height: auto;\n}\n\n.skip-navbar-height {\n    padding-top: var(--skip-navbar-height);\n}\n.min-height-screen-skip-navbar {\n    min-height: var(--height-screen-skip-navbar);\n}\n\n/* Backgrounds */\n.bg-form {\n    background-color: var(--bg-form);\n}\n\n/* Border radius */\n.rounded {\n    border-radius: var(--border-radius) !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21374,6 +21383,19 @@ var root = {
 };
 
 module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/isarray/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/isarray/index.js ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),
@@ -50458,7 +50480,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
 
 /**
  * Expose `pathToRegexp`.
@@ -50884,19 +50906,6 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
-  \*******************************************************************/
-/***/ ((module) => {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),

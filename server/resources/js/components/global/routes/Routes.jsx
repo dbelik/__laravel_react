@@ -9,13 +9,16 @@ import GlobalNavbar from "../Navbar.jsx";
 import ContentContainer from "../../containers/Content";
 
 import Welcome from "@pages/Welcome.jsx";
-import Product from "@pages/Product.jsx";
-import Products from "@pages/Products.jsx";
-import SearchProducts from "@pages/SearchProducts.jsx";
+import Dashboard from "@pages/Dashboard.jsx";
+
 import AuthRegister from "@pages/Auth/Register.jsx";
 import AuthLogin from "@pages/Auth/Login.jsx";
-import Dashboard from "@pages/Dashboard.jsx";
-import PageError from "@pages/PageError.jsx";
+
+import InfoProduct from "@pages/Product/Info.jsx";
+import CreateProduct from "@pages/Product/Create.jsx";
+import SearchProducts from "@pages/Product/Search.jsx";
+
+import NotFound from "@pages/Errors/NotFound.jsx";
 
 import { useUser } from "@provider/User";
 
@@ -43,11 +46,11 @@ export default function GlobalRouter() {
                         component={AuthLogin}
                     />
 
-                    <PrivateRoute path="/products/new" component={Products} />
-                    <PrivateRoute path="/products/:id" component={Product} />
-                    <PrivateRoute path="/search" component={SearchProducts} />
+                    <PrivateRoute exact path="/products/new" component={CreateProduct} />
+                    <PrivateRoute exact path="/products/:id" component={InfoProduct} />
+                    <PrivateRoute exact path="/search" component={SearchProducts} />
 
-                    <Route component={PageError} />
+                    <Route component={NotFound} />
                 </Switch>
             </ContentContainer>
         </Router>
