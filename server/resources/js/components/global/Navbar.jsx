@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Button } from "@shopify/polaris";
 
+import history from "@utils/createHistory";
+
 import { useUser } from "@provider/User";
 
 export default function Navbar() {
@@ -32,7 +34,13 @@ export default function Navbar() {
                 <ul className="d-flex align-items-center list-style-none p-0 m-0">
                     {!currentUser ? (
                         <li>
-                            <Link to="/auth/login">Login</Link>
+                            <Button
+                                className="bg-transparent"
+                                onClick={() => history.push("/auth/login")}
+                                loading={loading}
+                            >
+                                Login
+                            </Button>
                         </li>
                     ) : (
                         <li>

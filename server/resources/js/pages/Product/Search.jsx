@@ -1,6 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { TextField, Form, Pagination, Icon } from "@shopify/polaris";
+import {
+    TextField,
+    Form,
+    Button,
+    Pagination,
+    FormLayout,
+    Icon,
+    Select,
+} from "@shopify/polaris";
 import { SearchMinor } from "@shopify/polaris-icons";
 
 import axios from "axios";
@@ -12,12 +20,33 @@ export default function SearchProduct(props) {
     const [products, setProducts] = useState([]);
     const [searchName, setSearchName] = useState("");
     const [pageState, setPageState] = useState({});
+    const [typeOptions, setTypeOptions] = useState([]);
+    const [selectedType, setSelectedType] = useState(1);
+    const [minPrice, setMinPrice] = useState();
+    const [maxPrice, setMaxPrice] = useState();
+    const [loading, setLoading] = useState(true);
 
     const search = new URLSearchParams(useLocation().search);
 
     useEffect(() => {
-        fetchProducts();
+        fetchAll();
     }, []);
+
+    async function fetchAll() {
+        await fetchProducts();
+        setLoading(false);
+        await fetchProductTypes();
+    }
+
+    async function fetchProductTypes() {
+        const types = await axios.get("/api/product_type");
+        const res = [];
+        types.data.forEach((option) => {
+            res.push({ label: option.name, value: option.id.toString() });
+        });
+        setTypeOptions(res);
+        setSelectedType(res[0].value);
+    }
 
     async function fetchProducts() {
         const page = parseInt(search.get("page")) || 1;
@@ -70,7 +99,42 @@ export default function SearchProduct(props) {
                     prefix={<Icon source={SearchMinor} color="base" />}
                     onChange={setSearchName}
                     placeholder="Search"
+                    connectedRight={
+                        <Button submit disabled={loading}>
+                            Search
+                        </Button>
+                    }
                 />
+
+                <FormLayout>
+                    <FormLayout.Group condensed>
+                        <TextField
+                            type="number"
+                            disabled={loading}
+                            label="Min price"
+                            placeholder="0.00"
+                            prefix="$"
+                            value={minPrice}
+                            onChange={setMinPrice}
+                        />
+                        <TextField
+                            type="number"
+                            disabled={loading}
+                            label="Max price"
+                            placeholder="100.00"
+                            prefix="$"
+                            value={maxPrice}
+                            onChange={setMaxPrice}
+                        />
+                        <Select
+                            label="Product type"
+                            disabled={loading}
+                            options={typeOptions}
+                            onChange={(value) => setSelectedType(value)}
+                            value={selectedType}
+                        />
+                    </FormLayout.Group>
+                </FormLayout>
             </Form>
 
             <h2 className="mt-5">Products:</h2>

@@ -4528,6 +4528,175 @@ function FocusManager({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FormLayout": () => (/* binding */ FormLayout)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js");
+/* harmony import */ var _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Group/Group.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js");
+
+
+
+
+
+
+const FormLayout = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function FormLayout({
+  children
+}) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.FormLayout
+  }, react__WEBPACK_IMPORTED_MODULE_0__.Children.map(children, wrapChildren));
+});
+FormLayout.Group = _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__.Group;
+
+function wrapChildren(child, index) {
+  if ((0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.isElementOfType)(child, _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__.Group)) {
+    return child;
+  }
+
+  const props = {
+    key: index
+  };
+  return (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.wrapWithComponent)(child, _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, props);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "FormLayout": "Polaris-FormLayout",
+  "Title": "Polaris-FormLayout__Title",
+  "Items": "Polaris-FormLayout__Items",
+  "HelpText": "Polaris-FormLayout__HelpText",
+  "Item": "Polaris-FormLayout__Item",
+  "grouped": "Polaris-FormLayout--grouped",
+  "condensed": "Polaris-FormLayout--condensed"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Group": () => (/* binding */ Group)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utilities/unique-id/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/unique-id/hooks.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+/* harmony import */ var _Item_Item_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js");
+
+
+
+
+
+
+
+function Group({
+  children,
+  condensed,
+  title,
+  helpText
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(condensed ? _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.condensed : _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.grouped);
+  const id = (0,_utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_3__.useUniqueId)('FormLayoutGroup');
+  let helpTextElement = null;
+  let helpTextID;
+  let titleElement = null;
+  let titleID;
+
+  if (helpText) {
+    helpTextID = `${id}HelpText`;
+    helpTextElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: helpTextID,
+      className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.HelpText
+    }, helpText);
+  }
+
+  if (title) {
+    titleID = `${id}Title`;
+    titleElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: titleID,
+      className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Title
+    }, title);
+  }
+
+  const itemsMarkup = react__WEBPACK_IMPORTED_MODULE_0__.Children.map(children, child => (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_4__.wrapWithComponent)(child, _Item_Item_js__WEBPACK_IMPORTED_MODULE_5__.Item, {}));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    role: "group",
+    className: className,
+    "aria-labelledby": titleID,
+    "aria-describedby": helpTextID
+  }, titleElement, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Items
+  }, itemsMarkup), helpTextElement);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+
+
+
+function Item(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.Item
+  }, props.children);
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js ***!
@@ -12395,10 +12564,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
-/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _utils_createHistory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @utils/createHistory */ "./resources/js/utils/createHistory.js");
+/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @provider/User */ "./resources/js/provider/User.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -12423,8 +12593,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Navbar() {
-  var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_2__.useUser)(),
+  var _useUser = (0,_provider_User__WEBPACK_IMPORTED_MODULE_3__.useUser)(),
       currentUser = _useUser.currentUser,
       logout = _useUser.logout;
 
@@ -12464,27 +12635,31 @@ function Navbar() {
     return _handleLogout.apply(this, arguments);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("nav", {
     className: "fixed-top py-3 bg-white shadow-sm",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "content-container d-flex align-items-center justify-content-between",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
         className: "m-0 p-0 list-style-none",
-        children: currentUser && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+        children: currentUser && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
             to: "/",
             children: "Dashboard"
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
         className: "d-flex align-items-center list-style-none p-0 m-0",
-        children: !currentUser ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-            to: "/auth/login",
+        children: !currentUser ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            className: "bg-transparent",
+            onClick: function onClick() {
+              return _utils_createHistory__WEBPACK_IMPORTED_MODULE_2__.default.push("/auth/login");
+            },
+            loading: loading,
             children: "Login"
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
             className: "bg-transparent",
             onClick: handleLogout,
             loading: loading,
@@ -13923,11 +14098,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
 /* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/SearchMinor.svg.mjs");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
@@ -13977,42 +14155,131 @@ function SearchProduct(props) {
       pageState = _useState6[0],
       setPageState = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      typeOptions = _useState8[0],
+      setTypeOptions = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      selectedType = _useState10[0],
+      setSelectedType = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState12 = _slicedToArray(_useState11, 2),
+      minPrice = _useState12[0],
+      setMinPrice = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState14 = _slicedToArray(_useState13, 2),
+      maxPrice = _useState14[0],
+      setMaxPrice = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState16 = _slicedToArray(_useState15, 2),
+      loading = _useState16[0],
+      setLoading = _useState16[1];
+
   var search = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)().search);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    fetchProducts();
+    fetchAll();
   }, []);
+
+  function fetchAll() {
+    return _fetchAll.apply(this, arguments);
+  }
+
+  function _fetchAll() {
+    _fetchAll = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return fetchProducts();
+
+            case 2:
+              setLoading(false);
+              _context3.next = 5;
+              return fetchProductTypes();
+
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+    return _fetchAll.apply(this, arguments);
+  }
+
+  function fetchProductTypes() {
+    return _fetchProductTypes.apply(this, arguments);
+  }
+
+  function _fetchProductTypes() {
+    _fetchProductTypes = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+      var types, res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/product_type");
+
+            case 2:
+              types = _context4.sent;
+              res = [];
+              types.data.forEach(function (option) {
+                res.push({
+                  label: option.name,
+                  value: option.id.toString()
+                });
+              });
+              setTypeOptions(res);
+              setSelectedType(res[0].value);
+
+            case 7:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }));
+    return _fetchProductTypes.apply(this, arguments);
+  }
 
   function fetchProducts() {
     return _fetchProducts.apply(this, arguments);
   }
 
   function _fetchProducts() {
-    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
       var page, searchName, data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
               page = parseInt(search.get("page")) || 1;
               searchName = search.get("name") || "";
               setSearchName(searchName);
-              _context3.next = 5;
+              _context5.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
                 name: search.get("name"),
                 page: page
               }));
 
             case 5:
-              data = _context3.sent;
+              data = _context5.sent;
               setProducts(data.data.items);
               setPageState(data.data.pageState);
 
             case 8:
             case "end":
-              return _context3.stop();
+              return _context5.stop();
           }
         }
-      }, _callee3);
+      }, _callee5);
     }));
     return _fetchProducts.apply(this, arguments);
   }
@@ -14034,31 +14301,31 @@ function SearchProduct(props) {
   }
 
   function _searchSubmit() {
-    _searchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(options) {
+    _searchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6(options) {
       var data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context6.prev = _context6.next) {
             case 0:
               setProducts([]);
               _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(buildFrontUrl({
                 name: options.name,
                 page: options.page
               }));
-              _context4.next = 4;
+              _context6.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl(options));
 
             case 4:
-              data = _context4.sent;
+              data = _context6.sent;
               setProducts(data.data.items);
               setPageState(data.data.pageState);
 
             case 7:
             case "end":
-              return _context4.stop();
+              return _context6.stop();
           }
         }
-      }, _callee4);
+      }, _callee6);
     }));
     return _searchSubmit.apply(this, arguments);
   }
@@ -14068,10 +14335,10 @@ function SearchProduct(props) {
   }
 
   function _handleSearchSubmit() {
-    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context7.prev = _context7.next) {
             case 0:
               searchSubmit({
                 name: searchName
@@ -14079,10 +14346,10 @@ function SearchProduct(props) {
 
             case 1:
             case "end":
-              return _context5.stop();
+              return _context7.stop();
           }
         }
-      }, _callee5);
+      }, _callee7);
     }));
     return _handleSearchSubmit.apply(this, arguments);
   }
@@ -14090,9 +14357,9 @@ function SearchProduct(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_global_Title_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
       children: "Search"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Form, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Form, {
       onSubmit: handleSearchSubmit,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
         label: "Search",
         value: searchName,
         prefix: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Icon, {
@@ -14100,8 +14367,42 @@ function SearchProduct(props) {
           color: "base"
         }),
         onChange: setSearchName,
-        placeholder: "Search"
-      })
+        placeholder: "Search",
+        connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Button, {
+          submit: true,
+          disabled: loading,
+          children: "Search"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout.Group, {
+          condensed: true,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
+            type: "number",
+            disabled: loading,
+            label: "Min price",
+            placeholder: "0.00",
+            prefix: "$",
+            value: minPrice,
+            onChange: setMinPrice
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
+            type: "number",
+            disabled: loading,
+            label: "Max price",
+            placeholder: "100.00",
+            prefix: "$",
+            value: maxPrice,
+            onChange: setMaxPrice
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Select, {
+            label: "Product type",
+            disabled: loading,
+            options: typeOptions,
+            onChange: function onChange(value) {
+              return setSelectedType(value);
+            },
+            value: selectedType
+          })]
+        })
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "mt-5",
       children: "Products:"
@@ -14141,7 +14442,7 @@ function SearchProduct(props) {
             children: product.price
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "col-4 col-sm-2 col-lg-2 text-truncate py-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Link, {
               to: "/products/".concat(product.id),
               children: "Details"
             })
@@ -14150,7 +14451,7 @@ function SearchProduct(props) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "w-100 d-flex justify-content-center mt-5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.Pagination, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Pagination, {
         hasPrevious: pageState.prevUrl,
         onPrevious: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
