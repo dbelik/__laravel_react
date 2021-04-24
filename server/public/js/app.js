@@ -14160,20 +14160,10 @@ function SearchProduct(props) {
       selectedType = _useState10[0],
       setSelectedType = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
       _useState12 = _slicedToArray(_useState11, 2),
-      minPrice = _useState12[0],
-      setMinPrice = _useState12[1];
-
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
-      _useState14 = _slicedToArray(_useState13, 2),
-      maxPrice = _useState14[0],
-      setMaxPrice = _useState14[1];
-
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
-      _useState16 = _slicedToArray(_useState15, 2),
-      loading = _useState16[0],
-      setLoading = _useState16[1];
+      loading = _useState12[0],
+      setLoading = _useState12[1];
 
   var search = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)().search);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
@@ -14238,8 +14228,6 @@ function SearchProduct(props) {
               url = buildApiUrl({
                 name: search.get("name"),
                 page: page,
-                minPrice: search.get("minPrice"),
-                maxPrice: search.get("maxPrice"),
                 type: search.get("type")
               });
               _context4.next = 6;
@@ -14261,7 +14249,7 @@ function SearchProduct(props) {
   }
 
   function buildFetchUrl(base, options) {
-    return "".concat(base, "?name=").concat(options.name || "", "&page=").concat(options.page || "", "&minPrice=").concat(options.minPrice || "", "&maxPrice=").concat(options.maxPrice, "&type=").concat(options.type);
+    return "".concat(base, "?name=").concat(options.name || "", "&page=").concat(options.page || "", "&type=").concat(options.type || "");
   }
 
   function buildApiUrl(options) {
@@ -14319,8 +14307,6 @@ function SearchProduct(props) {
               return searchSubmit({
                 name: searchName,
                 page: 1,
-                minPrice: minPrice,
-                maxPrice: maxPrice,
                 type: selectedType
               });
 
@@ -14357,25 +14343,9 @@ function SearchProduct(props) {
           children: "Search"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout.Group, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout.Group, {
           condensed: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
-            type: "number",
-            disabled: loading,
-            label: "Min price",
-            placeholder: "0.00",
-            prefix: "$",
-            value: minPrice,
-            onChange: setMinPrice
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
-            type: "number",
-            disabled: loading,
-            label: "Max price",
-            placeholder: "100.00",
-            prefix: "$",
-            value: maxPrice,
-            onChange: setMaxPrice
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Select, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Select, {
             label: "Product type",
             disabled: loading,
             options: typeOptions,
@@ -14383,7 +14353,7 @@ function SearchProduct(props) {
               return setSelectedType(value);
             },
             value: selectedType
-          })]
+          })
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
@@ -14443,7 +14413,8 @@ function SearchProduct(props) {
                 case 0:
                   searchSubmit({
                     name: searchName,
-                    page: pageState.currentPage - 1
+                    page: pageState.currentPage - 1,
+                    type: selectedType
                   });
 
                 case 1:
@@ -14461,7 +14432,8 @@ function SearchProduct(props) {
                 case 0:
                   searchSubmit({
                     name: searchName,
-                    page: pageState.currentPage + 1
+                    page: pageState.currentPage + 1,
+                    type: selectedType
                   });
 
                 case 1:

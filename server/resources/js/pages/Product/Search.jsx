@@ -24,8 +24,6 @@ export default function SearchProduct(props) {
     // Search filters
     const [typeOptions, setTypeOptions] = useState([]);
     const [selectedType, setSelectedType] = useState(1);
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(0);
     const [loading, setLoading] = useState(true);
 
     const search = new URLSearchParams(useLocation().search);
@@ -54,8 +52,6 @@ export default function SearchProduct(props) {
         const url = buildApiUrl({
             name: search.get("name"),
             page: page,
-            minPrice: search.get("minPrice"),
-            maxPrice: search.get("maxPrice"),
             type: search.get("type"),
         });
 
@@ -68,9 +64,7 @@ export default function SearchProduct(props) {
     function buildFetchUrl(base, options) {
         return `${base}?name=${options.name || ""}&page=${
             options.page || ""
-        }&minPrice=${options.minPrice || ""}&maxPrice=${
-            options.maxPrice
-        }&type=${options.type}`;
+        }&type=${options.type || ""}`;
     }
 
     function buildApiUrl(options) {
@@ -95,8 +89,6 @@ export default function SearchProduct(props) {
         await searchSubmit({
             name: searchName,
             page: 1,
-            minPrice: minPrice,
-            maxPrice: maxPrice,
             type: selectedType,
         });
         setLoading(false);
@@ -122,24 +114,6 @@ export default function SearchProduct(props) {
 
                 <FormLayout>
                     <FormLayout.Group condensed>
-                        <TextField
-                            type="number"
-                            disabled={loading}
-                            label="Min price"
-                            placeholder="0.00"
-                            prefix="$"
-                            value={minPrice}
-                            onChange={setMinPrice}
-                        />
-                        <TextField
-                            type="number"
-                            disabled={loading}
-                            label="Max price"
-                            placeholder="100.00"
-                            prefix="$"
-                            value={maxPrice}
-                            onChange={setMaxPrice}
-                        />
                         <Select
                             label="Product type"
                             disabled={loading}
@@ -197,6 +171,7 @@ export default function SearchProduct(props) {
                         searchSubmit({
                             name: searchName,
                             page: pageState.currentPage - 1,
+                            type: selectedType
                         });
                     }}
                     hasNext={pageState.nextUrl}
@@ -204,6 +179,7 @@ export default function SearchProduct(props) {
                         searchSubmit({
                             name: searchName,
                             page: pageState.currentPage + 1,
+                            type: selectedType
                         });
                     }}
                 />
