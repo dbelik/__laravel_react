@@ -5,7 +5,7 @@ import {
     Form,
     Select,
     Button,
-    Banner,
+    ButtonGroup,
 } from "@shopify/polaris";
 import { Redirect, useParams } from "react-router-dom";
 
@@ -111,7 +111,7 @@ export default function Products() {
             });
             success("Product has been saved!");
         } catch (e) {
-            console.log(e.response)
+            console.log(e.response);
             setErrors(e.response.data.errors);
         }
         setLoading(false);
@@ -137,64 +137,64 @@ export default function Products() {
             <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>
                     <Form onSubmit={saveProduct}>
-                        <Fragment>
-                            <h2 className="text-center">Edit product</h2>
+                        <h2 className="text-center">Edit product</h2>
 
-                            <div className="mt-3">
-                                <TextField
-                                    focused
-                                    placeholder="Product name"
-                                    label="Name"
-                                    disabled={loading}
-                                    value={name}
-                                    onChange={setName}
-                                    error={errors.name}
-                                />
-                            </div>
+                        <div className="mt-3">
+                            <TextField
+                                focused
+                                placeholder="Product name"
+                                label="Name"
+                                disabled={loading}
+                                value={name}
+                                onChange={setName}
+                                error={errors.name}
+                            />
+                        </div>
 
-                            <div className="mt-3">
-                                <p className="mb-3">Color</p>
-                                <ColorPicker
-                                    onChange={handleChange}
-                                    color={color}
-                                />
-                            </div>
+                        <div className="mt-3">
+                            <p className="mb-3">Color</p>
+                            <ColorPicker
+                                onChange={handleChange}
+                                color={color}
+                            />
+                        </div>
 
-                            <div className="mt-3">
-                                <TextField
-                                    placeholder="Weight in kg"
-                                    label="Weight"
-                                    type="number"
-                                    value={weight}
-                                    onChange={setWeight}
-                                    error={errors.weight}
-                                    disabled={loading}
-                                />
-                            </div>
+                        <div className="mt-3">
+                            <TextField
+                                placeholder="Weight in kg"
+                                label="Weight"
+                                type="number"
+                                value={weight}
+                                onChange={setWeight}
+                                error={errors.weight}
+                                disabled={loading}
+                            />
+                        </div>
 
-                            <div className="mt-3">
-                                <TextField
-                                    placeholder="Price in dollars"
-                                    label="Price"
-                                    type="number"
-                                    value={price}
-                                    onChange={setPrice}
-                                    error={errors.price}
-                                    disabled={loading}
-                                />
-                            </div>
+                        <div className="mt-3">
+                            <TextField
+                                placeholder="Price in dollars"
+                                label="Price"
+                                type="number"
+                                value={price}
+                                onChange={setPrice}
+                                error={errors.price}
+                                disabled={loading}
+                            />
+                        </div>
 
-                            <div className="mt-3">
-                                <Select
-                                    label="Product type"
-                                    options={typeOptions}
-                                    onChange={handleTypeSelectChange}
-                                    value={type}
-                                    disabled={loading}
-                                />
-                            </div>
+                        <div className="mt-3">
+                            <Select
+                                label="Product type"
+                                options={typeOptions}
+                                onChange={handleTypeSelectChange}
+                                value={type}
+                                disabled={loading}
+                            />
+                        </div>
 
-                            <div className="mt-5 d-flex justify-content-center">
+                        <div className="mt-5 d-flex justify-content-center">
+                            <ButtonGroup>
                                 <div className="mr-4">
                                     <Button
                                         loading={loading}
@@ -210,8 +210,8 @@ export default function Products() {
                                         Save
                                     </Button>
                                 </div>
-                            </div>
-                        </Fragment>
+                            </ButtonGroup>
+                        </div>
                     </Form>
                 </FormContainer>
             </CenterContainer>

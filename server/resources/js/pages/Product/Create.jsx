@@ -5,7 +5,6 @@ import {
     Form,
     Select,
     Button,
-    Banner,
 } from "@shopify/polaris";
 
 import axios from "axios";
