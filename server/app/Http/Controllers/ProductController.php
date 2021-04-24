@@ -23,15 +23,23 @@ class ProductController extends Controller
         // Extract query params
         $productName = $request->query('name');
         $productName = $productName ? $productName : '';
+        $minPrice = $request->query('minPrice');
+        $minPrice = $minPrice ? $minPrice : '';
+        $maxPrice = $request->query('maxPrice');
+        $maxPrice = $maxPrice ? $maxPrice : '';
+        $type = $request->query('type');
+        $type = $type ? $type : '';
 
         // Init query
         $products = Product::query();
 
         // Apply search parameters
         // If name parameter has been passed
-        if ($productName) {
-            $products = $products->where('name', 'LIKE', "%$productName%");
-        }
+        $type = ProductType::find($type);
+        if ($productName) $products = $products->where('name', 'LIKE', "%$productName%");
+        // if (is_numeric($minPrice)) $products = $products->where('price', '>', $minPrice);
+        // if (is_numeric($maxPrice)) $products = $products->where('price', '<', $maxPrice);
+        if ($type) $products = $products->where('product_type_id', '=', $type->id);
 
         // Paginate result
         $products = $products->paginate(5);

@@ -13815,8 +13815,9 @@ function Products() {
                 });
                 setTypeOptions(options);
                 setType(options[0].value);
+                setLoading(false);
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -13879,17 +13880,10 @@ function Products() {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
-                return fetchTypes();
+                fetchTypes();
+                fetchProduct(id);
 
               case 2:
-                _context3.next = 4;
-                return fetchProduct(id);
-
-              case 4:
-                setLoading(false);
-
-              case 5:
               case "end":
                 return _context3.stop();
             }
@@ -14153,7 +14147,8 @@ function SearchProduct(props) {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
       _useState6 = _slicedToArray(_useState5, 2),
       pageState = _useState6[0],
-      setPageState = _useState6[1];
+      setPageState = _useState6[1]; // Search filters
+
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState8 = _slicedToArray(_useState7, 2),
@@ -14165,12 +14160,12 @@ function SearchProduct(props) {
       selectedType = _useState10[0],
       setSelectedType = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState12 = _slicedToArray(_useState11, 2),
       minPrice = _useState12[0],
       setMinPrice = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState14 = _slicedToArray(_useState13, 2),
       maxPrice = _useState14[0],
       setMaxPrice = _useState14[1];
@@ -14182,54 +14177,30 @@ function SearchProduct(props) {
 
   var search = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)().search);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    fetchAll();
+    fetchProductTypes();
+    fetchProducts();
   }, []);
-
-  function fetchAll() {
-    return _fetchAll.apply(this, arguments);
-  }
-
-  function _fetchAll() {
-    _fetchAll = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              _context3.next = 2;
-              return fetchProducts();
-
-            case 2:
-              setLoading(false);
-              _context3.next = 5;
-              return fetchProductTypes();
-
-            case 5:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-    return _fetchAll.apply(this, arguments);
-  }
 
   function fetchProductTypes() {
     return _fetchProductTypes.apply(this, arguments);
   }
 
   function _fetchProductTypes() {
-    _fetchProductTypes = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+    _fetchProductTypes = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
       var types, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _context4.next = 2;
+              _context3.next = 2;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/product_type");
 
             case 2:
-              types = _context4.sent;
-              res = [];
+              types = _context3.sent;
+              res = [{
+                label: "any",
+                value: ""
+              }];
               types.data.forEach(function (option) {
                 res.push({
                   label: option.name,
@@ -14238,13 +14209,14 @@ function SearchProduct(props) {
               });
               setTypeOptions(res);
               setSelectedType(res[0].value);
+              setLoading(false);
 
-            case 7:
+            case 8:
             case "end":
-              return _context4.stop();
+              return _context3.stop();
           }
         }
-      }, _callee4);
+      }, _callee3);
     }));
     return _fetchProductTypes.apply(this, arguments);
   }
@@ -14254,38 +14226,42 @@ function SearchProduct(props) {
   }
 
   function _fetchProducts() {
-    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
-      var page, searchName, data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+    _fetchProducts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+      var page, searchName, url, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context4.prev = _context4.next) {
             case 0:
               page = parseInt(search.get("page")) || 1;
               searchName = search.get("name") || "";
               setSearchName(searchName);
-              _context5.next = 5;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
+              url = buildApiUrl({
                 name: search.get("name"),
-                page: page
-              }));
+                page: page,
+                minPrice: search.get("minPrice"),
+                maxPrice: search.get("maxPrice"),
+                type: search.get("type")
+              });
+              _context4.next = 6;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get(url);
 
-            case 5:
-              data = _context5.sent;
+            case 6:
+              data = _context4.sent;
               setProducts(data.data.items);
               setPageState(data.data.pageState);
 
-            case 8:
+            case 9:
             case "end":
-              return _context5.stop();
+              return _context4.stop();
           }
         }
-      }, _callee5);
+      }, _callee4);
     }));
     return _fetchProducts.apply(this, arguments);
   }
 
   function buildFetchUrl(base, options) {
-    return "".concat(base, "?name=").concat(options.name || "", "&page=").concat(options.page || "");
+    return "".concat(base, "?name=").concat(options.name || "", "&page=").concat(options.page || "", "&minPrice=").concat(options.minPrice || "", "&maxPrice=").concat(options.maxPrice, "&type=").concat(options.type);
   }
 
   function buildApiUrl(options) {
@@ -14301,31 +14277,29 @@ function SearchProduct(props) {
   }
 
   function _searchSubmit() {
-    _searchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6(options) {
-      var data;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
+    _searchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(options) {
+      var url, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context6.prev = _context6.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
               setProducts([]);
-              _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(buildFrontUrl({
-                name: options.name,
-                page: options.page
-              }));
-              _context6.next = 4;
+              url = buildFrontUrl(options);
+              _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(url);
+              _context5.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl(options));
 
-            case 4:
-              data = _context6.sent;
+            case 5:
+              data = _context5.sent;
               setProducts(data.data.items);
               setPageState(data.data.pageState);
 
-            case 7:
+            case 8:
             case "end":
-              return _context6.stop();
+              return _context5.stop();
           }
         }
-      }, _callee6);
+      }, _callee5);
     }));
     return _searchSubmit.apply(this, arguments);
   }
@@ -14335,21 +14309,30 @@ function SearchProduct(props) {
   }
 
   function _handleSearchSubmit() {
-    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
+    _handleSearchSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
         while (1) {
-          switch (_context7.prev = _context7.next) {
+          switch (_context6.prev = _context6.next) {
             case 0:
-              searchSubmit({
-                name: searchName
+              setLoading(true);
+              _context6.next = 3;
+              return searchSubmit({
+                name: searchName,
+                page: 1,
+                minPrice: minPrice,
+                maxPrice: maxPrice,
+                type: selectedType
               });
 
-            case 1:
+            case 3:
+              setLoading(false);
+
+            case 4:
             case "end":
-              return _context7.stop();
+              return _context6.stop();
           }
         }
-      }, _callee7);
+      }, _callee6);
     }));
     return _handleSearchSubmit.apply(this, arguments);
   }
@@ -14370,7 +14353,7 @@ function SearchProduct(props) {
         placeholder: "Search",
         connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Button, {
           submit: true,
-          disabled: loading,
+          loading: loading,
           children: "Search"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.FormLayout, {

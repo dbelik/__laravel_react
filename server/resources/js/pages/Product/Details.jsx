@@ -59,6 +59,7 @@ export default function Products() {
 
             setTypeOptions(options);
             setType(options[0].value);
+            setLoading(false);
         }
 
         async function fetchProduct(id) {
@@ -84,9 +85,8 @@ export default function Products() {
         }
 
         async function fetch() {
-            await fetchTypes();
-            await fetchProduct(id);
-            setLoading(false);
+            fetchTypes();
+            fetchProduct(id);
         }
 
         fetch();

@@ -20,32 +20,30 @@ export default function SearchProduct(props) {
     const [products, setProducts] = useState([]);
     const [searchName, setSearchName] = useState("");
     const [pageState, setPageState] = useState({});
+
+    // Search filters
     const [typeOptions, setTypeOptions] = useState([]);
     const [selectedType, setSelectedType] = useState(1);
-    const [minPrice, setMinPrice] = useState();
-    const [maxPrice, setMaxPrice] = useState();
+    const [minPrice, setMinPrice] = useState(0);
+    const [maxPrice, setMaxPrice] = useState(0);
     const [loading, setLoading] = useState(true);
 
     const search = new URLSearchParams(useLocation().search);
 
     useEffect(() => {
-        fetchAll();
+        fetchProductTypes();
+        fetchProducts();
     }, []);
-
-    async function fetchAll() {
-        await fetchProducts();
-        setLoading(false);
-        await fetchProductTypes();
-    }
 
     async function fetchProductTypes() {
         const types = await axios.get("/api/product_type");
-        const res = [];
+        const res = [{ label: "any", value: "" }];
         types.data.forEach((option) => {
             res.push({ label: option.name, value: option.id.toString() });
         });
         setTypeOptions(res);
         setSelectedType(res[0].value);
+        setLoading(false);
     }
 
     async function fetchProducts() {
@@ -53,19 +51,26 @@ export default function SearchProduct(props) {
         const searchName = search.get("name") || "";
         setSearchName(searchName);
 
-        const data = await axios.get(
-            buildApiUrl({
-                name: search.get("name"),
-                page: page,
-            })
-        );
+        const url = buildApiUrl({
+            name: search.get("name"),
+            page: page,
+            minPrice: search.get("minPrice"),
+            maxPrice: search.get("maxPrice"),
+            type: search.get("type"),
+        });
+
+        const data = await axios.get(url);
 
         setProducts(data.data.items);
         setPageState(data.data.pageState);
     }
 
     function buildFetchUrl(base, options) {
-        return `${base}?name=${options.name || ""}&page=${options.page || ""}`;
+        return `${base}?name=${options.name || ""}&page=${
+            options.page || ""
+        }&minPrice=${options.minPrice || ""}&maxPrice=${
+            options.maxPrice
+        }&type=${options.type}`;
     }
 
     function buildApiUrl(options) {
@@ -78,14 +83,23 @@ export default function SearchProduct(props) {
 
     async function searchSubmit(options) {
         setProducts([]);
-        history.push(buildFrontUrl({ name: options.name, page: options.page }));
+        const url = buildFrontUrl(options);
+        history.push(url);
         const data = await axios.get(buildApiUrl(options));
         setProducts(data.data.items);
         setPageState(data.data.pageState);
     }
 
     async function handleSearchSubmit() {
-        searchSubmit({ name: searchName });
+        setLoading(true);
+        await searchSubmit({
+            name: searchName,
+            page: 1,
+            minPrice: minPrice,
+            maxPrice: maxPrice,
+            type: selectedType,
+        });
+        setLoading(false);
     }
 
     return (
@@ -100,7 +114,7 @@ export default function SearchProduct(props) {
                     onChange={setSearchName}
                     placeholder="Search"
                     connectedRight={
-                        <Button submit disabled={loading}>
+                        <Button submit loading={loading}>
                             Search
                         </Button>
                     }
