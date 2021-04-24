@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { Button } from "@shopify/polaris";
 
 import { useUser } from "@provider/User";
 
 export default function Navbar() {
     const { currentUser, logout } = useUser();
-    const [redirect, setRedirect] = useState(false);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
     async function handleLogout() {
+        setLoading(true);
         await logout();
-        setRedirect(true);
+        setLoading(false);
     }
 
     return (
         <nav className="fixed-top py-3 bg-white shadow-sm">
             <div className="content-container d-flex align-items-center justify-content-between">
-                {currentUser && (
-                    <ul className="m-0 p-0 list-style-none">
+                <ul className="m-0 p-0 list-style-none">
+                    {currentUser && (
                         <li>
                             <Link to="/">Dashboard</Link>
                         </li>
-                    </ul>
-                )}
+                    )}
+                </ul>
 
                 <ul className="d-flex align-items-center list-style-none p-0 m-0">
                     {!currentUser ? (
@@ -30,12 +36,13 @@ export default function Navbar() {
                         </li>
                     ) : (
                         <li>
-                            <button
+                            <Button
                                 className="bg-transparent"
                                 onClick={handleLogout}
+                                loading={loading}
                             >
                                 Logout
-                            </button>
+                            </Button>
                         </li>
                     )}
                 </ul>
