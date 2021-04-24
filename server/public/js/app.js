@@ -13634,11 +13634,11 @@ function Products() {
                   error("Product with the given id doesn't exist");
                   _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push("/");
                 } else {
-                  setName(product.Name);
-                  setWeight(product.Weight.toString());
-                  setPrice(product.Price.toString());
-                  setType(product.Type.id);
-                  hlv = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hex.hsv(product.Color);
+                  setName(product.name);
+                  setWeight(product.weight.toString());
+                  setPrice(product.price.toString());
+                  setType(product.type.id.toString());
+                  hlv = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hex.hsv(product.color);
                   resColor = Object.assign({}, color);
                   resColor.hue = hlv[0];
                   resColor.saturation = hlv[1] / 100;
@@ -14073,7 +14073,7 @@ function SearchProduct(props) {
           children: "Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           className: "d-none d-lg-block col-lg-3 pb-3 text-truncate text-muted",
-          children: "Weight"
+          children: "Type"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           className: "d-none d-lg-block col-lg-2 pb-3 text-truncate text-muted",
           children: "Price"
@@ -14085,24 +14085,24 @@ function SearchProduct(props) {
           className: "row border-bottom",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "d-none d-sm-block col-sm-2 col-lg-2 text-truncate py-3 text-muted",
-            children: product.Id
+            children: product.id
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "col-8 col-lg-3 text-truncate py-3",
-            children: product.Name
+            children: product.name
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "d-none d-lg-block col-lg-3 text-truncate py-3 text-muted",
-            children: product.Weight
+            children: product.type.name
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "d-none d-lg-block col-lg-2 text-truncate py-3 text-muted",
-            children: product.Price
+            children: product.price
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "col-4 col-sm-2 col-lg-2 text-truncate py-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-              to: "/products/".concat(product.Id),
+              to: "/products/".concat(product.id),
               children: "Details"
             })
           })]
-        }, product.Id);
+        }, product.id);
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "w-100 d-flex justify-content-center mt-5",

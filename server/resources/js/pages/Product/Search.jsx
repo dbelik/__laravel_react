@@ -78,7 +78,7 @@ export default function SearchProduct(props) {
                         Name
                     </span>
                     <span className="d-none d-lg-block col-lg-3 pb-3 text-truncate text-muted">
-                        Weight
+                        Type
                     </span>
                     <span className="d-none d-lg-block col-lg-2 pb-3 text-truncate text-muted">
                         Price
@@ -87,21 +87,21 @@ export default function SearchProduct(props) {
                 </li>
 
                 {products.map((product) => (
-                    <li key={product.Id} className="row border-bottom">
+                    <li key={product.id} className="row border-bottom">
                         <span className="d-none d-sm-block col-sm-2 col-lg-2 text-truncate py-3 text-muted">
-                            {product.Id}
+                            {product.id}
                         </span>
                         <span className="col-8 col-lg-3 text-truncate py-3">
-                            {product.Name}
+                            {product.name}
                         </span>
                         <span className="d-none d-lg-block col-lg-3 text-truncate py-3 text-muted">
-                            {product.Weight}
+                            {product.type.name}
                         </span>
                         <span className="d-none d-lg-block col-lg-2 text-truncate py-3 text-muted">
-                            {product.Price}
+                            {product.price}
                         </span>
                         <span className="col-4 col-sm-2 col-lg-2 text-truncate py-3">
-                            <Link to={`/products/${product.Id}`}>Details</Link>
+                            <Link to={`/products/${product.id}`}>Details</Link>
                         </span>
                     </li>
                 ))}

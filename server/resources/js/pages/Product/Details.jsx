@@ -67,12 +67,12 @@ export default function Products() {
                 error("Product with the given id doesn't exist");
                 history.push("/");
             } else {
-                setName(product.Name);
-                setWeight(product.Weight.toString());
-                setPrice(product.Price.toString());
-                setType(product.Type.id);
+                setName(product.name);
+                setWeight(product.weight.toString());
+                setPrice(product.price.toString());
+                setType(product.type.id.toString());
 
-                const hlv = convert.hex.hsv(product.Color);
+                const hlv = convert.hex.hsv(product.color);
 
                 const resColor = Object.assign({}, color);
                 resColor.hue = hlv[0];

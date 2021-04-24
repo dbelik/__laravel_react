@@ -49,14 +49,16 @@ class ProductController extends Controller
 
         for ($i = 0; $i < count($products); ++$i) {
             $product = $products[$i];
-            $res['items'][$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
+            $res['items'][$i] = [
+                'name' => $product->name, 
+                'type' => ProductType::find($product->product_type_id), 
+                'id' => $product->id
+            ];
 
-            $attributes = $product->attributes()->get();
-            foreach ($attributes as $attribute) {
-                $model = $attribute->attributable_type;
-                $type = substr($model, strrpos($model, '\\') + 1);
-                $res['items'][$i][$type] = $attribute->attributable->value;
-            }
+            $attributes = $product->attributes()->first();
+            $res['items'][$i]['weight'] = $attributes->weight->value;
+            $res['items'][$i]['price'] = $attributes->price->value;
+            $res['items'][$i]['color'] = $attributes->color->value;
         }
 
         return $res;
@@ -111,12 +113,12 @@ class ProductController extends Controller
         $savedAttrib = $product->attributes()->first();
 
         $res = [
-            'Name' => $product->name, 
-            'Type' => ProductType::find($product->product_type_id), 
-            'Id' => $product->id,
-            'Weight' => $savedAttrib->weight->value,
-            'Color' => $savedAttrib->color->value,
-            'Price' => $savedAttrib->price->value,
+            'name' => $product->name, 
+            'type' => ProductType::find($product->product_type_id), 
+            'id' => $product->id,
+            'weight' => $savedAttrib->weight->value,
+            'color' => $savedAttrib->color->value,
+            'price' => $savedAttrib->price->value,
         ];
 
         return $res;
