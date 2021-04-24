@@ -13815,9 +13815,8 @@ function Products() {
                 });
                 setTypeOptions(options);
                 setType(options[0].value);
-                setLoading(false);
 
-              case 8:
+              case 7:
               case "end":
                 return _context.stop();
             }
@@ -13860,7 +13859,9 @@ function Products() {
                   setColor(resColor);
                 }
 
-              case 4:
+                setLoading(false);
+
+              case 5:
               case "end":
                 return _context2.stop();
             }
@@ -14336,7 +14337,7 @@ function SearchProduct(props) {
           color: "base"
         }),
         onChange: setSearchName,
-        placeholder: "Search",
+        placeholder: "Search by name",
         connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Button, {
           submit: true,
           loading: loading,

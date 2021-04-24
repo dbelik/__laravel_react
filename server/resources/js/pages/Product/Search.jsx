@@ -104,7 +104,7 @@ export default function SearchProduct(props) {
                     value={searchName}
                     prefix={<Icon source={SearchMinor} color="base" />}
                     onChange={setSearchName}
-                    placeholder="Search"
+                    placeholder="Search by name"
                     connectedRight={
                         <Button submit loading={loading}>
                             Search

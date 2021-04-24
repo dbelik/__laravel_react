@@ -59,7 +59,6 @@ export default function Products() {
 
             setTypeOptions(options);
             setType(options[0].value);
-            setLoading(false);
         }
 
         async function fetchProduct(id) {
@@ -82,6 +81,7 @@ export default function Products() {
 
                 setColor(resColor);
             }
+            setLoading(false);
         }
 
         async function fetch() {
