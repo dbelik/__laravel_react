@@ -30,6 +30,7 @@ export default function Products() {
     const [price, setPrice] = useState("");
     const [type, setType] = useState("");
     const [errors, setErrors] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const {success} = useLog();
 
@@ -51,6 +52,7 @@ export default function Products() {
 
             setTypeOptions(options);
             setType(options[0].value);
+            setLoading(false);
         }
 
         fetch();
@@ -87,7 +89,7 @@ export default function Products() {
                         <h2 className="text-center">Add new product</h2>
 
                         <div className="mt-3">
-                            <TextField
+                            <TextField disabled={loading}
                                 focused
                                 placeholder="Product name"
                                 label="Name"
@@ -106,7 +108,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <TextField
+                            <TextField disabled={loading}
                                 placeholder="Weight in kg"
                                 label="Weight"
                                 type="number"
@@ -117,7 +119,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <TextField
+                            <TextField disabled={loading}
                                 placeholder="Price in dollars"
                                 label="Price"
                                 type="number"
@@ -128,7 +130,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <Select
+                            <Select disabled={loading}
                                 label="Product type"
                                 options={typeOptions}
                                 onChange={handleTypeSelectChange}
@@ -137,7 +139,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-5 d-flex justify-content-center">
-                            <Button disabled={submitDisabled} submit>
+                            <Button disabled={loading || submitDisabled} submit>
                                 Create
                             </Button>
                         </div>

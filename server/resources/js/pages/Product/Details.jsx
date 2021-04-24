@@ -7,13 +7,13 @@ import {
     Button,
     Banner,
 } from "@shopify/polaris";
-import { Redirect, useParams } from 'react-router-dom';
+import { Redirect, useParams } from "react-router-dom";
 
 import axios from "axios";
 import convert from "color-convert";
-import history from '@utils/createHistory'
+import history from "@utils/createHistory";
 
-import { useLog } from '@provider/Log';
+import { useLog } from "@provider/Log";
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
@@ -65,13 +65,23 @@ export default function Products() {
             const product = (await axios.get(`/api/products/${id}`)).data;
             if (product.length === 0) {
                 error("Product with the given id doesn't exist");
-                history.push('/');
-            }
-            else {
+                history.push("/");
+            } else {
                 setName(product.Name);
                 setWeight(product.Weight.toString());
                 setPrice(product.Price.toString());
                 setType(product.Type.id);
+
+                const hlv = convert.hex.hsv(product.Color);
+
+                const resColor = Object.assign({}, color);
+                resColor.hue = hlv[0];
+                resColor.saturation = hlv[1] / 100;
+                resColor.brightness = hlv[2] / 100;
+
+                console.log(resColor);
+
+                setColor(resColor);
             }
         }
 
@@ -100,7 +110,7 @@ export default function Products() {
 
         try {
             const res = await axios({
-                method: 'put',
+                method: "put",
                 url: "/api/products",
                 data: options,
             });
@@ -112,14 +122,14 @@ export default function Products() {
 
     async function deleteProduct() {
         const res = await axios({
-            method: 'delete',
+            method: "delete",
             url: `/api/products/${id}`,
         });
         success("Successfully deleted item");
         setRedirect(true);
     }
 
-    if (redirect) return <Redirect to="/" />
+    if (redirect) return <Redirect to="/" />;
 
     return (
         <Fragment>
@@ -186,19 +196,24 @@ export default function Products() {
                             </div>
 
                             <div className="mt-5 d-flex justify-content-center">
-                                <Button
-                                    disabled={loading || submitDisabled}
-                                    onClick={deleteProduct}
-                                    destructive
-                                >
-                                    Delete
-                                </Button>
-                                <Button
-                                    disabled={loading || submitDisabled}
-                                    submit
-                                >
-                                    Save
-                                </Button>
+                                <div className="mr-4">
+                                    <Button
+                                        disabled={loading || submitDisabled}
+                                        onClick={deleteProduct}
+                                        destructive
+                                    >
+                                        Delete
+                                    </Button>
+                                </div>
+
+                                <div>
+                                    <Button
+                                        disabled={loading || submitDisabled}
+                                        submit
+                                    >
+                                        Save
+                                    </Button>
+                                </div>
                             </div>
                         </Fragment>
                     </Form>

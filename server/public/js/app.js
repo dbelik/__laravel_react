@@ -3182,6 +3182,122 @@ var styles = {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonGroup": () => (/* binding */ ButtonGroup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
+/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js");
+
+
+
+
+
+
+function ButtonGroup({
+  children,
+  spacing,
+  segmented,
+  fullWidth,
+  connectedTop
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.ButtonGroup, spacing && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default[spacing], segmented && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.segmented, fullWidth && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.fullWidth);
+  const contents = (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.elementChildren)(children).map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, {
+    button: child,
+    key: index
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    "data-buttongroup-segmented": segmented,
+    "data-buttongroup-connected-top": connectedTop,
+    "data-buttongroup-full-width": fullWidth
+  }, contents);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "ButtonGroup": "Polaris-ButtonGroup",
+  "Item": "Polaris-ButtonGroup__Item",
+  "Item-plain": "Polaris-ButtonGroup__Item--plain",
+  "segmented": "Polaris-ButtonGroup--segmented",
+  "Item-focused": "Polaris-ButtonGroup__Item--focused",
+  "fullWidth": "Polaris-ButtonGroup--fullWidth",
+  "extraTight": "Polaris-ButtonGroup--extraTight",
+  "tight": "Polaris-ButtonGroup--tight",
+  "loose": "Polaris-ButtonGroup--loose"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
+/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
+
+
+
+
+
+function Item({
+  button
+}) {
+  const {
+    value: focused,
+    setTrue: forceTrueFocused,
+    setFalse: forceFalseFocused
+  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(false);
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Item, focused && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-focused"], button.props.plain && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-plain"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    onFocus: forceTrueFocused,
+    onBlur: forceFalseFocused
+  }, button);
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js ***!
@@ -3456,122 +3572,6 @@ function buttonFrom(_ref, overrides, key) {
     key: key,
     onClick: onAction
   }, action, overrides), content);
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js ***!
-  \**************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ButtonGroup": () => (/* binding */ ButtonGroup)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
-/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
-/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
-/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js");
-
-
-
-
-
-
-function ButtonGroup({
-  children,
-  spacing,
-  segmented,
-  fullWidth,
-  connectedTop
-}) {
-  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.ButtonGroup, spacing && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default[spacing], segmented && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.segmented, fullWidth && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.fullWidth);
-  const contents = (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.elementChildren)(children).map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, {
-    button: child,
-    key: index
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: className,
-    "data-buttongroup-segmented": segmented,
-    "data-buttongroup-connected-top": connectedTop,
-    "data-buttongroup-full-width": fullWidth
-  }, contents);
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js ***!
-  \*******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var styles = {
-  "ButtonGroup": "Polaris-ButtonGroup",
-  "Item": "Polaris-ButtonGroup__Item",
-  "Item-plain": "Polaris-ButtonGroup__Item--plain",
-  "segmented": "Polaris-ButtonGroup--segmented",
-  "Item-focused": "Polaris-ButtonGroup__Item--focused",
-  "fullWidth": "Polaris-ButtonGroup--fullWidth",
-  "extraTight": "Polaris-ButtonGroup--extraTight",
-  "tight": "Polaris-ButtonGroup--tight",
-  "loose": "Polaris-ButtonGroup--loose"
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
-
-
-/***/ }),
-
-/***/ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/components/Item/Item.js ***!
-  \***********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Item": () => (/* binding */ Item)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
-/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
-/* harmony import */ var _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ButtonGroup.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.scss.js");
-
-
-
-
-
-function Item({
-  button
-}) {
-  const {
-    value: focused,
-    setTrue: forceTrueFocused,
-    setFalse: forceFalseFocused
-  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(false);
-  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Item, focused && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-focused"], button.props.plain && _ButtonGroup_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-plain"]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: className,
-    onFocus: forceTrueFocused,
-    onBlur: forceFalseFocused
-  }, button);
 }
 
 
@@ -13261,6 +13261,11 @@ function Products() {
       errors = _useState12[0],
       setErrors = _useState12[1];
 
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState14 = _slicedToArray(_useState13, 2),
+      loading = _useState14[0],
+      setLoading = _useState14[1];
+
   var _useLog = (0,_provider_Log__WEBPACK_IMPORTED_MODULE_4__.useLog)(),
       success = _useLog.success;
 
@@ -13268,10 +13273,10 @@ function Products() {
     return setType(type);
   }, []); // Make a request to get product types
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState14 = _slicedToArray(_useState13, 2),
-      typeOptions = _useState14[0],
-      setTypeOptions = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState16 = _slicedToArray(_useState15, 2),
+      typeOptions = _useState16[0],
+      setTypeOptions = _useState16[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     function fetch() {
@@ -13299,8 +13304,9 @@ function Products() {
                 });
                 setTypeOptions(options);
                 setType(options[0].value);
+                setLoading(false);
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -13313,10 +13319,10 @@ function Products() {
     fetch();
   }, []); // Submit button
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState16 = _slicedToArray(_useState15, 2),
-      submitDisabled = _useState16[0],
-      setSubmitDisabled = _useState16[1]; // Submit handler
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      submitDisabled = _useState18[0],
+      setSubmitDisabled = _useState18[1]; // Submit handler
 
 
   function handleFormSubmit() {
@@ -13381,6 +13387,7 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+              disabled: loading,
               focused: true,
               placeholder: "Product name",
               label: "Name",
@@ -13400,6 +13407,7 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+              disabled: loading,
               placeholder: "Weight in kg",
               label: "Weight",
               type: "number",
@@ -13410,6 +13418,7 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
+              disabled: loading,
               placeholder: "Price in dollars",
               label: "Price",
               type: "number",
@@ -13420,6 +13429,7 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.Select, {
+              disabled: loading,
               label: "Product type",
               options: typeOptions,
               onChange: handleTypeSelectChange,
@@ -13428,7 +13438,7 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-5 d-flex justify-content-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Button, {
-              disabled: submitDisabled,
+              disabled: loading || submitDisabled,
               submit: true,
               children: "Create"
             })
@@ -13609,7 +13619,7 @@ function Products() {
 
     function _fetchProduct() {
       _fetchProduct = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(id) {
-        var product;
+        var product, hlv, resColor;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -13622,12 +13632,19 @@ function Products() {
 
                 if (product.length === 0) {
                   error("Product with the given id doesn't exist");
-                  _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push('/');
+                  _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push("/");
                 } else {
                   setName(product.Name);
                   setWeight(product.Weight.toString());
                   setPrice(product.Price.toString());
                   setType(product.Type.id);
+                  hlv = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hex.hsv(product.Color);
+                  resColor = Object.assign({}, color);
+                  resColor.hue = hlv[0];
+                  resColor.saturation = hlv[1] / 100;
+                  resColor.brightness = hlv[2] / 100;
+                  console.log(resColor);
+                  setColor(resColor);
                 }
 
               case 4:
@@ -13702,7 +13719,7 @@ function Products() {
               _context4.prev = 3;
               _context4.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()({
-                method: 'put',
+                method: "put",
                 url: "/api/products",
                 data: options
               });
@@ -13743,7 +13760,7 @@ function Products() {
             case 0:
               _context5.next = 2;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()({
-                method: 'delete',
+                method: "delete",
                 url: "/api/products/".concat(id)
               });
 
@@ -13830,15 +13847,20 @@ function Products() {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "mt-5 d-flex justify-content-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
-                disabled: loading || submitDisabled,
-                onClick: deleteProduct,
-                destructive: true,
-                children: "Delete"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
-                disabled: loading || submitDisabled,
-                submit: true,
-                children: "Save"
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "mr-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
+                  disabled: loading || submitDisabled,
+                  onClick: deleteProduct,
+                  destructive: true,
+                  children: "Delete"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
+                  disabled: loading || submitDisabled,
+                  submit: true,
+                  children: "Save"
+                })
               })]
             })]
           })
@@ -13979,19 +14001,20 @@ function SearchProduct(props) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
+              setProducts([]);
               _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__.default.push(buildFrontUrl({
                 name: options.name,
                 page: options.page
               }));
-              _context4.next = 3;
+              _context4.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl(options));
 
-            case 3:
+            case 4:
               data = _context4.sent;
               setProducts(data.data.items);
               setPageState(data.data.pageState);
 
-            case 6:
+            case 7:
             case "end":
               return _context4.stop();
           }
@@ -20239,7 +20262,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\n:root {\n    font-size: 14px;\n\n    /* Sizes */\n    --skip-navbar-height: 6rem;\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\n\n    /* Font sizes */\n    --font-size-h1: 3rem;\n    --font-size-h2: 2rem;\n\n    /* Backgrounds */\n    --bg-form: #ffffff;\n\n    /* Border radius */\n    --border-radius: 0.5rem;\n}\n\n/* Tag overloads */\nh1 {\n    font-size: var(--font-size-h1);\n    margin-bottom: 1.5rem;\n}\n\nh2 {\n    font-size: var(--font-size-h2);\n    margin-bottom: 1.5rem;\n}\n\na:hover,\na:focus {\n    text-decoration: none;\n}\n\n/* Common classes */\n/* Containers */\n.content-container,\n.form-container {\n    margin: auto;\n    width: 100%;\n}\n\n.content-container {\n    max-width: 1280px;\n    padding: 0 2rem;\n}\n\n.form-container {\n    max-width: 560px;\n}\n\n/* List styles */\n.list-style-none {\n    list-style: none;\n}\n\n/* Margins/paddings */\n.return-to-navbar {\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\n}\n\n/* Sizes */\n.h-100vh {\n    height: 100vh;\n}\n.w-100vw {\n    width: 100vw;\n}\n\n.min-h-100vh {\n    min-height: 100vh;\n    height: auto;\n}\n\n.skip-navbar-height {\n    padding-top: var(--skip-navbar-height);\n}\n.min-height-screen-skip-navbar {\n    min-height: var(--height-screen-skip-navbar);\n}\n\n/* Backgrounds */\n.bg-form {\n    background-color: var(--bg-form);\n}\n\n/* Border radius */\n.rounded {\n    border-radius: var(--border-radius) !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\r\n:root {\r\n    font-size: 14px;\r\n\r\n    /* Sizes */\r\n    --skip-navbar-height: 6rem;\r\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\r\n\r\n    /* Font sizes */\r\n    --font-size-h1: 3rem;\r\n    --font-size-h2: 2rem;\r\n\r\n    /* Backgrounds */\r\n    --bg-form: #ffffff;\r\n\r\n    /* Border radius */\r\n    --border-radius: 0.5rem;\r\n}\r\n\r\n/* Tag overloads */\r\nh1 {\r\n    font-size: var(--font-size-h1);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\nh2 {\r\n    font-size: var(--font-size-h2);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n/* Common classes */\r\n/* Containers */\r\n.content-container,\r\n.form-container {\r\n    margin: auto;\r\n    width: 100%;\r\n}\r\n\r\n.content-container {\r\n    max-width: 1280px;\r\n    padding: 0 2rem;\r\n}\r\n\r\n.form-container {\r\n    max-width: 560px;\r\n}\r\n\r\n/* List styles */\r\n.list-style-none {\r\n    list-style: none;\r\n}\r\n\r\n/* Margins/paddings */\r\n.return-to-navbar {\r\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\r\n}\r\n\r\n/* Sizes */\r\n.h-100vh {\r\n    height: 100vh;\r\n}\r\n.w-100vw {\r\n    width: 100vw;\r\n}\r\n\r\n.min-h-100vh {\r\n    min-height: 100vh;\r\n    height: auto;\r\n}\r\n\r\n.skip-navbar-height {\r\n    padding-top: var(--skip-navbar-height);\r\n}\r\n.min-height-screen-skip-navbar {\r\n    min-height: var(--height-screen-skip-navbar);\r\n}\r\n\r\n/* Backgrounds */\r\n.bg-form {\r\n    background-color: var(--bg-form);\r\n}\r\n\r\n/* Border radius */\r\n.rounded {\r\n    border-radius: var(--border-radius) !important;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22037,19 +22060,6 @@ var root = {
 };
 
 module.exports = root;
-
-
-/***/ }),
-
-/***/ "./node_modules/isarray/index.js":
-/*!***************************************!*\
-  !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-/***/ ((module) => {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),
@@ -51134,7 +51144,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
 
 /**
  * Expose `pathToRegexp`.
@@ -51560,6 +51570,19 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
+  \*******************************************************************/
+/***/ ((module) => {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),

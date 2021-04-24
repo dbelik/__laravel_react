@@ -45,6 +45,7 @@ export default function SearchProduct(props) {
     }
 
     async function searchSubmit(options) {
+        setProducts([]);
         history.push(buildFrontUrl({ name: options.name, page: options.page}));
         const data = await axios.get(buildApiUrl(options));
         setProducts(data.data.items);

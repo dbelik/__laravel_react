@@ -16,4 +16,8 @@ class Color extends Model
     {
         return $this->morphMany(Attribute::class, 'attributable');
     }
+
+    public function colorable() {
+        return $this->morphTo();
+    }
 }

@@ -139,7 +139,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update($id)
     {
         // Update product
         $product = Product::find($id);
@@ -148,20 +148,12 @@ class ProductController extends Controller
             return response("Couldn't find product with the given id")->status(404);
         }
 
-        $product->name = $request->name;
-        $product->product_type_id = $request->type_id;
-        $product->save();
+        // $product->name = $request->name;
+        // $product->product_type_id = $request->type_id;
+        // $product->save();
 
         $savedAttrib = $product->attributes();
-
-        foreach ($savedAttrib as $newAttrib) {
-            $savedAttrib->product_type_id = $request->type_id;
-
-            // $new_attrib = new $attrib['class']();
-            // $new_attrib->value = $attrib['value'];
-            // $new_attrib->save();
-            // $new_attrib->attribute()->save($attribute);
-        }
+        dd($savedAttrib->first()->color());
     }
 
     /**
