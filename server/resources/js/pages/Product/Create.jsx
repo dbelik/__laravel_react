@@ -10,7 +10,7 @@ import {
 
 import axios from "axios";
 import convert from "color-convert";
-import { useLog } from '@provider/Log'
+import { useLog } from "@provider/Log";
 
 import FormContainer from "@components/containers/Form.jsx";
 import CenterContainer from "@components/containers/Center.jsx";
@@ -32,7 +32,7 @@ export default function Products() {
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const {success} = useLog();
+    const { success } = useLog();
 
     const handleTypeSelectChange = useCallback((type) => setType(type), []);
 
@@ -89,7 +89,7 @@ export default function Products() {
                         <h2 className="text-center">Add new product</h2>
 
                         <div className="mt-3">
-                            <TextField disabled={loading}
+                            <TextField
                                 focused
                                 placeholder="Product name"
                                 label="Name"
@@ -108,7 +108,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <TextField disabled={loading}
+                            <TextField
                                 placeholder="Weight in kg"
                                 label="Weight"
                                 type="number"
@@ -119,7 +119,7 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <TextField disabled={loading}
+                            <TextField
                                 placeholder="Price in dollars"
                                 label="Price"
                                 type="number"
@@ -130,7 +130,8 @@ export default function Products() {
                         </div>
 
                         <div className="mt-3">
-                            <Select disabled={loading}
+                            <Select
+                                disabled={loading}
                                 label="Product type"
                                 options={typeOptions}
                                 onChange={handleTypeSelectChange}
@@ -139,7 +140,11 @@ export default function Products() {
                         </div>
 
                         <div className="mt-5 d-flex justify-content-center">
-                            <Button disabled={loading || submitDisabled} submit>
+                            <Button
+                                loading={loading || submitDisabled}
+                                submit
+                                primary
+                            >
                                 Create
                             </Button>
                         </div>

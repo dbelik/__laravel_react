@@ -66,7 +66,7 @@ export default function Login() {
                         </div>
 
                         <div className="mt-4 d-flex justify-content-center">
-                            <Button disabled={submitDisabled} submit>
+                            <Button loading={submitDisabled} submit>
                                 Login
                             </Button>
                         </div>

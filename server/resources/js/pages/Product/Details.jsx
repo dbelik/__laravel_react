@@ -92,12 +92,9 @@ export default function Products() {
         fetch();
     }, []);
 
-    // Submit button
-    const [submitDisabled, setSubmitDisabled] = useState(false);
-
     // Submit handler
-    async function handleFormSubmit() {
-        setSubmitDisabled(true);
+    async function saveProduct() {
+        setLoading(true);
         const rgb = convert.hsv.hex(
             color.hue,
             color.saturation * 100,
@@ -112,20 +109,23 @@ export default function Products() {
                 url: `/api/products/${id}`,
                 data: options,
             });
-            success('Product has been saved!');
+            success("Product has been saved!");
         } catch (e) {
+            console.log(e.response)
             setErrors(e.response.data.errors);
         }
-        setSubmitDisabled(false);
+        setLoading(false);
     }
 
     async function deleteProduct() {
+        setLoading(true);
         const res = await axios({
             method: "delete",
             url: `/api/products/${id}`,
         });
         success("Successfully deleted item");
         setRedirect(true);
+        setLoading(false);
     }
 
     if (redirect) return <Redirect to="/" />;
@@ -136,7 +136,7 @@ export default function Products() {
 
             <CenterContainer className="min-height-screen-skip-navbar">
                 <FormContainer>
-                    <Form onSubmit={handleFormSubmit}>
+                    <Form onSubmit={saveProduct}>
                         <Fragment>
                             <h2 className="text-center">Edit product</h2>
 
@@ -197,7 +197,7 @@ export default function Products() {
                             <div className="mt-5 d-flex justify-content-center">
                                 <div className="mr-4">
                                     <Button
-                                        disabled={loading || submitDisabled}
+                                        loading={loading}
                                         onClick={deleteProduct}
                                         destructive
                                     >
@@ -206,10 +206,7 @@ export default function Products() {
                                 </div>
 
                                 <div>
-                                    <Button
-                                        disabled={loading || submitDisabled}
-                                        submit
-                                    >
+                                    <Button loading={loading} submit primary>
                                         Save
                                     </Button>
                                 </div>

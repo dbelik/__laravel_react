@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { TextField, Button, Form, Pagination } from "@shopify/polaris";
+import { TextField, Form, Pagination, Icon } from "@shopify/polaris";
+import { SearchMinor } from "@shopify/polaris-icons";
 
 import axios from "axios";
-import history from '@utils/createHistory';
+import history from "@utils/createHistory";
 
 import Title from "@components/global/Title.jsx";
 
@@ -19,14 +20,16 @@ export default function SearchProduct(props) {
     }, []);
 
     async function fetchProducts() {
-        const page = parseInt(search.get('page')) || 1;
-        const searchName = search.get('name') || "";
+        const page = parseInt(search.get("page")) || 1;
+        const searchName = search.get("name") || "";
         setSearchName(searchName);
 
-        const data = await axios.get(buildApiUrl({
-            name: search.get('name'),
-            page: page,
-        }));
+        const data = await axios.get(
+            buildApiUrl({
+                name: search.get("name"),
+                page: page,
+            })
+        );
 
         setProducts(data.data.items);
         setPageState(data.data.pageState);
@@ -37,16 +40,16 @@ export default function SearchProduct(props) {
     }
 
     function buildApiUrl(options) {
-        return buildFetchUrl('/api/products', options);
+        return buildFetchUrl("/api/products", options);
     }
 
     function buildFrontUrl(options) {
-        return buildFetchUrl('/search', options);
+        return buildFetchUrl("/search", options);
     }
 
     async function searchSubmit(options) {
         setProducts([]);
-        history.push(buildFrontUrl({ name: options.name, page: options.page}));
+        history.push(buildFrontUrl({ name: options.name, page: options.page }));
         const data = await axios.get(buildApiUrl(options));
         setProducts(data.data.items);
         setPageState(data.data.pageState);
@@ -64,7 +67,9 @@ export default function SearchProduct(props) {
                 <TextField
                     label="Search"
                     value={searchName}
+                    prefix={<Icon source={SearchMinor} color="base" />}
                     onChange={setSearchName}
+                    placeholder="Search"
                 />
             </Form>
 
@@ -111,12 +116,17 @@ export default function SearchProduct(props) {
                 <Pagination
                     hasPrevious={pageState.prevUrl}
                     onPrevious={async () => {
-                        searchSubmit({ name: searchName, page: pageState.currentPage - 1});
+                        searchSubmit({
+                            name: searchName,
+                            page: pageState.currentPage - 1,
+                        });
                     }}
-
                     hasNext={pageState.nextUrl}
                     onNext={async () => {
-                        searchSubmit({ name: searchName, page: pageState.currentPage + 1});
+                        searchSubmit({
+                            name: searchName,
+                            page: pageState.currentPage + 1,
+                        });
                     }}
                 />
             </div>

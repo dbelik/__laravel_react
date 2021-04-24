@@ -156,7 +156,7 @@ class ProductController extends Controller
         $product->save();
 
         $savedAttrib = $product->attributes()->first();
-        $savedAttrib->product_type_id = $request->product_type_id;
+        $savedAttrib->product_type_id = $request->type_id;
 
         $savedAttrib->weight->value = $request->weight;
         $savedAttrib->weight->save();

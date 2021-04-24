@@ -17,6 +17,12 @@
     --border-radius: 0.5rem;
 }
 
+@media (max-width: 620px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
 /* Tag overloads */
 h1 {
     font-size: var(--font-size-h1);

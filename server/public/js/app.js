@@ -459,6 +459,37 @@ var SvgDiamondAlertMajor = function SvgDiamondAlertMajor(props) {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris-icons/dist/icons/SearchMinor.svg.mjs":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris-icons/dist/icons/SearchMinor.svg.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "S": () => (/* binding */ SvgSearchMinor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var _ref =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"
+});
+
+var SvgSearchMinor = function SvgSearchMinor(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    viewBox: "0 0 20 20"
+  }, props), _ref);
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris-icons/dist/icons/SelectMinor.svg.mjs":
 /*!****************************************************************************!*\
   !*** ./node_modules/@shopify/polaris-icons/dist/icons/SelectMinor.svg.mjs ***!
@@ -12868,7 +12899,7 @@ function Login() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-4 d-flex justify-content-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Button, {
-              disabled: submitDisabled,
+              loading: submitDisabled,
               submit: true,
               children: "Login"
             })
@@ -13074,7 +13105,7 @@ function Register() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "mt-4 d-flex justify-content-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Button, {
-              disabled: submitDisabled,
+              loading: submitDisabled,
               submit: true,
               children: "Register"
             })
@@ -13387,7 +13418,6 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
-              disabled: loading,
               focused: true,
               placeholder: "Product name",
               label: "Name",
@@ -13407,7 +13437,6 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
-              disabled: loading,
               placeholder: "Weight in kg",
               label: "Weight",
               type: "number",
@@ -13418,7 +13447,6 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.TextField, {
-              disabled: loading,
               placeholder: "Price in dollars",
               label: "Price",
               type: "number",
@@ -13438,8 +13466,9 @@ function Products() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "mt-5 d-flex justify-content-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_13__.Button, {
-              disabled: loading || submitDisabled,
+              loading: loading || submitDisabled,
               submit: true,
+              primary: true,
               children: "Create"
             })
           })]
@@ -13687,26 +13716,20 @@ function Products() {
     }
 
     fetch();
-  }, []); // Submit button
+  }, []); // Submit handler
 
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState20 = _slicedToArray(_useState19, 2),
-      submitDisabled = _useState20[0],
-      setSubmitDisabled = _useState20[1]; // Submit handler
-
-
-  function handleFormSubmit() {
-    return _handleFormSubmit.apply(this, arguments);
+  function saveProduct() {
+    return _saveProduct.apply(this, arguments);
   }
 
-  function _handleFormSubmit() {
-    _handleFormSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+  function _saveProduct() {
+    _saveProduct = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
       var rgb, options, res;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              setSubmitDisabled(true);
+              setLoading(true);
               rgb = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hsv.hex(color.hue, color.saturation * 100, color.brightness * 100);
               options = {
                 weight: weight,
@@ -13725,26 +13748,27 @@ function Products() {
 
             case 6:
               res = _context4.sent;
-              success('Product has been saved!');
-              _context4.next = 13;
+              success("Product has been saved!");
+              _context4.next = 14;
               break;
 
             case 10:
               _context4.prev = 10;
               _context4.t0 = _context4["catch"](3);
+              console.log(_context4.t0.response);
               setErrors(_context4.t0.response.data.errors);
 
-            case 13:
-              setSubmitDisabled(false);
-
             case 14:
+              setLoading(false);
+
+            case 15:
             case "end":
               return _context4.stop();
           }
         }
       }, _callee4, null, [[3, 10]]);
     }));
-    return _handleFormSubmit.apply(this, arguments);
+    return _saveProduct.apply(this, arguments);
   }
 
   function deleteProduct() {
@@ -13758,18 +13782,20 @@ function Products() {
         while (1) {
           switch (_context5.prev = _context5.next) {
             case 0:
-              _context5.next = 2;
+              setLoading(true);
+              _context5.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()({
                 method: "delete",
                 url: "/api/products/".concat(id)
               });
 
-            case 2:
+            case 3:
               res = _context5.sent;
               success("Successfully deleted item");
               setRedirect(true);
+              setLoading(false);
 
-            case 5:
+            case 7:
             case "end":
               return _context5.stop();
           }
@@ -13789,7 +13815,7 @@ function Products() {
       className: "min-height-screen-skip-navbar",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_containers_Form_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Form, {
-          onSubmit: handleFormSubmit,
+          onSubmit: saveProduct,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
               className: "text-center",
@@ -13850,15 +13876,16 @@ function Products() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                 className: "mr-4",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
-                  disabled: loading || submitDisabled,
+                  loading: loading,
                   onClick: deleteProduct,
                   destructive: true,
                   children: "Delete"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_15__.Button, {
-                  disabled: loading || submitDisabled,
+                  loading: loading,
                   submit: true,
+                  primary: true,
                   children: "Save"
                 })
               })]
@@ -13887,10 +13914,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/SearchMinor.svg.mjs");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _utils_createHistory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @utils/createHistory */ "./resources/js/utils/createHistory.js");
@@ -13913,6 +13942,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -13954,12 +13984,12 @@ function SearchProduct(props) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              page = parseInt(search.get('page')) || 1;
-              searchName = search.get('name') || "";
+              page = parseInt(search.get("page")) || 1;
+              searchName = search.get("name") || "";
               setSearchName(searchName);
               _context3.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get(buildApiUrl({
-                name: search.get('name'),
+                name: search.get("name"),
                 page: page
               }));
 
@@ -13983,11 +14013,11 @@ function SearchProduct(props) {
   }
 
   function buildApiUrl(options) {
-    return buildFetchUrl('/api/products', options);
+    return buildFetchUrl("/api/products", options);
   }
 
   function buildFrontUrl(options) {
-    return buildFetchUrl('/search', options);
+    return buildFetchUrl("/search", options);
   }
 
   function searchSubmit(_x) {
@@ -14056,7 +14086,12 @@ function SearchProduct(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.TextField, {
         label: "Search",
         value: searchName,
-        onChange: setSearchName
+        prefix: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Icon, {
+          source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_10__.S,
+          color: "base"
+        }),
+        onChange: setSearchName,
+        placeholder: "Search"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "mt-5",
@@ -14097,7 +14132,7 @@ function SearchProduct(props) {
             children: product.price
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "col-4 col-sm-2 col-lg-2 text-truncate py-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
               to: "/products/".concat(product.id),
               children: "Details"
             })
@@ -14106,7 +14141,7 @@ function SearchProduct(props) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "w-100 d-flex justify-content-center mt-5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.Pagination, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_12__.Pagination, {
         hasPrevious: pageState.prevUrl,
         onPrevious: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
@@ -20262,7 +20297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\r\n:root {\r\n    font-size: 14px;\r\n\r\n    /* Sizes */\r\n    --skip-navbar-height: 6rem;\r\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\r\n\r\n    /* Font sizes */\r\n    --font-size-h1: 3rem;\r\n    --font-size-h2: 2rem;\r\n\r\n    /* Backgrounds */\r\n    --bg-form: #ffffff;\r\n\r\n    /* Border radius */\r\n    --border-radius: 0.5rem;\r\n}\r\n\r\n/* Tag overloads */\r\nh1 {\r\n    font-size: var(--font-size-h1);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\nh2 {\r\n    font-size: var(--font-size-h2);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n/* Common classes */\r\n/* Containers */\r\n.content-container,\r\n.form-container {\r\n    margin: auto;\r\n    width: 100%;\r\n}\r\n\r\n.content-container {\r\n    max-width: 1280px;\r\n    padding: 0 2rem;\r\n}\r\n\r\n.form-container {\r\n    max-width: 560px;\r\n}\r\n\r\n/* List styles */\r\n.list-style-none {\r\n    list-style: none;\r\n}\r\n\r\n/* Margins/paddings */\r\n.return-to-navbar {\r\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\r\n}\r\n\r\n/* Sizes */\r\n.h-100vh {\r\n    height: 100vh;\r\n}\r\n.w-100vw {\r\n    width: 100vw;\r\n}\r\n\r\n.min-h-100vh {\r\n    min-height: 100vh;\r\n    height: auto;\r\n}\r\n\r\n.skip-navbar-height {\r\n    padding-top: var(--skip-navbar-height);\r\n}\r\n.min-height-screen-skip-navbar {\r\n    min-height: var(--height-screen-skip-navbar);\r\n}\r\n\r\n/* Backgrounds */\r\n.bg-form {\r\n    background-color: var(--bg-form);\r\n}\r\n\r\n/* Border radius */\r\n.rounded {\r\n    border-radius: var(--border-radius) !important;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Variable declarations */\r\n:root {\r\n    font-size: 14px;\r\n\r\n    /* Sizes */\r\n    --skip-navbar-height: 6rem;\r\n    --height-screen-skip-navbar: calc(100vh - var(--skip-navbar-height));\r\n\r\n    /* Font sizes */\r\n    --font-size-h1: 3rem;\r\n    --font-size-h2: 2rem;\r\n\r\n    /* Backgrounds */\r\n    --bg-form: #ffffff;\r\n\r\n    /* Border radius */\r\n    --border-radius: 0.5rem;\r\n}\r\n\r\n@media (max-width: 620px) {\r\n    :root {\r\n        font-size: 10px;\r\n    }\r\n}\r\n\r\n/* Tag overloads */\r\nh1 {\r\n    font-size: var(--font-size-h1);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\nh2 {\r\n    font-size: var(--font-size-h2);\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n/* Common classes */\r\n/* Containers */\r\n.content-container,\r\n.form-container {\r\n    margin: auto;\r\n    width: 100%;\r\n}\r\n\r\n.content-container {\r\n    max-width: 1280px;\r\n    padding: 0 2rem;\r\n}\r\n\r\n.form-container {\r\n    max-width: 560px;\r\n}\r\n\r\n/* List styles */\r\n.list-style-none {\r\n    list-style: none;\r\n}\r\n\r\n/* Margins/paddings */\r\n.return-to-navbar {\r\n    margin-top: calc(-1 * var(--skip-navbar-height) / 2);\r\n}\r\n\r\n/* Sizes */\r\n.h-100vh {\r\n    height: 100vh;\r\n}\r\n.w-100vw {\r\n    width: 100vw;\r\n}\r\n\r\n.min-h-100vh {\r\n    min-height: 100vh;\r\n    height: auto;\r\n}\r\n\r\n.skip-navbar-height {\r\n    padding-top: var(--skip-navbar-height);\r\n}\r\n.min-height-screen-skip-navbar {\r\n    min-height: var(--height-screen-skip-navbar);\r\n}\r\n\r\n/* Backgrounds */\r\n.bg-form {\r\n    background-color: var(--bg-form);\r\n}\r\n\r\n/* Border radius */\r\n.rounded {\r\n    border-radius: var(--border-radius) !important;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
