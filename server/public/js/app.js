@@ -13643,7 +13643,6 @@ function Products() {
                   resColor.hue = hlv[0];
                   resColor.saturation = hlv[1] / 100;
                   resColor.brightness = hlv[2] / 100;
-                  console.log(resColor);
                   setColor(resColor);
                 }
 
@@ -13720,29 +13719,30 @@ function Products() {
               _context4.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()({
                 method: "put",
-                url: "/api/products",
+                url: "/api/products/".concat(id),
                 data: options
               });
 
             case 6:
               res = _context4.sent;
-              _context4.next = 12;
+              success('Product has been saved!');
+              _context4.next = 13;
               break;
 
-            case 9:
-              _context4.prev = 9;
+            case 10:
+              _context4.prev = 10;
               _context4.t0 = _context4["catch"](3);
               setErrors(_context4.t0.response.data.errors);
 
-            case 12:
+            case 13:
               setSubmitDisabled(false);
 
-            case 13:
+            case 14:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[3, 9]]);
+      }, _callee4, null, [[3, 10]]);
     }));
     return _handleFormSubmit.apply(this, arguments);
   }

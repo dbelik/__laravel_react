@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/products/{id}', [ProductController::class, 'show']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
-    // Route::get('/products/{id}', [ProductController::class, 'update']);
+    Route::put('/products/{id}', [ProductController::class, 'update']);
 });
 
 // Used for authentication on the frontend

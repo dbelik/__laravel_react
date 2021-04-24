@@ -79,8 +79,6 @@ export default function Products() {
                 resColor.saturation = hlv[1] / 100;
                 resColor.brightness = hlv[2] / 100;
 
-                console.log(resColor);
-
                 setColor(resColor);
             }
         }
@@ -111,9 +109,10 @@ export default function Products() {
         try {
             const res = await axios({
                 method: "put",
-                url: "/api/products",
+                url: `/api/products/${id}`,
                 data: options,
             });
+            success('Product has been saved!');
         } catch (e) {
             setErrors(e.response.data.errors);
         }

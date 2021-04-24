@@ -108,15 +108,16 @@ class ProductController extends Controller
             return [];
         }
 
-        $res = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
+        $savedAttrib = $product->attributes()->first();
 
-        $attributes = $product->productType->attributes()->get();
-        foreach ($attributes as $attribute) {
-            $model = $attribute->attributable_type;
-            $type = substr($model, strrpos($model, '\\') + 1);
-
-            $res[$type] = $attribute->attributable->value;
-        }
+        $res = [
+            'Name' => $product->name, 
+            'Type' => ProductType::find($product->product_type_id), 
+            'Id' => $product->id,
+            'Weight' => $savedAttrib->weight->value,
+            'Color' => $savedAttrib->color->value,
+            'Price' => $savedAttrib->price->value,
+        ];
 
         return $res;
     }
@@ -139,7 +140,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(ProductRequest $request, $id)
     {
         // Update product
         $product = Product::find($id);
@@ -148,12 +149,23 @@ class ProductController extends Controller
             return response("Couldn't find product with the given id")->status(404);
         }
 
-        // $product->name = $request->name;
-        // $product->product_type_id = $request->type_id;
-        // $product->save();
+        $product->name = $request->name;
+        $product->product_type_id = $request->type_id;
+        $product->save();
 
-        $savedAttrib = $product->attributes();
-        dd($savedAttrib->first()->color());
+        $savedAttrib = $product->attributes()->first();
+        $savedAttrib->product_type_id = $request->product_type_id;
+
+        $savedAttrib->weight->value = $request->weight;
+        $savedAttrib->weight->save();
+        
+        $savedAttrib->price->value = $request->price;
+        $savedAttrib->price->save();
+
+        $savedAttrib->color->value = $request->color;
+        $savedAttrib->color->save();
+
+        $savedAttrib->save();
     }
 
     /**
