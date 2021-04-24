@@ -9,17 +9,21 @@
 Lar-React introduces a simple way to maintain product database. Lar-React makes
 product managing routine more enjoyable with a simple and delightful UI.
 
+### Containers
+
+Lar-React uses 5 docker containers. Those are: mysql, phpmyadmin, redis, php-fpm (see [Dockerfile](/server/Dockerfile)) and nginx.
+You can open [docker compose](/docker-compose.yml) file to find out how docker actually launches them.
+
 ### Structure
 
 Lar-React, as might have guessed, was written using Laravel, for backend, and
 React, for frontend. And here's what Lar-React looks like:
 | File/folder name | Description |
 | ---------------- | ----------- |
-| `/docker` | Contains misc. configurations for php/nginx |
-| `/Makefile` | Contains a bunch of `make` commands. Full description is given [here](docs/Makefile.md) |
+| `/docker` | Contains misc. configurations for php/nginx. |
+| `/Makefile` | Contains a bunch of `make` commands. Full description is given [here](docs/Makefile.md). |
 | `/server` | Laravel project itself. You may wanna see [Laravel docs](https://laravel.com/docs/8.x/structure) to read about its structure. |
-
-### Containers
+| `/server/resources` | Contains frontend/React side. It was generated with `php artisan ui react`. |
 
 ## Getting started
 
