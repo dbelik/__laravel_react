@@ -62,3 +62,7 @@ seed database with:
 - product types using `php artisan db:seed --class ProductTypesSeeder`.
 
 Generate application key with `php artisan key:generate`.
+
+### Stopping
+
+In root folder, type `make down` to stop all containers. You should also close window where `npm` runs.
