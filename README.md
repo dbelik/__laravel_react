@@ -5,14 +5,14 @@
 ![Lar-React search page](/docs/assets/search_page.png)
 
 1. [Overview](#overview)
-    1. [Containers](#overview.containers)
-    2. [Structure](#overview.structure)
+    * [Containers](#overview.containers)
+    * [Structure](#overview.structure)
 2. [Getting started](#start)
-    1. [Installation](#start.installation)
-    2. [Configuration](#start.config)
-    3. [Launching](#start.launch)
-    4. [Database](#start.db)
-    5. [Stopping](#start.stop)
+    * [Installation](#start.installation)
+    * [Configuration](#start.config)
+    * [Launching](#start.launch)
+    * [Database](#start.db)
+    * [Stopping](#start.stop)
 
 ## <a id="overview">Overview</a>
 
