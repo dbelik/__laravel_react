@@ -36,6 +36,7 @@ export default function SearchProduct(props) {
     async function fetchProductTypes() {
         const types = await axios.get("/api/product_type");
         const res = [{ label: "any", value: "" }];
+        console.log(types);
         types.data.forEach((option) => {
             res.push({ label: option.name, value: option.id.toString() });
         });

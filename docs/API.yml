@@ -1,0 +1,354 @@
+swagger: "2.0"
+info:
+  description: "Lar-React API for working with data about products, as well as user authentication"
+  version: "1.0.0"
+  title: "Lar-React"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8081"
+basePath: "/api"
+tags:
+  - name: "products"
+    description: "CRUD products"
+  - name: "product types"
+    description: "CRUD product types"
+  - name: "auth"
+    description: "User authentication"
+  - name: "user"
+    description: "Information about user"
+schemes:
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+paths:
+  /register:
+    post:
+      tags:
+        - "auth"
+      summary: "Register a new user"
+      description: "Saves in database user data, which includes: name, email and password hash."
+      parameters:
+        - in: "body"
+          name: "user"
+          description: "User's data"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+              email:
+                type: "string"
+              password:
+                type: "string"
+                minLength: 8
+              password_confirmation:
+                type: "string"
+                minLength: 8
+      responses:
+        "201":
+          description: "User has been created"
+        "442":
+          description: "Invalid register input data"
+          schema:
+            $ref: "#/schemaDefinitions/responses/AuthError"
+  /login:
+    post:
+      tags:
+        - "auth"
+      summary: "Login"
+      description: "Login with existing user"
+      parameters:
+        - in: "body"
+          name: "user"
+          description: "User's data"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              email:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        "204":
+          description: "Successfully logged in"
+        "442":
+          description: "Invalid login input data"
+          schema:
+            $ref: "#/schemaDefinitions/responses/AuthError"
+  /logout:
+    post:
+      tags:
+        - "auth"
+      summary: "Logout"
+      description: "Logout"
+      security:
+        - auth: []
+      parameters:
+        - in: "body"
+          name: "user"
+          description: "User's data"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              email:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        "204":
+          description: "Successfully logged in"
+        "442":
+          description: "Invalid login input data"
+          schema:
+            $ref: "#/schemaDefinitions/responses/AuthError"
+
+  /profile:
+    get:
+      tags:
+        - "user"
+      summary: "Get current user's data"
+      description: "Get information about currently logged in user"
+      security:
+        - auth: []
+      responses:
+        "200":
+          description: "Successfully retrieved user's data"
+          schema:
+            $ref: "#/schemaDefinitions/user/Profile"
+
+  /product_type:
+    get:
+      tags:
+        - "product types"
+      summary: "Get all product types"
+      description: "Get all product types"
+      security:
+        - auth: []
+      responses:
+        "200":
+          description: "Successfully retrieved product types"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/schemaDefinitions/product/Type"
+    post:
+      tags:
+        - "product types"
+      summary: "Create new product type"
+      description: "Create new product type"
+      security:
+        - auth: []
+      parameters:
+        - in: "body"
+          name: "product type"
+          description: "Product type data"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              title:
+                type: "string"
+      responses:
+        "201":
+          description: "Successfully created product types"
+
+  /products:
+    get:
+      tags:
+        - "products"
+      summary: "Get products data"
+      description: "Get products data"
+      security:
+        - auth: []
+      parameters:
+        - in: "query"
+          name: "page"
+          type: "integer"
+          description: "Page number"
+          required: false
+        - in: "query"
+          name: "type"
+          type: "integer"
+          description: "Product type id"
+          required: false
+        - in: "query"
+          name: "name"
+          type: "string"
+          description: "Product name"
+          required: false
+      responses:
+        "200":
+          description: "Successfully retrieved products"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/schemaDefinitions/product/ProductSearch"
+    post:
+      tags:
+        - "products"
+      summary: "Create new product"
+      description: "Create new product"
+      security:
+        - auth: []
+      parameters:
+        - in: "body"
+          name: "page"
+          description: "Product data"
+          required: true
+          schema:
+            $ref: "#/schemaDefinitions/product/Product"
+
+      responses:
+        "200":
+          description: "Successfully created products"
+        "422":
+          description: "Successfully created products"
+          schema:
+            $ref: "#/schemaDefinitions/responses/ProductError"
+
+  /products/{id}:
+    get:
+      tags:
+        - "products"
+      summary: "Get product by id"
+      description: "Get product by id"
+      security:
+        - auth: []
+      parameters:
+        - in: "path"
+          name: "id"
+          type: "integer"
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Successfully created products"
+          schema:
+            $ref: "#/schemaDefinitions/product/ProductSearch"
+        "404":
+          description: "Product doesn't exist"
+    put:
+      tags:
+        - "products"
+      summary: "Update existing product by the given id"
+      description: "Update existing product by the given id"
+      security:
+        - auth: []
+      parameters:
+        - in: "path"
+          name: "id"
+          type: "integer"
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Successfully created products"
+        "404":
+          description: "Product doesn't exist"
+    delete:
+      tags:
+        - "products"
+      summary: "Delete product by the given id"
+      description: "Delete product by the given id"
+      security:
+        - auth: []
+      parameters:
+        - in: "path"
+          name: "id"
+          type: "integer"
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Successfully created products"
+        "404":
+          description: "Product doesn't exist"
+
+securityDefinitions:
+  auth:
+    type: "apiKey"
+    in: "header"
+    name: "laravel_session"
+schemaDefinitions:
+  user:
+    Profile:
+      type: "object"
+      properties:
+        created_at:
+          type: "string"
+        email:
+          type: "string"
+        email_verified_at:
+          type: "string"
+        id:
+          type: "integer"
+        name:
+          type: "string"
+        updated_at:
+          type: "string"
+  product:
+    ProductSearch:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        name:
+          type: "string"
+        type:
+          $ref: "#/schemaDefinitions/product/Type"
+        price:
+          type: "number"
+        weight:
+          type: "number"
+        color:
+          type: "string"
+    Product:
+      type: "object"
+      properties:
+        name:
+          type: "string"
+        type:
+          type: "integer"
+        price:
+          type: "number"
+        weight:
+          type: "number"
+        color:
+          type: "string"
+    Type:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        name:
+          type: "string"
+  responses:
+    AuthError:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+        errors:
+          type: "object"
+      example:
+        message: "The given data was invalid."
+        errors:
+          password: "The password field is required."
+          email: "The email field is required."
+    ProductError:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+        errors:
+          type: "object"
+      example:
+        message: "Product data is invalid."
+        errors:
+          weight: "The weight must be a number.The weight field is required."

@@ -109,7 +109,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         // If product isn't stored, return empty result
         if (!$product) {
-            return [];
+            return response()->noContent(404);
         }
 
         $savedAttrib = $product->attributes()->first();
@@ -127,17 +127,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param int $id
@@ -148,9 +137,8 @@ class ProductController extends Controller
     {
         // Update product
         $product = Product::find($id);
-
         if (!$product) {
-            return response("Couldn't find product with the given id")->status(404);
+            return response()->noContent(404);
         }
 
         $product->name = $request->name;
@@ -183,7 +171,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            return [];
+            return response()->noContent(404);
         }
 
         foreach ($product->attributes()->get() as $attribute) {

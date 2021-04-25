@@ -18,6 +18,7 @@
 
 Lar-React introduces a simple way to maintain product database. Lar-React makes
 product managing routine more enjoyable with a simple and delightful UI.
+You can read [API documentation](/docs/API.yml), which was written with Swagger editor.
 
 ### <a id="overview.containers">Containers</a>
 

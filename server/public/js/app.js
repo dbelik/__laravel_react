@@ -13213,6 +13213,7 @@ function Register() {
 
             case 4:
               res = _context.sent;
+              console.log(res.data);
 
               if (res && res.data && res.data.errors) {
                 setErrorMessages(res.data.errors);
@@ -13221,7 +13222,7 @@ function Register() {
                 setErrorMessages([]);
               }
 
-            case 6:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -13837,36 +13838,40 @@ function Products() {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                _context2.prev = 0;
+                _context2.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/".concat(id));
 
-              case 2:
-                product = _context2.sent.data;
+              case 3:
+                product = _context2.sent;
+                setName(product.name);
+                setWeight(product.weight.toString());
+                setPrice(product.price.toString());
+                setType(product.type.id.toString());
+                hlv = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hex.hsv(product.color);
+                resColor = Object.assign({}, color);
+                resColor.hue = hlv[0];
+                resColor.saturation = hlv[1] / 100;
+                resColor.brightness = hlv[2] / 100;
+                setColor(resColor);
+                _context2.next = 20;
+                break;
 
-                if (product.length === 0) {
-                  error("Product with the given id doesn't exist");
-                  _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push("/");
-                } else {
-                  setName(product.name);
-                  setWeight(product.weight.toString());
-                  setPrice(product.price.toString());
-                  setType(product.type.id.toString());
-                  hlv = color_convert__WEBPACK_IMPORTED_MODULE_3___default().hex.hsv(product.color);
-                  resColor = Object.assign({}, color);
-                  resColor.hue = hlv[0];
-                  resColor.saturation = hlv[1] / 100;
-                  resColor.brightness = hlv[2] / 100;
-                  setColor(resColor);
-                }
+              case 16:
+                _context2.prev = 16;
+                _context2.t0 = _context2["catch"](0);
+                if (_context2.t0.response.status === 404) error("Product with the given id doesn't exist");else error("Cannot display this product");
+                _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push("/");
 
+              case 20:
                 setLoading(false);
 
-              case 5:
+              case 21:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 16]]);
       }));
       return _fetchProduct.apply(this, arguments);
     }
@@ -14192,6 +14197,7 @@ function SearchProduct(props) {
                 label: "any",
                 value: ""
               }];
+              console.log(types);
               types.data.forEach(function (option) {
                 res.push({
                   label: option.name,
@@ -14202,7 +14208,7 @@ function SearchProduct(props) {
               setSelectedType(res[0].value);
               setLoading(false);
 
-            case 8:
+            case 9:
             case "end":
               return _context3.stop();
           }

@@ -30,6 +30,7 @@ export default function Register() {
         };
 
         const res = await signup(options);
+        console.log(res.data);
         if (res && res.data && res.data.errors) {
             setErrorMessages(res.data.errors);
             setSubmitDisabled(false);

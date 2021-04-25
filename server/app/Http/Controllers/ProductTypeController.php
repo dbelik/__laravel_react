@@ -23,6 +23,6 @@ class ProductTypeController extends Controller
         $type->timestamps = false;
         $type->save();
 
-        return redirect()->back()->with('message', 'New product type has been saved');
+        return $this->noContent(201);
     }
 }

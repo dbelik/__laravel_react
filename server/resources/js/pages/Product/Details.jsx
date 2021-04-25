@@ -62,11 +62,9 @@ export default function Products() {
         }
 
         async function fetchProduct(id) {
-            const product = (await axios.get(`/api/products/${id}`)).data;
-            if (product.length === 0) {
-                error("Product with the given id doesn't exist");
-                history.push("/");
-            } else {
+            try {
+                const product = (await axios.get(`/api/products/${id}`));
+
                 setName(product.name);
                 setWeight(product.weight.toString());
                 setPrice(product.price.toString());
@@ -80,6 +78,12 @@ export default function Products() {
                 resColor.brightness = hlv[2] / 100;
 
                 setColor(resColor);
+            } catch (e) {
+                if (e.response.status === 404)
+                    error("Product with the given id doesn't exist");
+                else
+                    error("Cannot display this product");
+                history.push("/");
             }
             setLoading(false);
         }
