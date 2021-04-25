@@ -33,10 +33,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Used for authentication on the frontend
     Route::get('/profile', [ProfileController::class, 'get']);
-    
+
     // Product types routes
     Route::get('/product_type', [ProductTypeController::class, 'index']);
     Route::post('/product_type', [ProductTypeController::class, 'store']);
+
+    Route::get('/product_type/{id}', [ProductTypeController::class, 'show']);
+    Route::delete('/product_type/{id}', [ProductTypeController::class, 'destroy']);
+    Route::put('/product_type/{id}', [ProductTypeController::class, 'update']);
 });
 
 // Authentication
