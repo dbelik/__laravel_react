@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Weight;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ProductController extends Controller
 {
@@ -21,10 +22,8 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         // Extract query params
-        $productName = $request->query('name');
-        $productName = $productName ? $productName : '';
-        $type = $request->query('type');
-        $type = $type ? $type : '';
+        $productName = $request->query('name', '');
+        $type = $request->query('type', '');
 
         // Init query
         $products = Product::query();
@@ -106,24 +105,31 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        if (Cache::has('product_'.$id)) {
+            return Cache::get('product_'.$id);
+        }
+
         $product = Product::find($id);
+
         // If product isn't stored, return empty result
         if (!$product) {
             return response()->noContent(404);
         }
 
-        $savedAttrib = $product->attributes()->first();
+        return Cache::remember('product_'.$id, 60 * 60, function () use ($product) {
+            $savedAttrib = $product->attributes()->first();
 
-        $res = [
-            'name' => $product->name, 
-            'type' => ProductType::find($product->product_type_id), 
-            'id' => $product->id,
-            'weight' => $savedAttrib->weight->value,
-            'color' => $savedAttrib->color->value,
-            'price' => $savedAttrib->price->value,
-        ];
-
-        return $res;
+            $res = [
+                'name' => $product->name, 
+                'type' => ProductType::find($product->product_type_id), 
+                'id' => $product->id,
+                'weight' => $savedAttrib->weight->value,
+                'color' => $savedAttrib->color->value,
+                'price' => $savedAttrib->price->value,
+            ];
+    
+            return $res;
+        });
     }
 
     /**
@@ -135,12 +141,13 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-        // Update product
+        // Try to find product by id
         $product = Product::find($id);
         if (!$product) {
             return response()->noContent(404);
         }
 
+        // Store in database
         $product->name = $request->name;
         $product->product_type_id = $request->type_id;
         $product->save();
@@ -158,6 +165,19 @@ class ProductController extends Controller
         $savedAttrib->color->save();
 
         $savedAttrib->save();
+
+        // Store in cache
+        $cache = [
+            'name' => $product->name,
+            'type' => ProductType::find($product->product_type_id),
+            'id' => $product->id,
+            'weight' => $savedAttrib->weight->value,
+            'color' => $savedAttrib->color->value,
+            'price' => $savedAttrib->price->value,
+        ];
+        Cache::put('product_'.$id, $cache);
+
+        return response()->noContent();
     }
 
     /**
@@ -169,15 +189,21 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        // Try to find product by id
         $product = Product::find($id);
         if (!$product) {
             return response()->noContent(404);
         }
 
+        // Delete all attributes
         foreach ($product->attributes()->get() as $attribute) {
             $attribute->attributable->delete();
         }
 
+        // Delete from database
         $product->delete();
+
+        // Delete from cache
+        Cache::forget('product_'.$id);
     }
 }

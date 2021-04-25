@@ -22,9 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    // Product types routes
-    Route::get('/product_type', [ProductTypeController::class, 'get']);
-    Route::post('/product_type', [ProductTypeController::class, 'post']);
 
     // Product routes
     Route::get('/products', [ProductController::class, 'index']);
@@ -37,6 +34,9 @@ Route::group(['middleware' => 'auth'], function () {
     // Used for authentication on the frontend
     Route::get('/profile', [ProfileController::class, 'get']);
 });
+// Product types routes
+Route::get('/product_type', [ProductTypeController::class, 'get']);
+Route::post('/product_type', [ProductTypeController::class, 'post']);
 
 // Authentication
 Auth::routes();
