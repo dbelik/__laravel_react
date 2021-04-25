@@ -13843,7 +13843,7 @@ function Products() {
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/".concat(id));
 
               case 3:
-                product = _context2.sent;
+                product = _context2.sent.data;
                 setName(product.name);
                 setWeight(product.weight.toString());
                 setPrice(product.price.toString());
@@ -13860,7 +13860,7 @@ function Products() {
               case 16:
                 _context2.prev = 16;
                 _context2.t0 = _context2["catch"](0);
-                if (_context2.t0.response.status === 404) error("Product with the given id doesn't exist");else error("Cannot display this product");
+                if (_context2.t0.response.status === 404) error("Product with the given id doesn't exist");else error("Failed to display this product");
                 _utils_createHistory__WEBPACK_IMPORTED_MODULE_4__.default.push("/");
 
               case 20:

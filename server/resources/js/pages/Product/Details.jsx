@@ -63,7 +63,7 @@ export default function Products() {
 
         async function fetchProduct(id) {
             try {
-                const product = (await axios.get(`/api/products/${id}`));
+                const product = (await axios.get(`/api/products/${id}`)).data;
 
                 setName(product.name);
                 setWeight(product.weight.toString());
@@ -81,8 +81,7 @@ export default function Products() {
             } catch (e) {
                 if (e.response.status === 404)
                     error("Product with the given id doesn't exist");
-                else
-                    error("Cannot display this product");
+                else error("Failed to display this product");
                 history.push("/");
             }
             setLoading(false);
