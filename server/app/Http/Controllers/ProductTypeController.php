@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Cache;
 
 class ProductTypeController extends Controller
 {
-    public function get()
+    public function index()
     {
         return Cache::remember('product_types', 60 * 60, function () {
             return ProductType::all();
         });
     }
 
-    public function post(ProductTypeRequest $request)
+    public function store(ProductTypeRequest $request)
     {
         // All data is valid, store them in database now.
         $type = new ProductType();
