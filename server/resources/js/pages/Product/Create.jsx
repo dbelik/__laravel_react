@@ -68,6 +68,7 @@ export default function Products() {
             color.saturation * 100,
             color.brightness * 100
         );
+        setErrors([]);
         const options = { weight, price, name, type_id: type, color: rgb };
         try {
             const res = await axios.post("/api/products", options);
