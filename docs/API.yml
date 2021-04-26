@@ -157,6 +157,50 @@ paths:
       responses:
         "201":
           description: "Successfully created product types"
+          
+  /product_type/{id}:
+    put:
+      tags:
+        - "product types"
+      summary: "Update product type"
+      description: "Update product type"
+      security:
+        - auth: []
+      parameters:
+        - in: "body"
+          name: "product type"
+          description: "Product type data"
+          required: true
+          schema:
+            $ref: "#/schemaDefinitions/product/TypeTitle"
+        - in: "path"
+          name: "id"
+          description: "Product type id"
+          required: true
+          type: "integer"
+      responses:
+        "200":
+          description: "Successfully updated product type"
+        "404":
+          description: "Product type with the given id wasn't found"
+    delete:
+      tags:
+        - "product types"
+      summary: "Delete product type"
+      description: "Delete product type"
+      security:
+        - auth: []
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "Product type id"
+          required: true
+          type: "integer"
+      responses:
+        "200":
+          description: "Successfully delete product type"
+        "404":
+          description: "Product type with the given id wasn't found"
 
   /products:
     get:
@@ -327,6 +371,11 @@ schemaDefinitions:
         id:
           type: "integer"
         name:
+          type: "string"
+    TypeTitle:
+      type: "object"
+      properties:
+        title:
           type: "string"
   responses:
     AuthError:
